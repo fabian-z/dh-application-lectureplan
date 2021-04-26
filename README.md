@@ -1,2 +1,2 @@
-# dh-lecture-plan
-TIF20A - Application project for lectures Web Engineering and Project Management
+# dh-application-lectureplan
+TIF20 - Group 05 - Application project for lectures Web Engineering and Project Management
