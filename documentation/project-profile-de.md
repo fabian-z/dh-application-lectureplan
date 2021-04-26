@@ -82,7 +82,7 @@ TODO
 | Stellvertreter       | Placeholder   |
 | Lenkungskreis        | Placeholder   |
 | Kernteam             | Placeholder   |
-| Machtpromotor        | Prof. Hanser  |
+| Machtpromotor        | Placeholder   |
 | Fachpromotor         | Prof. Behrends|
 | Weitere Stakeholder  | Placeholder   |
 
@@ -92,8 +92,8 @@ TODO
 | Stellvertreter       | Placeholder   |
 | Lenkungskreis        | Placeholder   |
 | Kernteam             | Dr. Birn, Prof. Behrends   |
-| Machtpromotor        | Placeholder   |
-| Fachpromotor         | Placeholder   |
+| Machtpromotor        | Prof. Hanser  |
+| Fachpromotor         | Prof. Behrends|
 | Weitere Stakeholder  | Placeholder   |
 
 ## Projektrisiken
