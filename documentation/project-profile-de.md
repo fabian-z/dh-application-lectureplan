@@ -8,7 +8,7 @@
 
 ### Kostenstelle
 
-## Projektziele (SMART Methode9
+## Projektziele (SMART Methode)
 
 ### Globalziel
 
