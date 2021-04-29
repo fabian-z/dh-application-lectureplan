@@ -8,9 +8,10 @@ Webanwendung Vorlesungsplanung DHBW Lörrach
 
 DHBW Lörrach, Hr. Prof. Behrends & Fr. Dr. Kristina Birn
 
-### Projektleiter
+### Projektleitung
 
-TODO
+- Organisatorische Leitung: Jennifer Krüger & Benedikt Kubon
+- Technische Leitung: Fabian Zaremba
 
 ### Kostenstelle
 
