@@ -42,6 +42,9 @@ N/A
 
 - Webanwendungen
 - Terminplanung (Vorlesungen)
+  - Ansatz pro Termin
+  - Alternativ: Regel- / Constraint basierter Ansatz
+- E-Mail Benachrichtigungen
 
 ### Not-Doing (Keine Umsetzung im Basisprojekt)
 
@@ -58,7 +61,11 @@ N/A
 
 ### Projektumfeld (Ort, Rahmen, Beteiligte)
 
-- DHBW Lörrach
+Ort: DHBW Lörrach
+
+Rahmen: Vorlesung Anwendungsprojekt / Projektmanagement, Kurs TIF20A
+
+Beteiligte: siehe Stakeholder
 
 ## Termine
 
