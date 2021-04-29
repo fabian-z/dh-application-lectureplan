@@ -6,7 +6,9 @@ Webanwendung Vorlesungsplanung DHBW Lörrach
 
 ### Projektsponsor
 
-DHBW Lörrach, Hr. Prof. Behrends & Fr. Dr. Kristina Birn
+DHBW Lörrach
+
+-> vertreten durch Hr. Prof. Behrends & Fr. Dr. Kristina Birn
 
 ### Projektleitung
 
@@ -31,7 +33,7 @@ N/A
 
 ## Strategisches Ziel (Unternehmensziel)
 
-- Erhöhung der organisatorischen Effizienz
+- Erhöhung der organisatorischen Effizienz (Verringerung des Zeitaufwandes)
 - Steigerung der Attraktivität der DHBW für Dozenten
 
 ## Projektumfang
@@ -43,15 +45,16 @@ N/A
 
 ### Not-Doing (Keine Umsetzung im Basisprojekt)
 
-- E-Mail Ersatz
+- E-Mail Ersatz für Individualkommunikation
 
 ## Projektkontext
 
 ### Ausgangssituation (Anlass, Auslöser)
 
 - Zeitaufwendige manuelle Organsiation und Verschiebung von Vorlesungsterminen
-- Absprache zwischen Dozent / Sekretariat
-- Geplante Verringerung des Zeitaufwandes
+- Häufige Absprachen zwischen Dozent / Sekretariat
+- Planung mit internen / externen Dozenten
+- Bisher: Tischkalender & Bleistift
 
 ### Projektumfeld (Ort, Rahmen, Beteiligte)
 
