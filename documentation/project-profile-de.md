@@ -61,11 +61,12 @@ N/A
 
 ### Geplanter Projektstart / Geplantes Ende
 
-- KW 16 / 2021 bis Ende des Semesters
+- KW 16 / 2021 bis Ende der Theoriephase 06/2021
 
 ### Zwischentermine / Meilensteine
 
 - KW 22 / 2021: Fertigstellung Dokumentation Projektplanung
+- Abgabe Projektergebnisse bis Sonntag 20. Juni 2021
 
 ## Erfolgsmessung
 
@@ -77,25 +78,25 @@ TODO
 
 ## Stakeholder
 
-|                      | Intern        |
-| -------------------- | ------------- |
-| Projektmanager       | Placeholder   |
-| Stellvertreter       | Placeholder   |
-| Lenkungskreis        | Placeholder   |
-| Kernteam             | Placeholder   |
-| Machtpromotor        | Placeholder   |
-| Fachpromotor         | Prof. Behrends|
-| Weitere Stakeholder  | Placeholder   |
+|                      | Intern                             |
+| -------------------- | ---------------------------------- |
+| Projektmanager       | Jennifer Krüger                    |
+| Stellvertreter       | Benedikt Kubon                     |
+| Lenkungskreis        | Krüger, Kubon, Zaremba             |
+| Kernteam             | Weishar, Meier, Bieringer, Zaremba |
+| Machtpromotor        | Prof. Behrends                     |
+| Fachpromotor         | Prof. Behrends                     |
+| Weitere Stakeholder  |                                    |
 
-|                      | Extern        |
-| -------------------- | ------------- |
-| Projektmanager       | Placeholder   |
-| Stellvertreter       | Placeholder   |
-| Lenkungskreis        | Placeholder   |
-| Kernteam             | Dr. Birn, Prof. Behrends   |
-| Machtpromotor        | Prof. Hanser  |
-| Fachpromotor         | Prof. Behrends|
-| Weitere Stakeholder  | Placeholder   |
+|                      | Extern                   |
+| -------------------- | -----------------------  |
+| Projektmanager       | Prof. Behrends           |
+| Stellvertreter       | Dr. Birn                 |
+| Lenkungskreis        | Dr. Birn, Prof. Behrends |
+| Kernteam             | Dr. Birn, Prof. Behrends |
+| Machtpromotor        | Prof. Hanser             |
+| Fachpromotor         | Prof. Behrends           |
+| Weitere Stakeholder  | Sekretariat SZI          |
 
 ## Projektrisiken
 
