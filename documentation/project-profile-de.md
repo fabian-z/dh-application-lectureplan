@@ -80,11 +80,18 @@ Beteiligte: siehe Stakeholder
 
 ## Erfolgsmessung
 
-TODO
+- Grad der Erfüllung der Hauptziele
+  - Key Performance Indicators
+- Erfüllung der Unterziele
+- Akzeptanz der Stakeholder
+- Prüfung des praktischen Einsatzes
+- Tatsächliche Reduzierung der Aufwendungen zur Organisation
 
 ## Projektbudget
 
-TODO
+Zeitbudget: 50 Stunden / Teammitglied * 6 Mitglieder = min. 300 Stunden
+
+Finanzielles Budget: ∅
 
 ## Stakeholder
 
