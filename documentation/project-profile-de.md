@@ -8,7 +8,7 @@ Webanwendung Vorlesungsplanung DHBW Lörrach
 
 DHBW Lörrach
 
--> vertreten durch Hr. Prof. Behrends & Fr. Dr. Kristina Birn
+-> vertreten durch Hr. Prof. Erik Behrends & Fr. Dr. Kristina Birn
 
 ### Projektleitung
 
