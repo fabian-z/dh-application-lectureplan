@@ -1,0 +1,38 @@
+{
+    "name": "dh-application-lectureplan",
+    "version": "0.0.1",
+    "description": "Frontend for project work for lecture application project @ DHBW Lörrach",
+    "private": true,
+    "scripts": {
+        "build-dev": "npx webpack -c webpack.devconfig.cjs",
+        "build": "npx webpack",
+        "lint": "npx eslint src",
+        "test": "echo \"Error: no test specified\" && exit 0"
+    },
+    "type": "module",
+    "browser": "src/main.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/fabian-z/dh-application-lectureplan.git"
+    },
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/fabian-z/dh-application-lectureplan/issues"
+    },
+    "homepage": "https://github.com/fabian-z/dh-application-lectureplan#readme",
+    "devDependencies": {
+        "@babel/core": "^7.14.0",
+        "@babel/eslint-parser": "^7.13.14",
+        "@babel/plugin-proposal-class-properties": "^7.13.0",
+        "@babel/preset-env": "^7.14.0",
+        "babel-core": "^6.26.3",
+        "babel-loader": "^8.2.2",
+        "babel-plugin-syntax-dynamic-import": "^6.18.0",
+        "babel-preset-env": "^1.7.0",
+        "eslint": "^7.25.0",
+        "terser-webpack-plugin": "^5.1.1",
+        "webpack": "^5.36.2",
+        "webpack-cli": "^4.6.0"
+    }
+}
