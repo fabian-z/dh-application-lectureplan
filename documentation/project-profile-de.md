@@ -92,11 +92,11 @@ Beteiligte: siehe Stakeholder
 
 ### Zwischentermine / Meilensteine
 
-- 28. und 29. April: Erstellung Projektsteckbrief
-- 06. und 07. Mai: Erstellung Pflichtenheft und Projektstrukturplan
-- 20. und 21. Mai: Erstellung Grobplan und Projektplan
-- 10. und 11. Juni: An der Umsetzung und Dokumentation arbeiten
-- 15. und 17. Juni: Projektabschluss und letzte Fragen vor der Abgabe
+- 28 - 29. April: Erstellung Projektsteckbrief
+- 06 - 07. Mai: Erstellung Pflichtenheft und Projektstrukturplan
+- 20 - 21. Mai: Erstellung Grobplan und Projektplan
+- 10 - 11. Juni: An der Umsetzung und Dokumentation arbeiten
+- 15 - 17. Juni: Projektabschluss und letzte Fragen vor der Abgabe
 
 ## Erfolgsmessung
 
