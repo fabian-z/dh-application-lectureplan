@@ -1,0 +1,31 @@
+/* Designed by Christian Robertson
+ * Licensed under Apache License Version 2.0, January 2004
+ * http://www.apache.org/licenses/
+ */
+
+@font-face {
+    font-family: 'roboto';
+    src: url('../fonts/roboto-bold.woff2') format('woff2'),
+         url('../fonts/roboto-bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('../fonts/roboto-italic.woff2') format('woff2'),
+         url('../fonts/roboto-italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('../fonts/roboto-regular.woff2') format('woff2'),
+         url('../fonts/roboto-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
