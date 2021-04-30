@@ -1,5 +1,5 @@
-@import "roboto.css";
-@import "fontawesome.css";
+/* webpackIgnore: true */ @import "roboto.css";
+/* webpackIgnore: true */ @import "fontawesome.css";
 
 * {
     box-sizing: border-box;
