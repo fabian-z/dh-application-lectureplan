@@ -95,7 +95,9 @@ Beteiligte: siehe Stakeholder
 - 28 - 29. April: Erstellung Projektsteckbrief
 - 06 - 07. Mai: Erstellung Pflichtenheft und Projektstrukturplan
 - 20 - 21. Mai: Erstellung Grobplan und Projektplan
-- 10 - 11. Juni: An der Umsetzung und Dokumentation arbeiten
+- 04 Juni: Abgabe aller Dokumentationen auf Moodle bis 17:00 Uhr
+- 07 Juni: Elevator Pitch (Referat) ab 14:00 Uhr
+- (10 - 11. Juni: An der Umsetzung und Dokumentation arbeiten)
 - 15 - 17. Juni: Projektabschluss und letzte Fragen vor der Abgabe
 
 ## Erfolgsmessung
