@@ -9,6 +9,9 @@ on:
 jobs:
   build:
     runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: ./backend
 
     strategy:
       matrix:
