@@ -102,12 +102,10 @@ Beteiligte: siehe Stakeholder
 
 ## Erfolgsmessung
 
-- Erfüllungsgrad des Globalzieles und der Hauptziele
-  - Key Performance Indicators
-- Erfüllung der Unterziele
-- Akzeptanz der Stakeholder
-- Prüfung des praktischen Einsatzes
-- Tatsächliche Reduzierung der Aufwendungen zur Organisation
+- Die Reduzierung des Organisatorischen Aufwandes in Bezug auf die erforderliche Zeit zur Planung des Kursplans um n Zeiteinheiten bis 17.Juni.2021.
+- Die Reduzierung des Organisatorischen Aufwandes in Bezug auf die Anfragen und Rückfragen an die Dozierenden bis zum 17.Juni.2021.
+- Nutzungsvolumen des Tools innerhalb der SZI Dozierende und Planungspersonal) anhand der Einsatzhäufigkeit bis zm 17.Juni.2021.
+- Legitimmität des Tools bei den Stakeholdern anhand der Bewertung durch ein sogennates Bewertungsportal und der Nutzungshäufigkeit innerhalb des SZI.
 
 ## Projektbudget
 
