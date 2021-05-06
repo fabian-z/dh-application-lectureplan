@@ -1,5 +1,4 @@
-/* TODO proper container instead of modifying body! */
-body {
+.login-page {
     margin: 0;
     height: 100vh;
     width: 100vw;
