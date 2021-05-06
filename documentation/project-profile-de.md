@@ -27,8 +27,11 @@ N/A
 Die Realisierung einer Webandwendung zur Vorlesungsplanung an der DHBW Lörrach zur Reduzierung des zeitlichen und administrativen Aufwandes für vorerst einen Kurs mit sowohl externen als auch internen Dotierenden bis zum 17.Juni.2021 mit einer minimalen Arbeitszeit von 50 Stunden pro Teammitglied. Dadurch soll der zeitlliche Aufwand zur Erstellung des Kursplans um n Zeitstunden verkürzt und die Anfragen und Rückfragen von/an Dozierenden auf n Anfragen reduziert werden.
 
 ### Unterziele
-<-- Rückfrage Montag
-
+- Entwurf eines möglichst realistischen Gesamtkonzeptes mit Hilfe von Wireframes und Mockups zur visuellen Veranschaulichung der Vorgehensweise bis zum 31.Mai.2021.
+- Implementierung der UI-Komponenten bis zum 15.Juni.2021 in Frontend-Code (HTML/CSS/JavaScript) bis zum 15.Juni.2021.
+- Aufsetzung des Frontends sowie des Backends bis zum 10.05.2021 mit einem minimalen Zeitaufwand von 4 Zeitstunden, um die Grundlage für das Frontendteam zu legen.
+- Festlegung der Testumgebungen für die Webanwendung bis zum 10.05.20221.
+- Testung der Webanwendungen in den vorher festgelegten Umgebungen bis zum 18.Juni.2021
 ## Projektnutzen (Erwarteter Nutzen für Unternehmen)
 
 - Minimierung des personellen Aufwandes zur Organisation der Vorlesungsterminen eines Kurses
@@ -107,6 +110,7 @@ Beteiligte: siehe Stakeholder
 - Die Reduzierung des Organisatorischen Aufwandes in Bezug auf die Anfragen und Rückfragen an die Dozierenden bis zum 17.Juni.2021.
 - Nutzungsvolumen des Tools innerhalb der SZI Dozierende und Planungspersonal) anhand der Einsatzhäufigkeit bis zm 17.Juni.2021.
 - Legitimmität des Tools bei den Stakeholdern anhand der Bewertung durch ein sogennates Bewertungsportal und der Nutzungshäufigkeit innerhalb des SZI.
+- Fertigstellung der Webanwendung im zeitlich vorgegebenen Rahmen bis zum 17.Juni.2020.
 
 ## Projektbudget
 
