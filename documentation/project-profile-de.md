@@ -23,7 +23,8 @@ N/A
 <-- Lastenheft (Input)
 
 ### Globalziel
-Die Reduzierung des Organisatorischen Overheads für vorerst einen Kurs mit sowohl externen als auch internen Dozierenden (Zeiteinsparung durch Prozessoptimierung bei gleichzeitiger Reduktion des zeitlichen und administrativen Planungsaufwandes).
+
+Die Realisierung einer Webandwendung zur Vorlesungsplanung an der DHBW Lörrach zur Reduzierung des zeitlichen und administrativen Aufwandes für vorerst einen Kurs mit sowohl externen als auch internen Dotierenden bis zum 17.Juni.2021 mit einer minimalen Arbeitszeit von 50 Stunden pro Teammitglied. Dadurch soll der zeitlliche Aufwand zur Erstellung des Kursplans um n Zeitstunden verkürzt und die Anfragen und Rückfragen von/an Dozierenden auf n Anfragen reduziert werden.
 
 ### Unterziele
 <-- Rückfrage Montag
