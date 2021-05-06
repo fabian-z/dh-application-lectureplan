@@ -4,25 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>DHBW-Vorlesungsplan</title>
-    <link href="login.css" rel="stylesheet" type="text/css" />
+    <link href="../../../backend/static/css/bundle.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div class="ueberschrift">
-      DHBW-Lörrach Vorlesungsplan
-
-      <div class="Login_begruessung">
-
-        Irgendwelcher Text
-
-          <div class="Login_formular">
-
-            Login-Formular
-
-          </div>
-          
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <img src="../../../backend/static/gfx/dhbw-loe-logo.png" class="img-fluid" style="width: 300px; height: 50px;">
+        <span class="navbar-brand mb-0 h1">DHBW-Vorlesungsplan</span>
+        <div class="d-flex">
+          <button class="btn btn-outline-success">sign-out</button>
+        </div>
       </div>
-
+    </nav>
+    <!-- {if user is logged in} -->
+    <div class="kurs_auswahl">
+      <form>
+        <!-- Selectbox -->
+      </form>
+      <button class="submit"><a href="#">Bestätigen</a></button>
     </div>
-
+    <div class="kurs_hinzufuegen">
+      <button><a href="#">Kurs hinzufügen</a></button>
+    </div>
+    <!-- {else} -->
+    <div class="card">
+      <div class="card-title">
+        <h1>Login</h1>
+      </div>
+      <div class="card-body">
+        <form>
+          <!-- Login Formular -->
+        </form>
+      </div>
+    </div>
+    <!-- {endif} -->
   </body>
 </html>
