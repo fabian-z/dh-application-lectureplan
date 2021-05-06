@@ -1,3 +1,4 @@
+/* TODO proper container instead of modifying body! */
 body {
     margin:0;
     height:100vh;
@@ -7,28 +8,28 @@ body {
     align-items:center;
     justify-content:center;
     color: white;
-    font-family:'Lato', sans-serif;
 }
-.login-Formular{
+
+.login-form{
     width:430px;
     height:700px;
     padding: 60px 35px 35px 35px;
     border-radius: 10px;
     background: #F0F4F5;
 }
-.logo{
+.logo {
     width:100%;
     height:100%;
     margin: 0 auto;
 }
-.untertitel{
+.subtitle {
 text-align: center;
 color: #E2001A;
 font-size:28px;
 padding-top:24px;
 letter-spacing: 0.5px;
 }
-.Felder input{
+.fields input{
     border: none;
     outline: none;
     background: none;
@@ -37,12 +38,12 @@ letter-spacing: 0.5px;
     color: #5C6971;
     padding: 10px 10px 10px 5px;
 }
-.benutzername, .passwort{
+.username, .password{
     display: block;
     border-bottom: 1px solid #b3b3b3;
     margin-bottom:30px;
 }
-.login-knopf{
+.login{
     outline: none;
     border: none;
     cursor: pointer;
@@ -57,17 +58,17 @@ letter-spacing: 0.5px;
     text-align: center;
     letter-spacing: 1px;
 }
-.login-knopf:hover{
+.login:hover{
     background: #cc0030;
 }
-.login-knopf:active{
+.login:active{
     background: #a80028;
 }
-.passwort-zuruecksetzen{
+.reset-password{
     padding-top: 20px;
     text-align: center;
 }
-.passwort-zuruecksetzen a{
+.reset-password a{
     text-decoration: none;
     color: #E2001A;
     font-size: 20px;
