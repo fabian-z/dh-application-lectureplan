@@ -7,7 +7,7 @@ import 'bootstrap';
 // precompiled CSS works for now
 import 'bootstrap/dist/css/bootstrap.css';
 
-import "./main.css";
+import "../css/main.css";
 
 document.addEventListener('DOMContentLoaded', function() {
     // Setup handlers when DOM is ready
