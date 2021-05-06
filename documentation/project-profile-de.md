@@ -24,14 +24,13 @@ N/A
 
 ### Globalziel
 
-Die Realisierung einer Webandwendung zur Vorlesungsplanung an der DHBW Lörrach zur Reduzierung des zeitlichen und administrativen Aufwandes für vorerst einen Kurs mit sowohl externen als auch internen Dotierenden bis zum 17.Juni.2021 mit einer minimalen Arbeitszeit von 50 Stunden pro Teammitglied. Dadurch soll der zeitlliche Aufwand zur Erstellung des Kursplans um n Zeitstunden verkürzt und die Anfragen und Rückfragen von/an Dozierenden auf n Anfragen reduziert werden.
+Die Realisierung einer Webandwendung zur Vorlesungsplanung an der DHBW Lörrach zur Reduzierung des zeitlichen und administrativen Aufwandes für vorerst einen Kurs mit sowohl externen als auch internen Dozierenden bis zum 17.Juni.2021. Dadurch soll der zeitlliche Aufwand zur Erstellung des Kursplans um n Zeitstunden verkürzt und die Anfragen und Rückfragen von bzw. an Dozierenden auf n Anfragen reduziert werden.
 
 ### Unterziele
-- Entwurf eines möglichst realistischen Gesamtkonzeptes mit Hilfe von Wireframes und Mockups zur visuellen Veranschaulichung der Vorgehensweise bis zum 31.Mai.2021.
-- Implementierung der UI-Komponenten bis zum 15.Juni.2021 in Frontend-Code (HTML/CSS/JavaScript) bis zum 15.Juni.2021.
-- Aufsetzung des Frontends sowie des Backends bis zum 10.05.2021 mit einem minimalen Zeitaufwand von 4 Zeitstunden, um die Grundlage für das Frontendteam zu legen.
-- Festlegung der Testumgebungen für die Webanwendung bis zum 10.05.20221.
-- Testung der Webanwendungen in den vorher festgelegten Umgebungen bis zum 18.Juni.2021
+- Entwurf eines möglichst realistischen Gesamtkonzeptes mit Hilfe von Wireframes und Mockups zur visuellen Veranschaulichung der Vorgehensweise bis zum [Datum eingeben].
+- Schulung des Frontend- sowie des Backendteams mit Hilfe des Kurses "Anwendungsprojekt" bei Herr Dr. Behrends sowie dessen empfohlenen Tutorials bis zum [Datum eingeben].
+- Festlegung von Testfällen sowie der Testumgebungen bis zum [Datum eingeben].
+- Aufsetzung des Backends sowie des Frontends bis zum [Datum eingeben].
 ## Projektnutzen (Erwarteter Nutzen für Unternehmen)
 
 - Minimierung des personellen Aufwandes zur Organisation der Vorlesungsterminen eines Kurses
