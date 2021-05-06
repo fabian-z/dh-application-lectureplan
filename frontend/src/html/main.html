@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>DHBW Lörrach Lecture Planning</title>
-    <link href="../../../backend/static/css/bundle.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <img src="../../../backend/static/gfx/dhbw-loe-logo.png" class="img-fluid" style="width: 300px; height: 50px;">
-        <span class="navbar-brand mb-0 h1">DHBW Lörrach Lecture Planning</span>
-        <div class="d-flex">
-          <button class="btn btn-outline-success">Logout</button>
-        </div>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>DHBW Lörrach Lecture Planning</title>
+  <link href="../../../backend/static/css/bundle.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <img src="../../../backend/static/gfx/dhbw-loe-logo.png" class="img-fluid" style="width: 300px; height: 50px;">
+      <span class="navbar-brand mb-0 h1">DHBW Lörrach Lecture Planning</span>
+      <div class="d-flex">
+        <button class="btn btn-outline-success">Logout</button>
       </div>
-    </nav>
-    <!-- {if user is logged in} -->
-    <div class="course_selection">
+    </div>
+  </nav>
+  <!-- {if user is logged in} -->
+  <div class="course_selection">
+    <form>
+      <!-- Selectbox -->
+    </form>
+    <button class="submit"><a href="#">Confirm</a></button>
+  </div>
+  <div class="course_add">
+    <button><a href="#">Add course</a></button>
+  </div>
+  <!-- {else} -->
+  <div class="card">
+    <div class="card-title">
+      <h1>Login</h1>
+    </div>
+    <div class="card-body">
       <form>
-        <!-- Selectbox -->
+        <!-- Login Formular -->
       </form>
-      <button class="submit"><a href="#">Confirm</a></button>
     </div>
-    <div class="course_add">
-      <button><a href="#">Add course</a></button>
-    </div>
-    <!-- {else} -->
-    <div class="card">
-      <div class="card-title">
-        <h1>Login</h1>
-      </div>
-      <div class="card-body">
-        <form>
-          <!-- Login Formular -->
-        </form>
-      </div>
-    </div>
-    <!-- {endif} -->
-  </body>
+  </div>
+  <!-- {endif} -->
+</body>
+
 </html>
