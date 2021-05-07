@@ -33,11 +33,6 @@ Dieser Prototyp soll dabei bis einschließlich den 17. Juni 2021 durch den Lenku
 - Zusätzlich zur verbesserten Kommunikation mittels des Dozierendenmanagement, soll das weitere fortbestehen der Kommunikationsinteraktionen zwischen Dozenten und Sekretariat durch einen Auto-Reminder erleichtert werden, sodass ein ständiger einseitiger  Kommunikationsverlauf Seitens des Sekretariates vermieden werden soll
 - Die Implementierung einer Möglichkeit zur Publikation soll managen, dass ein geeigneter, fertiggestellter und (von allen betroffenen Dozenten und dem Sekretariat) abgesegtneter Vorlesungsplan für einen Kurs veröffentlicht werden kann
 
-### Unterziele
-- Entwurf eines möglichst realistischen Gesamtkonzeptes mit Hilfe von Wireframes und Mockups zur visuellen Veranschaulichung der Vorgehensweise bis zum [Datum eingeben].
-- Schulung des Frontend- sowie des Backendteams mit Hilfe des Kurses "Anwendungsprojekt" bei Herr Dr. Behrends sowie dessen empfohlenen Tutorials bis zum [Datum eingeben].
-- Festlegung von Testfällen sowie der Testumgebungen bis zum [Datum eingeben].
-- Aufsetzung des Backends sowie des Frontends bis zum [Datum eingeben].
 ## Projektnutzen (Erwarteter Nutzen für Unternehmen)
 
 - Minimierung des personellen Aufwandes zur Organisation der Vorlesungsterminen eines Kurses
