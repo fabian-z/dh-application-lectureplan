@@ -1,5 +1,4 @@
 # Projektsteckbrief
-
 ## Projekttitel (Kurzbezeichnung)
 
 Webanwendung Vorlesungsplanung DHBW Lörrach
@@ -19,12 +18,25 @@ welche vertreten wird durch Hr. Prof. Erik Behrends & Fr. Dr. Kristina Birn
 N/A
 
 ## Projektziele (SMART Methode)
-
 <-- Lastenheft (Input)
 
 ### Globalziel
+<<<<<<< Updated upstream
 
 Die Realisierung einer Webandwendung zur Vorlesungsplanung an der DHBW Lörrach zur Reduzierung des zeitlichen und administrativen Aufwandes für vorerst einen Kurs mit sowohl externen als auch internen Dozierenden bis zum 17.Juni.2021. Dadurch soll der zeitlliche Aufwand zur Erstellung des Kursplans um n Zeitstunden verkürzt und die Anfragen und Rückfragen von bzw. an Dozierenden auf n Anfragen reduziert werden.
+=======
+Die Implementierung eines Prototypen einer Webanwendung zur Vorlesungsplanung eines beziehungsweise mehrerer Kurse an der DHBW Lörrach zur Einschränkung des zeitlichen und organisatorischen Aufwandes um t-n Zeiteinheiten gegenüber den bisherigen Zeitaufwandes t.
+Zusätzlich dazu soll eine Alternativlösung zur Kommunikationsmöglichkeit zwischen Dozent und Sekretariat geschaffen werden, in welcher eine Einseitige Kommunikation Seitens des Sekretariates, durch eine Automatisierte Reminder-Funktion für den Dozenten, vermieden werden soll.
+
+Dieser Prototyp soll dabei bis einschließlich den 17. Juni 2021 durch den Lenkungskreis und des Kernteams, sowie mithilfe der internen und externen Fachpromotern, realisiert und den Stakeholdern zur Verfügung gestellt werden.
+
+### Unterziele
+- Die Webanwendung zur Vorlesungsplanung für das Sekretariat der DHBW-Lörrach geht durch die formalisierung des Projektumfanges hervor
+- Implementierung eines Algorithmus mit dem Ziel der Ausgabe von Planungsvorschlägen, welche mittels diversen Kriterien (Constraints) in aussagenlogischer Form definiert werden
+- Erstellung einer Alternativlösung zum Dozierendenmanagement, d.h. die Kommunikation zur Terminvergabe der Vorlesungen zwischen Dozenten und dem Sekretariat soll erleichtert werden, indem Dozenten die Möglichkeit besitzen innerhalb der Webanwendung selber Wunschtermine, sowie den jeweiligen Terminstatus (offen, akzeptiert, abgelehnt oder anderer Vorschlag) in den entsprechenden Kurskalender einzutragen beziehungsweise zu aktualisieren
+- Zusätzlich zur verbesserten Kommunikation mittels des Dozierendenmanagement, soll das weitere fortbestehen der Kommunikationsinteraktionen zwischen Dozenten und Sekretariat durch einen Auto-Reminder erleichtert werden, sodass ein ständiger einseitiger  Kommunikationsverlauf Seitens des Sekretariates vermieden werden soll
+- Die Implementierung einer Möglichkeit zur Publikation soll managen, dass ein geeigneter, fertiggestellter und (von allen betroffenen Dozenten und dem Sekretariat) abgesegtneter Vorlesungsplan für einen Kurs veröffentlicht werden kann
+>>>>>>> Stashed changes
 
 ### Unterziele
 - Entwurf eines möglichst realistischen Gesamtkonzeptes mit Hilfe von Wireframes und Mockups zur visuellen Veranschaulichung der Vorgehensweise bis zum [Datum eingeben].
@@ -41,7 +53,6 @@ Die Realisierung einer Webandwendung zur Vorlesungsplanung an der DHBW Lörrach 
 - Steigerung der Attraktivität der DHBW für Dozenten
 
 ## Projektumfang
-
 ### Doing (Welche Maßnahmen werden umgesetzt?)
 #### MUST-HAVEs
 - Vorlesungszeitraum zur Planung festlegen
@@ -68,9 +79,9 @@ Die Realisierung einer Webandwendung zur Vorlesungsplanung an der DHBW Lörrach 
 
 - E-Mail Ersatz für Individualkommunikation
 - Dozierendenmanagement
+- Option zur Terminänderung eines bereits fertiggestellten Vorlesungsplanes (beispielsweise für den Falleintritt, dass eine oder mehrere Vorlesungen ausfallen beziehungsweise verschoben werden müssen)
 
 ## Projektkontext
-
 ### Ausgangssituation (Anlass, Auslöser)
 
 - Zeitaufwendige manuelle Organisation und Verschiebung von Vorlesungsterminen
@@ -84,10 +95,12 @@ Ort: DHBW Lörrach
 
 Rahmen: Vorlesung Anwendungsprojekt / Projektmanagement, Kurs TIF20A
 
-Beteiligte: siehe Stakeholder
-
+Beteiligte: 
+- siehe Stakeholder,
+- externe Fachpromoter
+- Fachrichtung der IT
+            
 ## Termine
-
 ### Geplanter Projektstart / Geplantes Ende
 
 - Das Projekt beginnt in der 16. KW
@@ -105,11 +118,17 @@ Beteiligte: siehe Stakeholder
 
 ## Erfolgsmessung
 
+<<<<<<< Updated upstream
 - Die Reduzierung des Organisatorischen Aufwandes in Bezug auf die erforderliche Zeit zur Planung des Kursplans um n Zeiteinheiten bis 17.Juni.2021.
 - Die Reduzierung des Organisatorischen Aufwandes in Bezug auf die Anfragen und Rückfragen an die Dozierenden bis zum 17.Juni.2021.
 - Nutzungsvolumen des Tools innerhalb der SZI Dozierende und Planungspersonal) anhand der Einsatzhäufigkeit bis zm 17.Juni.2021.
 - Legitimmität des Tools bei den Stakeholdern anhand der Bewertung durch ein sogennates Bewertungsportal und der Nutzungshäufigkeit innerhalb des SZI.
 - Fertigstellung der Webanwendung im zeitlich vorgegebenen Rahmen bis zum 17.Juni.2020.
+=======
+- Durch die Implementierung der Webanwendung zur Vorlesungplanung, welche bis einschließlich den 17. Juni durch einen entsprechenden Prototypen ausführbar ist, soll das Sekretariat eine zukünftige zeitliche Reduzierung von t-n Zeiteinheiten erfahren (wobei t den bisherigen Zeitaufwand beschreibt und n die Zeiteinheiten definiert, welche zur Reduzierung der zeitlichen Aufwendung beitragen)
+- Die Akzeptanz der Stakeholder wird an der Häufigkeit des praktischen Einsatzes und der tatsächlichen Reduzierung des zeitlichen Aufwandes zur Organisation und Planung eines Vorlesungsplanes eines beziehungsweise mehrerer Kurse bestimmt. Damit hierbei kein Ergebnisrisiko (siehe Projektrisiken 3. Risikobeispiel) entsteht, soll während der gesamten zeitlichen Projektspanne mindestens jede Woche eine Rücksprache mit den entprechenden Stakeholdern Prof. Behrends und Fr. Dr. Birn gehalten werden bis zur terminlichen Abgabe am 17. Juni 2021
+- Fertigstellung des Prototypen der Webanwendung durch die Implementierung aller MUST-HAVEs (Key Performance Indicators) mit Einhaltung aller dazugehörigen Zwischenterminen und der Endgültigen Abgabe dieses Prototypen bis einschließlich den 17. Juni 2021. Die Fertigstellung schließt dabei nicht nur den Programmier Aufwand mit ein, sondern auch die Organisatorische Dokumentationen, wie beispielsweise den Projektsteckbrief, den PSP, den Projektplan, das Risikoregister, sowie das Pflichtenheft, welches angelehnt am Lastenheft ist
+>>>>>>> Stashed changes
 
 ## Projektbudget
 
@@ -129,19 +148,19 @@ Finanzielles Budget: ∅
 | Fachpromotor         | Prof. Behrends                     |
 | Weitere Stakeholder  |                                    |
 
-|                      | Extern                   |
-| -------------------- | -----------------------  |
-| Projektmanager       | Prof. Behrends           |
-| Stellvertreter       | Dr. Birn                 |
-| Lenkungskreis        | Dr. Birn, Prof. Behrends |
-| Kernteam             | Dr. Birn, Prof. Behrends |
-| Machtpromotor        | Prof. Hanser             |
-| Fachpromotor         | Prof. Behrends           |
-| Weitere Stakeholder  | Sekretariat SZI          |
+|                      | Extern                                       |
+| -------------------- | ---------------------------------------------|
+| Projektmanager       | Prof. Behrends                               |
+| Stellvertreter       | Dr. Birn                                     |
+| Lenkungskreis        | Dr. Birn, Prof. Behrends                     |
+| Kernteam             | Dr. Birn, Prof. Behrends                     |
+| Machtpromotor        | Prof. Hanser                                 |
+| Fachpromotor         | Prof. Behrends, IT-Services der DH           |
+| Weitere Stakeholder  | Sekretariat SZI, Dozierende (extern & intern)|
 
 ## Projektrisiken
 
-1. Risiko
+1. Risiko (Vorgehensrisiko)
 
 
 ***Beschreibung***
@@ -161,7 +180,7 @@ Hoch
 Regelmäßige Rücksprache mit Fachpromoter und Stakeholder
 
 
-2. Risiko
+2. Risiko (Vorgehensrisiko)
 
 
 ***Beschreibung***
@@ -179,3 +198,23 @@ Mittel
 ***Gegenmaßnahmen***
 
 Evaluierung der Notwendigkeit einzelner Features bei Umsetzung eines MVP
+
+
+3. Risiko (Ergebnisrisiko)
+
+
+***Beschreibung***
+
+Sowohl Dozenten (extern und/oder intern), als auch das Sekretariat sind unzufrieden mit der entsprechenden Webanwendung zur Vorlesungplanung.
+
+***Eintrittswahrscheinlichkeit***
+
+Mittel
+
+***Schadenspotential***
+
+Hoch
+
+***Gegenmaßnahmen***
+
+Regelmäßige Rücksprache mit Stakeholder 
