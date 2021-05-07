@@ -18,20 +18,16 @@ welche vertreten wird durch Hr. Prof. Erik Behrends & Fr. Dr. Kristina Birn
 N/A
 
 ## Projektziele (SMART Methode)
-<-- Lastenheft (Input)
-
 ### Globalziel
-Die Implementierung eines Prototypen einer Webanwendung zur Vorlesungsplanung eines beziehungsweise mehrerer Kurse an der DHBW Lörrach zur Einschränkung des zeitlichen und organisatorischen Aufwandes um t-n Zeiteinheiten gegenüber den bisherigen Zeitaufwandes t.
-Zusätzlich dazu soll eine Alternativlösung zur Kommunikationsmöglichkeit zwischen Dozent und Sekretariat geschaffen werden, in welcher eine Einseitige Kommunikation Seitens des Sekretariates, durch eine Automatisierte Reminder-Funktion für den Dozenten, vermieden werden soll.
+Die grundlegende Kozeptionierung und Implementierung eines Webanwendungsprototypen zur Vorlesungsplanung zur Verwendung durch das Sekretariat des SZI an der DHBW Lörrach. Dabei sollen ein oder mehrere Kurse der DHBW Lörrach verwaltet werden, um den zeitlichen und organisatorischen Aufwand um t-n Zeiteinheiten gegenüber dem bisherigen Zeitaufwand t zu reduzieren.
 
-Dieser Prototyp soll dabei bis einschließlich den 17. Juni 2021 durch den Lenkungskreis und des Kernteams, sowie mithilfe der internen und externen Fachpromotern, realisiert und den Stakeholdern zur Verfügung gestellt werden.
+Ein Prototyp / MVP soll dabei bis einschließlich den 20. Juni 2021 durch den Lenkungskreis und das Kernteam, sowie mithilfe der internen und externen Fachpromotern, realisiert und den Stakeholdern zur weiteren Evaluierung zur Verfügung gestellt werden.
 
-### Unterziele
-- Die Webanwendung zur Vorlesungsplanung für das Sekretariat der DHBW-Lörrach geht durch die formalisierung des Projektumfanges hervor
-- Implementierung eines Algorithmus mit dem Ziel der Ausgabe von Planungsvorschlägen, welche mittels diversen Kriterien (Constraints) in aussagenlogischer Form definiert werden
-- Erstellung einer Alternativlösung zum Dozierendenmanagement, d.h. die Kommunikation zur Terminvergabe der Vorlesungen zwischen Dozenten und dem Sekretariat soll erleichtert werden, indem Dozenten die Möglichkeit besitzen innerhalb der Webanwendung selber Wunschtermine, sowie den jeweiligen Terminstatus (offen, akzeptiert, abgelehnt oder anderer Vorschlag) in den entsprechenden Kurskalender einzutragen beziehungsweise zu aktualisieren
-- Zusätzlich zur verbesserten Kommunikation mittels des Dozierendenmanagement, soll das weitere fortbestehen der Kommunikationsinteraktionen zwischen Dozenten und Sekretariat durch einen Auto-Reminder erleichtert werden, sodass ein ständiger einseitiger  Kommunikationsverlauf Seitens des Sekretariates vermieden werden soll
-- Die Implementierung einer Möglichkeit zur Publikation soll managen, dass ein geeigneter, fertiggestellter und (von allen betroffenen Dozenten und dem Sekretariat) abgesegtneter Vorlesungsplan für einen Kurs veröffentlicht werden kann
+### Unterziele zur Erfüllung des Globalzieles
+- Standardisierung und Formalisierung des Projektumfangs und der Anforderungen der externen Stakeholder
+- Visuelle Entwürfe anhand von Mockups und Prototypen als Basis zur Entwicklung eines MVP der Vorlesungsplanung
+- Interface für Dozenten (bpsw. E-Mail Benachrichtigung, Eintragung von Wunschterminen, Terminbestätigung, etc.)
+- Algorithmische Planung mit dem Ziel der Ausgabe von Planungsvorschlägen, welche mittels diversen Kriterien (Constraints) in aussagenlogischer Form definiert werden
 
 ## Projektnutzen (Erwarteter Nutzen für Unternehmen)
 
@@ -41,6 +37,7 @@ Dieser Prototyp soll dabei bis einschließlich den 17. Juni 2021 durch den Lenku
 
 - Erhöhung der organisatorischen Effizienz (Verringerung des Zeitaufwandes)
 - Steigerung der Attraktivität der DHBW für Dozenten
+- Überführung analoger Planungsprozesse des Studienbetriebes in digitale Lösungenansätze zur Vereinheitlichung der Optimierung der Planungsabläufe
 
 ## Projektumfang
 ### Doing (Welche Maßnahmen werden umgesetzt?)
@@ -48,28 +45,32 @@ Dieser Prototyp soll dabei bis einschließlich den 17. Juni 2021 durch den Lenku
 - Vorlesungszeitraum zur Planung festlegen
 - Kursangabe beziehungsweise Kursauswahl
 - Planungsmöglichkeiten der Vorlesung durch die Möglichkeit...
-  - ...Termine einzutragen, zu berbeiten und zu löschen
-  - ... Termine im Kurskalender erscheinen zu lassen
+  - ...noch zu planende Vorlesungen mit Namen, Stundenzahl und ggf. mit Prüfungsleistungen zu versehen  
+  - ...Termine (innerhalb der jeweiligen Theoriephase) einzutragen, zu berbeiten und zu löschen
+  - ...Termine im Kurskalender in Wochen- und/oder Monatsansicht erscheinen zu lassen
   - ...Termine mit einer Start- und einer Endzeit zu versehen, denen ein Vorlesungstitel und den Namen des Dozierenden zu hinterlegen
-  - ... dass Vorlesungen lediglich im Rahmen von 08:00 - 17:00 Uhr zu veranstalten sind
-  - ...das mindestens eine Stunde Mittagspause einzuplanen ist
+  - ..., dass Vorlesungen lediglich im Rahmen von 08:00 - 17:00 Uhr zu veranstalten sind
+  - ...das mindestens eine Stunde Mittagspause (zwischen 11:30 - 14:00 Uhr) einzuplanen ist
   - ...der Erkennung, ob alle Vorlesungsstunden eingeplant sind
-  - ...der Bestätigung des Vorlesungsplanes diesen zu veröffentlichen
+  - ...der Bestätigung des Vorlesungsplanes, sodass dieser endgültig Veröffentlicht werden kann
 
 #### NICE-TO-HAVEs
 - Planung für mehrere Kurse
 - Einführung optimaler Vorlesungszeiten (von 09:00 - 12:15 Uhr und von 13:00 - 16:15 Uhr)
-- Dozierende können "Wunschtermine" eintragen
 - LogIn mit Benutzername und Passwort
 - Entwicklung von Prozessen zur Benachrichtigung, Erinnerung und Bestätigung von Terminen
-- Auswahlmöglichkeiten für die Vorlesungräume
-- Export als PDF
+- Raumplanung
+- Export als PDF zum Drucken bzw. per E-Mail verschicken
+- Usability und Vereinfachung: Vorlesungen beginnen und/oder enden immer :00; :15; :30; :45; (mithilfe von Autovervollständigung oder Suchfunktion)
 
 ### Not-Doing (Keine Umsetzung im Basisprojekt)
 
 - E-Mail Ersatz für Individualkommunikation
 - Dozierendenmanagement
-- Option zur Terminänderung eines bereits fertiggestellten Vorlesungsplanes (beispielsweise für den Falleintritt, dass eine oder mehrere Vorlesungen ausfallen beziehungsweise verschoben werden müssen)
+- Responsive Design (für Geräte mit kleineren Displays bzw. Smartphones im Hochkantformat)
+- Backup der Daten
+- Benachrichtigung und Erinnerungen für das Sekretariat und/oder der Dozierenden (z.B. per E-Mail)
+- Schnittstellen zu anderen Anwendungen (Veröffentlichung über Exchange, Moodle, usw.)
 
 ## Projektkontext
 ### Ausgangssituation (Anlass, Auslöser)
@@ -86,9 +87,8 @@ Ort: DHBW Lörrach
 Rahmen: Vorlesung Anwendungsprojekt / Projektmanagement, Kurs TIF20A
 
 Beteiligte: 
-- siehe Stakeholder,
+- siehe Stakeholder
 - externe Fachpromoter
-- Fachrichtung der IT
             
 ## Termine
 ### Geplanter Projektstart / Geplantes Ende
@@ -100,17 +100,34 @@ Beteiligte:
 
 - 28 - 29. April: Erstellung Projektsteckbrief
 - 06 - 07. Mai: Erstellung Pflichtenheft und Projektstrukturplan
+- 07 Mai: Kontrollabgabe Projektsteckbrief und Projektstrukturplan (Abgabe bei: Prof. Behrends)
 - 20 - 21. Mai: Erstellung Grobplan und Projektplan
-- 04 Juni: Abgabe aller Dokumentationen auf Moodle bis 17:00 Uhr
-- 07 Juni: Elevator Pitch (Referat) ab 14:00 Uhr
+- 21 Mai: Kontrollabgabe Pflichtenheft, Zugang zum PM-Tool für die Einsicht der konkrete und detaillierte Planung für Kunde/Dozenten (Abgabe bei: Prof. Behrends)
+- 04 Juni: Abgabe aller Dokumentationen auf Moodle bis 17:00 Uhr (Abgabe bei: Dr. Birn)
+- 07 Juni: Elevator Pitch (Referat) ab 14:00 Uhr (Durchführung durch: Dr. Birn, Prof. Behrends)
 - (10 - 11. Juni: An der Umsetzung und Dokumentation arbeiten)
-- 15 - 17. Juni: Projektabschluss und letzte Fragen vor der Abgabe
+- 15 - 20. Juni: Projektabschluss und letzte Fragen vor der Abgabe (Abgabe bei: Prof. Behrends)
 
 ## Erfolgsmessung
 
-- Durch die Implementierung der Webanwendung zur Vorlesungplanung, welche bis einschließlich den 17. Juni durch einen entsprechenden Prototypen ausführbar ist, soll das Sekretariat eine zukünftige zeitliche Reduzierung von t-n Zeiteinheiten erfahren (wobei t den bisherigen Zeitaufwand beschreibt und n die Zeiteinheiten definiert, welche zur Reduzierung der zeitlichen Aufwendung beitragen)
-- Die Akzeptanz der Stakeholder wird an der Häufigkeit des praktischen Einsatzes und der tatsächlichen Reduzierung des zeitlichen Aufwandes zur Organisation und Planung eines Vorlesungsplanes eines beziehungsweise mehrerer Kurse bestimmt. Damit hierbei kein Ergebnisrisiko (siehe Projektrisiken 3. Risikobeispiel) entsteht, soll während der gesamten zeitlichen Projektspanne mindestens jede Woche eine Rücksprache mit den entprechenden Stakeholdern Prof. Behrends und Fr. Dr. Birn gehalten werden bis zur terminlichen Abgabe am 17. Juni 2021
-- Fertigstellung des Prototypen der Webanwendung durch die Implementierung aller MUST-HAVEs (Key Performance Indicators) mit Einhaltung aller dazugehörigen Zwischenterminen und der Endgültigen Abgabe dieses Prototypen bis einschließlich den 17. Juni 2021. Die Fertigstellung schließt dabei nicht nur den Programmier Aufwand mit ein, sondern auch die Organisatorische Dokumentationen, wie beispielsweise den Projektsteckbrief, den PSP, den Projektplan, das Risikoregister, sowie das Pflichtenheft, welches angelehnt am Lastenheft ist
+- Ziel: Prototyp/Konzept der Webanwendung zur Vorlesungsplanung
+  -  Erfolgskriterium: Reduzierung des organisatorischen Aufwandes von t-n Zeiteinheiten (t: bisheriger Zeitaufwand, n: geplanter Zeitaufwand)
+  -  Akzeptanz: Akzeptanz der Stakeholder durch positive Evaluierung der geplanten UX
+  -  Zeitrahmen: Prototyp bis einschließlich den 20. Juni 2021
+
+- Ziel: Fertigstellung und Abgabe der Projektdokumente
+  -  Erfolgskriterium: Ausführliche und vollständige Dokumentation und Formalisierung des Projektes anhand der gegebenen Kriterien aus der Vorlesung Projektmanagement
+  -  Akzeptanz: Überprüfung der formalen und inhaltlichen Anforderungen durch das externe Kernteam
+  -  Zeitrahmen: Abgabe bei Dr. Birn im gegebenen Zeitrahmen bis 04. Juni 2021, Zusätzliche Abgabe bei Prof. Behrends bis 20. Juni 2021
+  
+- Ziel: Implementierung aller MUST-HAVEs in funktionsfähiger Webanwendung
+  -  Erfolgskriterium: Reduzierung des organisatorischen Aufwandes von t-n Zeiteinheiten (t: bisheriger Zeitaufwand, n: geplanter Zeitaufwand)
+  -  Akzeptanz: Akzeptanz der Stakeholder durch praktischen Einsatz mit Abbildung der analogen Prozesse in digitaler Form
+  -  Zeitrahmen: Ausführbares MVP bis einschließlich den 20. Juni 2021
+ 
+Die Akzeptanz der Stakeholder wird bei einer funktionsfähigen Anwendung an der Häufigkeit des praktischen Einsatzes und der tatsächlichen Reduzierung des zeitlichen Aufwandes zur Organisation und Planung der Vorlesungen eines oder mehrerer Kurse bestimmt. Der aktuell benötigte zeitliche Aufwand hierfür ist auf Grund des analogen Prozesses und fehlender Dokumentation aktuell unbekannt.
+
+Damit hierbei kein Ergebnisrisiko (siehe Projektrisiken 3. Risikobeispiel) entsteht, soll während der gesamten zeitlichen Projektspanne mindestens jede Woche eine Rücksprache mit den entprechenden Stakeholdern Prof. Behrends und Fr. Dr. Birn gehalten werden bis zur terminlichen Abgabe am 20. Juni 2021 
 
 ## Projektbudget
 
