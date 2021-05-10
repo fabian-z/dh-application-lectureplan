@@ -19,11 +19,14 @@ N/A
 
 ## Projektziele (SMART Methode)
 ### Globalziel
-Die grundlegende Kozeptionierung und Implementierung eines Webanwendungsprototypen zur Vorlesungsplanung zur Verwendung durch das Sekretariat des SZI an der DHBW Lörrach. Dabei sollen ein oder mehrere Kurse der DHBW Lörrach verwaltet werden, um den zeitlichen und organisatorischen Aufwand um t-n Zeiteinheiten gegenüber dem bisherigen Zeitaufwand t zu reduzieren.
+Das Sekretariat des SZI an der DHBW Lörrach soll einen Zeitersparnis bei der Vorlesungsplanung erfahren, mithilfe einer grundlegenden Konzeptionierung und Implementierung eines entsprechenden Webanwendungsprototypen. Dabei soll der zetiliche und organisatorische Aufwand um t-n Zeiteinheiten, gegenüber dem bisherigen Zeitaufwand t, reduziert werden.
+Die Anwendung soll es insgesamt dem Sekretariat erlauben einen oder mehrere Kurse der DHBW Lörrach zu verwalten.
 
-Ein Prototyp / MVP soll dabei bis einschließlich den 20. Juni 2021 durch den Lenkungskreis und das Kernteam, sowie mithilfe der internen und externen Fachpromotern, realisiert und den Stakeholdern zur weiteren Evaluierung zur Verfügung gestellt werden.
+Ein Prototyp / MVP soll hierbei bis einschließlich den 20. Juni 2021 durch den Lenkungskreis und das Kernteam, sowie mithilfe der internen und externen Fachpromotern, realisiert und den Stakeholdern zur weiteren Evaluierung zur Verfügung gestellt werden.
 
 ### Unterziele zur Erfüllung des Globalzieles
+Für die Messbarkeit der Unterziele siehe Erfolgsmessung
+
 - Standardisierung und Formalisierung des Projektumfangs und der Anforderungen der externen Stakeholder
 - Visuelle Entwürfe anhand von Mockups und Prototypen als Basis zur Entwicklung eines MVP der Vorlesungsplanung
 - Interface für Dozenten (bpsw. E-Mail Benachrichtigung, Eintragung von Wunschterminen, Terminbestätigung, etc.)
@@ -112,28 +115,32 @@ Beteiligte:
 
 - Ziel: Prototyp/Konzept der Webanwendung zur Vorlesungsplanung
   -  Erfolgskriterium: Reduzierung des organisatorischen Aufwandes von t-n Zeiteinheiten (t: bisheriger Zeitaufwand, n: geplanter Zeitaufwand)
-  -  Akzeptanz: Akzeptanz der Stakeholder durch positive Evaluierung der geplanten UX
+  -  Akzeptanz: Freigabe zur Implementierung der Webanwendung (MVP) durch positive Evaluierung der Stakeholder
   -  Zeitrahmen: Prototyp bis einschließlich den 20. Juni 2021
 
 - Ziel: Fertigstellung und Abgabe der Projektdokumente
   -  Erfolgskriterium: Ausführliche und vollständige Dokumentation und Formalisierung des Projektes anhand der gegebenen Kriterien aus der Vorlesung Projektmanagement
-  -  Akzeptanz: Überprüfung der formalen und inhaltlichen Anforderungen durch das externe Kernteam
+  -  Akzeptanz: Abnahme der Projektdokumente durch die Stakeholder
   -  Zeitrahmen: Abgabe bei Dr. Birn im gegebenen Zeitrahmen bis 04. Juni 2021, Zusätzliche Abgabe bei Prof. Behrends bis 20. Juni 2021
   
 - Ziel: Implementierung aller MUST-HAVEs in funktionsfähiger Webanwendung
   -  Erfolgskriterium: Reduzierung des organisatorischen Aufwandes von t-n Zeiteinheiten (t: bisheriger Zeitaufwand, n: geplanter Zeitaufwand)
-  -  Akzeptanz: Akzeptanz der Stakeholder durch praktischen Einsatz mit Abbildung der analogen Prozesse in digitaler Form
+  -  Akzeptanz: Erfolgreicher Einsatz (d.h. Prototyp / MVP wird mind. 1 mal benutzt) durch den Key-User
   -  Zeitrahmen: Ausführbares MVP bis einschließlich den 20. Juni 2021
  
 Die Akzeptanz der Stakeholder wird bei einer funktionsfähigen Anwendung an der Häufigkeit des praktischen Einsatzes und der tatsächlichen Reduzierung des zeitlichen Aufwandes zur Organisation und Planung der Vorlesungen eines oder mehrerer Kurse bestimmt. Der aktuell benötigte zeitliche Aufwand hierfür ist auf Grund des analogen Prozesses und fehlender Dokumentation aktuell unbekannt.
 
 Damit hierbei kein Ergebnisrisiko (siehe Projektrisiken 3. Risikobeispiel) entsteht, soll während der gesamten zeitlichen Projektspanne mindestens jede Woche eine Rücksprache mit den entprechenden Stakeholdern Prof. Behrends und Fr. Dr. Birn gehalten werden bis zur terminlichen Abgabe am 20. Juni 2021 
 
-## Projektbudget
-
-Zeitbudget: 50 Stunden / Teammitglied * 6 Mitglieder = min. 300 Stunden
-
-Finanzielles Budget: ∅
+## Projektbudget - Finanzielles Budget
+- Personalstunden
+  - Pro Mitglied: 50 Stunden pro Teammitglied
+  - Pro Gruppe (á 6 Mitglieder): min. 300 Arbeitsstunden oder 7,5 FTE
+- bw Cloud: 0€ zur Zeit
+- externe Dienstleister
+  - Lenkungskreis / Kernteam: Regelmäßige Rücksprache / Evaluierung (= Beratungskosten)
+  - IT-Services der DHBW Lörrach: Betreuung & Einrichtung SSO (= Bewirtungskosten)
+- (Jira: 0€ zur Zeit)
 
 ## Stakeholder
 
