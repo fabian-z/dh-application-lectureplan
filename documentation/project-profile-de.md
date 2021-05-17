@@ -10,7 +10,7 @@ welche vertreten wird durch Hr. Prof. Erik Behrends & Fr. Dr. Kristina Birn
 
 ### Projektleitung
 
-- Organisatorische Leitung: Jennifer Krüger & Benedikt Kubon
+- Organisatorische Leitung: Jennifer Krüger, Fabian Zaremba
 - Technische Leitung: Fabian Zaremba
 
 ### Kostenstelle
@@ -144,15 +144,15 @@ Damit hierbei kein Ergebnisrisiko (siehe Projektrisiken 3. Risikobeispiel) entst
 
 ## Stakeholder
 
-|                      | Intern                             |
-| -------------------- | ---------------------------------- |
-| Projektmanager       | Jennifer Krüger                    |
-| Stellvertreter       | Benedikt Kubon                     |
-| Lenkungskreis        | Krüger, Kubon, Zaremba             |
-| Kernteam             | Weishar, Meier, Bieringer, Zaremba |
-| Machtpromotor        | Prof. Behrends                     |
-| Fachpromotor         | Prof. Behrends                     |
-| Weitere Stakeholder  |                                    |
+|                      | Intern                                    |
+| -------------------- | ----------------------------------------- |
+| Projektmanager       | Jennifer Krüger                           |
+| Stellvertreter       | Fabian Zaremba                            |
+| Lenkungskreis        | Krüger, Zaremba                           |
+| Kernteam             | Weishar, Meier, Bieringer, Zaremba, Kubon |
+| Machtpromotor        | Prof. Behrends                            |
+| Fachpromotor         | Prof. Behrends                            |
+| Weitere Stakeholder  |                                           |
 
 |                      | Extern                                       |
 | -------------------- | ---------------------------------------------|
