@@ -179,6 +179,11 @@ Besonderer Kundennutzen:
   Der moderne Javascriptstandard bietet praktische und neue Features, die eine zeitgemäße Entwicklung ermöglichen.
   ES Module ermöglichen die modularisierte Verwendung von Javascript Code und die Gliederung von Funktionalität in eine sinnvolle Struktur.
 
+- Package Management mit NPM
+
+  - Paketverwaltung und angepasste Scripts für wiederkehrende Tasks (Builds, Lint, etc.)
+  - Updatemanagement von Abhängigkeiten
+
 - Babel als Transpiler (mit preset-env und browserquery für target >= 0,25% Market & not dead)
 
   Babel ist in der Lage, die verwendeten modernen Standards und Sprachfeatures so zu verarbeiten, dass sie von einem definierten Satz an Browser verarbeitet werden können.
