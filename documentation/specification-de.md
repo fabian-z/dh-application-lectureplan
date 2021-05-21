@@ -255,6 +255,13 @@ Besonderer Kundennutzen:
 - Erstellung von Mockups zur Visualisierung und Unterstützung der Anwendungsentwicklung
 - Strukturierte Entwicklung der User Experience
 
+#### Vorschau
+
+![mockup-start-de](mockups/mockup-start-de.png)
+![mockup-navigation-de](mockups/mockup-navigation-de.png)
+![mockup-calendar-de](mockups/mockup-calendar-de.png)
+![mockup-edit-de](mockups/mockup-edit-de.png)
+
 ### Lieferobjekt: Minimum Viable Product / Prototyp
 
 Das MVP bzw. der entwickelte Prototyp soll auf Basis der getroffenen Technologieauswahl und basierend auf den erstellen Konzepten und Mockups einen möglichst großen Teil der geplanten Features abbilden und als funktionsfähige Webanwendung ausgeliefert werden.
