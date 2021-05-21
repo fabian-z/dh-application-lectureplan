@@ -265,14 +265,6 @@ Das MVP bzw. der entwickelte Prototyp soll auf Basis der getroffenen Technologie
   - HTML5 / CSS3 / JS
   - Entwickelt für aktuelle Browserversionen von Firefox, Chromium und Safari
 
-*Hier wird beschrieben, welche Anforderungen geliefert werden. 
-Dies kann z.B. nach Teilprojekten gegliedert werden. 
-Die Anforderungen werden beschrieben und können mit Screenshots von den Skizzen, Wireframes oder Mockups dargestellt werden. 
-Eine Einteilung in die Pflichtanforderungen (MUST-HAVEs) und zusätzlich geplanten Anforderungen (NICE-TO-HAVEs) ist sinnvoll.*
-
-*Durch die Beschreibungen soll der Umfang (Scope) eines sinnvollen Lieferobjekts festgelegt werden. 
-Falls möglich können Akzeptanzkriterien angegeben werden, sodass dadurch der Nachweis erbracht wird, dass eine Anforderung erfüllt ist.*
-
 ## Bereitstellung der Mockups und der Webanwendung
 
 - Bereitstellung und Auslieferung der Mockups erfolgt über Screenshots im Rahmen der Dokumentation sowie als Klickprototypen über das Cloudangebot von https://mockplus.com
