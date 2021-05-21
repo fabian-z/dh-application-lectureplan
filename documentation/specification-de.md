@@ -224,7 +224,7 @@ Besonderer Kundennutzen:
 #### Nice-to-haves
 - Planung für mehrere Kurse
 - Einführung optimaler Vorlesungszeiten (von 09:00 - 12:15 Uhr und von 13:00 - 16:15 Uhr)
-- LogIn mit Benutzername und Passwort
+- Login mit Benutzername und Passwort
 - Entwicklung von Prozessen zur Benachrichtigung, Erinnerung und Bestätigung von Terminen
 - Raumplanung
 - Export als PDF zum Drucken bzw. Versand per E-Mail
@@ -246,7 +246,7 @@ Besonderer Kundennutzen:
 
 ### Lieferobjekt: Minimum Viable Product / Prototyp
 
-Das MVP bzw. der entwickelte Prototyp soll auf Basis der getroffenen Technologieauswahl und basierend auf den erstellen Konzepten und Mockups einen möglichst großen Teil der geplanten Features abbilden und als funktionsfähigke Webanwendung ausgeliefert werden.
+Das MVP bzw. der entwickelte Prototyp soll auf Basis der getroffenen Technologieauswahl und basierend auf den erstellen Konzepten und Mockups einen möglichst großen Teil der geplanten Features abbilden und als funktionsfähige Webanwendung ausgeliefert werden.
 
 - Backend
   - Schnittstelle zu Persistenz bzw. Datenbankserver
@@ -295,7 +295,7 @@ Falls möglich können Akzeptanzkriterien angegeben werden, sodass dadurch der N
 ### Meilensteine
 
 - Konzeption (ca. 26.05.2021)
-- Einrichtung Infrastruktur (ca. 26.05.2021)
+- Einrichtung Infrastruktur (ca. 15.05.2021)
 - Realisierung (ca. 06.06.2021)
 - Zwischentests (ca 08.06.2021)
 - Abschließende Integrationstests (ca. 10.06.2021)
@@ -315,12 +315,14 @@ Falls möglich können Akzeptanzkriterien angegeben werden, sodass dadurch der N
 
 ## Anhang
 
-### Algorithmische Planung
+### Wartung
 
 - Betrieb mit regelmäßigen Updates über stabile Linuxdistribution für den Servereinsatz (Debian)
   - Bullseye Sicherheitsupdates bis voraussichtlich ca. 2024
   
-- Go v1 Sourcecode Kompatiblität ermöglicht langfristigen Betrieb einer sicheren Anwendung ohne großen Wartungsaufwand  
+- Go v1 Kompatiblität ermöglicht langfristigen Betrieb einer sicheren Anwendung ohne großen Wartungsaufwand  
+
+### Weiterentwicklung: Algorithmische Planung
 
 - Weiterentwicklung der Planung von manueller Terminfestlegung
   - Festlegung von Constraints und Darstellung als SAT Problem
