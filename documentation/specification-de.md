@@ -308,8 +308,8 @@ Das MVP bzw. der entwickelte Prototyp soll auf Basis der getroffenen Technologie
 
 ### Meilensteine
 
-- Konzeption (ca. 26.05.2021)
 - Einrichtung Infrastruktur (ca. 15.05.2021)
+- Konzeption (ca. 26.05.2021)
 - Realisierung (ca. 06.06.2021)
 - Zwischentests (ca 08.06.2021)
 - Abschließende Integrationstests (ca. 10.06.2021)
