@@ -56,6 +56,7 @@ Für die Messbarkeit der Unterziele siehe Erfolgsmessung
   - ...das mindestens eine Stunde Mittagspause (zwischen 11:30 - 14:00 Uhr) einzuplanen ist
   - ...der Erkennung, ob alle Vorlesungsstunden eingeplant sind
   - ...der Bestätigung des Vorlesungsplanes, sodass dieser endgültig Veröffentlicht werden kann
+- Einhaltung der DSGVO für Produktivdaten  
 
 #### NICE-TO-HAVEs
 - Planung für mehrere Kurse
