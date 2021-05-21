@@ -99,17 +99,22 @@ Beteiligte:
 - Das Projekt beginnt in der 16. KW
 - Abgabe der Ergebnisse erfolgt bis einschließlich Sonntag, den 20. Juni 2021
 
-### Zwischentermine / Meilensteine
+### Terminplanung
 
-- 28 - 29. April: Erstellung Projektsteckbrief
-- 06 - 07. Mai: Erstellung Pflichtenheft und Projektstrukturplan
-- 07 Mai: Kontrollabgabe Projektsteckbrief und Projektstrukturplan (Abgabe bei: Prof. Behrends)
-- 20 - 21. Mai: Erstellung Grobplan und Projektplan
-- 21 Mai: Kontrollabgabe Pflichtenheft, Zugang zum PM-Tool für die Einsicht der konkrete und detaillierte Planung für Kunde/Dozenten (Abgabe bei: Prof. Behrends)
-- 04 Juni: Abgabe aller Dokumentationen auf Moodle bis 17:00 Uhr (Abgabe bei: Dr. Birn)
-- 07 Juni: Elevator Pitch (Referat) ab 14:00 Uhr (Durchführung durch: Dr. Birn, Prof. Behrends)
-- (10 - 11. Juni: An der Umsetzung und Dokumentation arbeiten)
-- 15 - 20. Juni: Projektabschluss und letzte Fragen vor der Abgabe (Abgabe bei: Prof. Behrends)
+- 07.05.2021: Kontrollabgabe Projektsteckbrief und Projektstrukturplan (Abgabe bei: Prof. Behrends)
+- 21.05.2021: Kontrollabgabe überarbeiteter Projektsteckbrief / PSP, Pflichtenheft, Zugang zum PM-Tool für die Einsicht der konkreten und detaillierten Planung für Kunde/Dozenten (Abgabe bei: Prof. Behrends)
+- 04.06.2021: Abgabe aller Projektmanagement Dokumentationen auf Moodle bis 17:00 Uhr (Abgabe bei: Dr. Birn)
+- 07.06.2021: Elevator Pitch (Referat) ab 14:00 Uhr (Durchführung durch: Dr. Birn, Prof. Behrends)
+- 15.06.2021 - 20.06.2021: Projektabschluss und letzte Fragen vor der Abgabe (Abgabe bei: Prof. Behrends)
+
+### Abschlusstermine der Meilensteine
+
+- 15.05.2021: Einrichtung Infrastruktur
+- 26.05.2021: Konzeptionierung
+- 06.08.2021: Realisierung 
+- 08.06.2021: Zwischentests
+- 10.06.2021: Abschließende Integrationstests
+(- Feature Erweiterung (aktuell nicht geplant))
 
 ## Erfolgsmessung
 
