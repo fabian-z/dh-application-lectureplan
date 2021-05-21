@@ -43,7 +43,7 @@ Besonderer Kundennutzen:
 - Umsetzung als Free / Libre Open Source Software unter MIT Lizenz
 
   Freie Software räumt dem Nutzer diverse Freiheiten ein, z.B. das Programm zu jedem Zweck auszuführen, den eigenen Bedürfnissen anzupassen und weiterzuverbreiten.
-  Diese Verbesserungen und der Quellcode insgesamt i.d.R. ebenfalls frei weitergegeben werden. Information und Wissen sollte frei zugänglich sein.
+  Diese Verbesserungen und der Quellcode insgesamt sollen i.d.R. ebenfalls frei weitergegeben werden. Information und Wissen sollte frei zugänglich sein.
   Freie Software bietet den Vorteil, dass auch nicht am Projekt beteiligte Dritte von dem Aufbau und der Programmierung der Software lernen und davon profitieren können.
   Außerdem kann eine Community entstehen, die das Projekt weiterentwickelt. Aus diesen Überlegungen stellen wir unser Projekt ebenfalls als freie Software zur Verfügung.
 
@@ -57,13 +57,13 @@ Besonderer Kundennutzen:
 
   Für Diagramme verwenden wir draw.io auf Grund der Verfügbarkeit als Browseranwendung für alle Plattformen und des guten Funktionsumfangs.
   Außerdem ist das Tool ebenfalls kostenfrei und als freie Software verfügbar.
-  Insbesondere ist auch ein Export in freie und kompatible Dateiformate (SVG) möglich, Quelldateien in einem portablen XML Format in der Versionskontrolle mit verwaltet werden.
+  Insbesondere ist auch ein Export in freie und kompatible Dateiformate (SVG) möglich, sowie das mitverwalten von Quelldateien in einem portablen XML Format in der Versionskontrolle.
 
 - Dokumentation im Markdown Format
 
   Markdown ermöglicht eine einfache Bearbeitung der Dokumentationsdateien in einem menschenlesbaren, plattformübergreifend kompatiblen Textformat.
   Die Dokumentationsdaten können in verschiedenen Tools (VCS, OpenProject Wiki) verwaltet und auch ohne technisches Vorwissen geschrieben werden.
-  Außerdem bietet GitHub eine native Unterstützung für das Rendering von Markdown im Userinterface.
+  Außerdem bietet GitHub eine native Unterstützung für das Rendering von Markdown im Userinterface an.
 
 
 ### VCS & Hosting
@@ -112,9 +112,9 @@ Besonderer Kundennutzen:
 
 - Backendentwicklung mit Go (memory-safe, high performance)
 
-  Die Programmiersprache Go wird von maßgeblich von Go entwickelt und ist ebenfalls freie Software. Sie ist fokussiert auf Sicherheit, Kompatiblität und eine gute Entwicklererfahrung.
-  Go ist speichersicher, stark typisiert und bietet Elemente, die eine einfache parallele Programmierung ermöglichen. 
-  Dadurch eignet die Sprache sich insbesondere für die Entwicklung von Webservern, die umfangreiche Standardlibrary bietet bereits einen hochperformanten HTTP Server und Unterstützung für einen modernen TLS Stack.
+  Die Programmiersprache Go wird von Go maßgeblich entwickelt und ist ebenfalls eine freie Software. Sie ist fokussiert auf Sicherheit, Kompatiblität und eine gute Entwicklererfahrung.
+  Go ist speichersicher, stark typisiert und bietet Elemente, die eine einfache parallele Programmierung ermöglicht. 
+  Dadurch eignet die Sprache sich insbesondere für die Entwicklung von Webservern, da die umfangreiche Standardlibrary bereits einen hochperformanten HTTP Server und Unterstützung für einen modernen TLS Stack anbietet.
 
 - Statische Analyse mit integriertem ```go vet``` bzw. ```gopls```
 
@@ -126,7 +126,7 @@ Besonderer Kundennutzen:
 
 - Race Conditions Testing mit ```go build -race```
 
-  Bei paralleler Programmierung ist es wichtig, entsprechendes Locking und Synchronisierungsprimitiven zu verwenden. Zur Prüfung biete Go eine integrierte Erkennung von Race Conditions mit einer speziellen Einstellung für den Compiler.
+  Bei paralleler Programmierung ist es wichtig, entsprechendes Locking und Synchronisierungsprimitiven zu verwenden. Zur Prüfung bietet Go eine integrierte Erkennung von Race Conditions mit einer speziellen Einstellung für den Compiler an.
   Diese Erkennung beeinträchtigt die Performance und wird daher hauptsächlich während der Integrationstests angewendet.
 
 - Keine Abhängigkeiten von C Libraries oder Betriebssystem -> Cross-Platform / Cross-Architecture
@@ -138,14 +138,14 @@ Besonderer Kundennutzen:
 - SQL Boilerplate & Mapping mit github.com/jmoiron/sqlx
 - SAML2 / Shibboleth SSO Serviceprovider mit github.com/crewjam/saml
 
-  Die angegebenen populären und freien Bibliotheken ergänzen die Standardlibrary um nützliche Features und Erhöhen damit die Sicherheit und Geschwindigkeit der Entwicklung im Backend.
+  Die angegebenen populären und freien Bibliotheken ergänzen die Standardlibrary um nützliche Features und erhöhen damit die Sicherheit und Geschwindigkeit der Entwicklung im Backend.
   Die Reimplementierung häufig genutzter Features wird damit vermieden.
 
 - REST API mit JSON Payloads zur Kommunikation mit Frontend
 
   Zur Kommunikation mit dem Frontend kommt eine REST (Representational State Transfer) orientierte API mit JSON (Javascript Object Notation) Payloads zum Einsatz.
   REST definiert einen weitgehend einheitlichen Standard für Anfragen über das reguläre HTTP Protokoll und wird von Browser APIs gut unterstützt.
-  Hauptsächlich werden in diesem Projekt GET & POST Requests zum Einsatz kommen. Informationen über die Anfragen oder Antworten werden in Form von JSON enkodiert, das eine kompatible Kommunikation zwischen den verwendeten Programmiersprachen ermöglicht.
+  Hauptsächlich werden in diesem Projekt GET & POST Requests zum Einsatz kommen. Informationen über die Anfragen oder Antworten werden in Form von JSON enkodiert, sodass eine kompatible Kommunikation zwischen den verwendeten Programmiersprachen ermöglicht wird.
 
 - TLS Mindestversion v1.2 mit Zertifikaten über ACME (CA Let's Encrypt)
 
@@ -159,8 +159,8 @@ Besonderer Kundennutzen:
 - Erstellung von Mockups & Klickprototypen mit https://mockplus.com
 
   mockplus.com ermöglicht in der kostenfreien Grundversion die kollaborative und einfache Erstellung von Mockups und Klickprototypen und das Teilen als Weblink.
-  Die kollaborativen Funktionalitäten erfordern eine synchrone Abstimmung der beteiligten Interfacentwickler. Außerdem handelt es sich nicht um eine freie Platform.
-  Trotzdem dieser Kontrapunkte war das Tool im Rahmen unserer Recherchen am Besten geeignet.
+  Die kollaborativen Funktionalitäten erfordern eine synchrone Abstimmung der beteiligten Interfacentwickler. Außerdem handelt es sich nicht um eine freie Plattform.
+  Trotz dieser Kontrapunkte war das Tool im Rahmen unserer Recherchen am Besten geeignet.
 
 - Frontend mit Javascript mit ES Modulen entwickelt nach ECMAScript 2021 Standard
 
