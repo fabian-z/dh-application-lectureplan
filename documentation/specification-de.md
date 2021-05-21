@@ -1,8 +1,11 @@
 # Pflichtenheft 
 
 Vorlesung: Anwendungsprojekt Informatik
+
 Zuständige Dozierende: Fr. Dr. Kristina Birn & Hr. Prof. Dr. Erik Behrends
+
 Kurs: TIF20A
+
 Projekt: Webanwendung zur Vorlesungsplanung
 
 Gruppenmitglieder:
