@@ -94,6 +94,11 @@ Besonderer Kundennutzen:
   Die uns im Rahmen des Studiums zur Verfügung gestellten Ressourcen eignen sich optimal zum Hosting des Projektmanagements und des daraus resultierenden Prototypes.
   Dabei können im Kontingent diverse virtuelle Server erstellt werden, die dann regulär über eine VNC Konsole im Browser oder über OpenSSH verwaltet werden können.
 
+- Einhaltung von Datenschutzstandards nach DSGVO
+  
+  Hosting in deutschen Rechenzentren über Hochschulinfrastruktur & Verzicht auf Drittanbieter (keine Notwendigkeit von Auftragsdatenverarbeitung)
+  
+
 ### Datenbank
 
 - Relationales Datenbankschema & EER Modell mit MySQL Workbench
