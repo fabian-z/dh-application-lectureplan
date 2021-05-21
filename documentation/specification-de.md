@@ -112,7 +112,7 @@ Besonderer Kundennutzen:
 
 - Backendentwicklung mit Go (memory-safe, high performance)
 
-  Die Programmiersprache Go wird von Go maßgeblich entwickelt und ist ebenfalls eine freie Software. Sie ist fokussiert auf Sicherheit, Kompatiblität und eine gute Entwicklererfahrung.
+  Die Programmiersprache Go wird maßgeblich von Google entwickelt und ist ebenfalls freie Software. Sie ist fokussiert auf Sicherheit, Kompatiblität und eine gute Entwicklererfahrung.
   Go ist speichersicher, stark typisiert und bietet Elemente, die eine einfache parallele Programmierung ermöglicht. 
   Dadurch eignet die Sprache sich insbesondere für die Entwicklung von Webservern, da die umfangreiche Standardlibrary bereits einen hochperformanten HTTP Server und Unterstützung für einen modernen TLS Stack anbietet.
 
@@ -145,7 +145,7 @@ Besonderer Kundennutzen:
 
   Zur Kommunikation mit dem Frontend kommt eine REST (Representational State Transfer) orientierte API mit JSON (Javascript Object Notation) Payloads zum Einsatz.
   REST definiert einen weitgehend einheitlichen Standard für Anfragen über das reguläre HTTP Protokoll und wird von Browser APIs gut unterstützt.
-  Hauptsächlich werden in diesem Projekt GET & POST Requests zum Einsatz kommen. Informationen über die Anfragen oder Antworten werden in Form von JSON enkodiert, sodass eine kompatible Kommunikation zwischen den verwendeten Programmiersprachen ermöglicht wird.
+  Hauptsächlich werden in diesem Projekt GET & POST Requests zum Einsatz kommen. Informationen über die Anfragen oder Antworten werden in Form von JSON enkodiert, so dass eine kompatible Kommunikation zwischen den verwendeten Programmiersprachen ermöglicht wird.
 
 - TLS Mindestversion v1.2 mit Zertifikaten über ACME (CA Let's Encrypt)
 
@@ -155,6 +155,13 @@ Besonderer Kundennutzen:
   Die Verwendung der Mindestversion v1.2 vermeidet Sicherheitsprobleme in früheren SSL / TLS Versionen auf Kosten der Kompatiblität mit sehr alten Clients (z.B. Android < v4)
 
 ### Frontend
+
+- HTML5, CSS3
+
+  HTML5 (Hypertext Markup Language) ist eine deklarative Markupsprache für den strukturierten Aufbau von Websiten und Webanwendungen.
+  CSS3 (Cascading Style Sheets) wird verwendet, um HTML Elemente nach Selektoren unterteilt mit bestimmten Gestaltungen zu versehen.
+  Beide Sprachen werden als Living Standard von dem W3C Konsortium verschiedener Browserhersteller entwickelt.
+  Bei der Kombination handelt es sich um die derzeit modernste Möglichkeit zur Entwicklung von Webanwendungen für aktuelle Versionen der meistgenutzten Browserengines (Firefox, Chromium und Safari).
 
 - Erstellung von Mockups & Klickprototypen mit https://mockplus.com
 
@@ -199,16 +206,58 @@ Besonderer Kundennutzen:
 
 ## Beschreibung der Anforderungen bzw. Komponenten
 
-### Mockups / Konzeption
+### Scope / Anforderungen
 
-- Konzeption des Userinterfaces
-- Mockups zur Visualisierung und Unterstützung der Anwendungsentwicklung
+#### Must-Haves
+- Vorlesungszeitraum zur Planung festlegen
+- Kursangabe beziehungsweise Kursauswahl
+- Planungsmöglichkeiten der Vorlesung durch die Möglichkeit...
+  - ...noch zu planende Vorlesungen mit Namen, Stundenzahl und ggf. mit Prüfungsleistungen zu versehen  
+  - ...Termine (innerhalb der jeweiligen Theoriephase) einzutragen, zu berbeiten und zu löschen
+  - ...Termine im Kurskalender in Wochen- und/oder Monatsansicht erscheinen zu lassen
+  - ...Termine mit einer Start- und einer Endzeit zu versehen, denen ein Vorlesungstitel und den Namen des Dozierenden zu hinterlegen
+  - ..., dass Vorlesungen lediglich im Rahmen von 08:00 - 17:00 Uhr zu veranstalten sind
+  - ...das mindestens eine Stunde Mittagspause (zwischen 11:30 - 14:00 Uhr) einzuplanen ist
+  - ...der Erkennung, ob alle Vorlesungsstunden eingeplant sind
+  - ...der Bestätigung des Vorlesungsplanes, sodass dieser endgültig Veröffentlicht werden kann
+
+#### Nice-to-haves
+- Planung für mehrere Kurse
+- Einführung optimaler Vorlesungszeiten (von 09:00 - 12:15 Uhr und von 13:00 - 16:15 Uhr)
+- LogIn mit Benutzername und Passwort
+- Entwicklung von Prozessen zur Benachrichtigung, Erinnerung und Bestätigung von Terminen
+- Raumplanung
+- Export als PDF zum Drucken bzw. Versand per E-Mail
+- Usability und Vereinfachung: Vorlesungen beginnen und/oder enden immer :00; :15; :30; :45; (mithilfe von Autovervollständigung oder Suchfunktion)
+
+#### Not-Doing (Keine Umsetzung im Basisprojekt)
+- E-Mail Ersatz für Individualkommunikation
+- Dozierendenmanagement
+- Responsive Design (für Geräte mit kleineren Displays bzw. Smartphones im Hochkantformat)
+- Backup der Daten
+- Benachrichtigung und Erinnerungen für das Sekretariat und/oder der Dozierenden (z.B. per E-Mail)
+- Schnittstellen zu anderen Anwendungen (Veröffentlichung über Exchange, Moodle, usw.)
+
+### Lieferobjekt: Mockups / Konzeption
+
+- Konzeption des Userinterfaces mit den oben aufgeführten Features
+- Erstellung von Mockups zur Visualisierung und Unterstützung der Anwendungsentwicklung
 - Strukturierte Entwicklung der User Experience
 
-### Minimum Viable Product / Prototyp
+### Lieferobjekt: Minimum Viable Product / Prototyp
+
+Das MVP bzw. der entwickelte Prototyp soll auf Basis der getroffenen Technologieauswahl und basierend auf den erstellen Konzepten und Mockups einen möglichst großen Teil der geplanten Features abbilden und als funktionsfähigke Webanwendung ausgeliefert werden.
 
 - Backend
+  - Schnittstelle zu Persistenz bzw. Datenbankserver
+  - Zuständig für Datenverarbeitung
+  - Auslieferung von Frontendcode (HTML / CSS / JS)
+  - Schnittstelle zu Frontend (REST API)
+
 - Frontend
+  - Userinterface
+  - HTML5 / CSS3 / JS
+  - Entwickelt für aktuelle Browserversionen von Firefox, Chromium und Safari
 
 *Hier wird beschrieben, welche Anforderungen geliefert werden. 
 Dies kann z.B. nach Teilprojekten gegliedert werden. 
@@ -223,8 +272,6 @@ Falls möglich können Akzeptanzkriterien angegeben werden, sodass dadurch der N
 - Bereitstellung und Auslieferung der Mockups erfolgt über Screenshots im Rahmen der Dokumentation sowie als Klickprototypen über das Cloudangebot von https://mockplus.com
 - Der Prototyp der Webanwendung / das MVP wird funktionsfähig auf einer Serverinstanz der bwCloud bereitgestellt (siehe oben).
 
-*Hier wird dargestellt wie das Ergebnis ausgeliefert und verwendet wird (Mockups oder Klickprototypen in der Cloud, Prototyp der Webanwendung usw.)*
-
 ## Qualität und Test
 
 - Statische Analyse für Backend & Frontend Code
@@ -232,15 +279,27 @@ Falls möglich können Akzeptanzkriterien angegeben werden, sodass dadurch der N
 - Kontinuierliche statische Prüfung von dynamisch typisiertem JS Code zur Reduzierung von Type Confusion
 - Kontinuierliche ausführliche Code Reviews im Team
 - Orientierung an OWASP Top 10 und Mitre CWE bei Entwicklung Code Review
+- Code soll selbst dokumentierend sein (sprechende Variablennamen), komplizierte Passagen kommentiert
 - Manuelle Integrationstests mit festgelegten Testdaten und Überprüfung von Edge Cases
-
-*Gibt es Qualitätskriterien? Wie werden Tests durchgeführt?*
 
 ## Projektplanung
 
 ### Terminplanung
 
+- 07.05.2021: Kontrollabgabe Projektsteckbrief und Projektstrukturplan (Abgabe bei: Prof. Behrends)
+- 21.05.2021: Kontrollabgabe überarbeiteter Projektsteckbrief / PSP, Pflichtenheft, Zugang zum PM-Tool für die Einsicht der konkreten und detaillierten Planung für Kunde/Dozenten (Abgabe bei: Prof. Behrends)
+- 04.06.2021: Abgabe aller Projektmanagement Dokumentationen auf Moodle bis 17:00 Uhr (Abgabe bei: Dr. Birn)
+- 07.06.2021: Elevator Pitch (Referat) ab 14:00 Uhr (Durchführung durch: Dr. Birn, Prof. Behrends)
+- 15.06.2021 - 20.06.2021: Projektabschluss und letzte Fragen vor der Abgabe (Abgabe bei: Prof. Behrends)
+
 ### Meilensteine
+
+- Konzeption (ca. 26.05.2021)
+- Einrichtung Infrastruktur (ca. 26.05.2021)
+- Realisierung (ca. 06.06.2021)
+- Zwischentests (ca 08.06.2021)
+- Abschließende Integrationstests (ca. 10.06.2021)
+- Feature Erweiterung (aktuell nicht geplant)
 
 ### Einsatzplanung
 
@@ -253,8 +312,6 @@ Falls möglich können Akzeptanzkriterien angegeben werden, sodass dadurch der N
 | Frontendentwicklung  | Weishar, Meier, Kubon     |
 | Backendentwicklung   | Zaremba                   |
 | API Entwicklung      | Bieringer                 |
-
-*Terminplan, Meilensteine, Einsatzplanung (Kapazitäten, Rollen, Zuständigkeiten)*
 
 ## Anhang
 
@@ -269,8 +326,3 @@ Falls möglich können Akzeptanzkriterien angegeben werden, sodass dadurch der N
   - Festlegung von Constraints und Darstellung als SAT Problem
   - Verwendung etablierter SAT Solver zur approximativen zeitlich begrenzten Lösung (Partial MaxSAT)
   - Ansatzpunkte siehe auch "Solving the Course-timetabling Problem of Cairo University Using Max-SAT", Mohamed El Halaby (2018), https://arxiv.org/abs/1803.05027
-
-
-
-*Begriffe und Definitionen
-Hinweise zu Betrieb, Wartung und Weiterentwicklung*
