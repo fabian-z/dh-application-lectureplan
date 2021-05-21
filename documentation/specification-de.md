@@ -283,7 +283,11 @@ Das MVP bzw. der entwickelte Prototyp soll auf Basis der getroffenen Technologie
 - Kontinuierliche ausführliche Code Reviews im Team
 - Orientierung an OWASP Top 10 und Mitre CWE bei Entwicklung Code Review
 - Code soll selbst dokumentierend sein (sprechende Variablennamen), komplizierte Passagen kommentiert
-- Manuelle Integrationstests mit festgelegten Testdaten und Überprüfung von Edge Cases
+
+- Manuelle Integrationstests mit festgelegten Testdaten
+- Überprüfung von Edge Cases
+- Enduser (Alpha / Beta) Testing
+- User Experience Validation
 
 ## Projektplanung
 
@@ -302,6 +306,7 @@ Das MVP bzw. der entwickelte Prototyp soll auf Basis der getroffenen Technologie
 - Realisierung (ca. 06.06.2021)
 - Zwischentests (ca 08.06.2021)
 - Abschließende Integrationstests (ca. 10.06.2021)
+- User Experience Validierung (aktuell nicht geplant)
 - Feature Erweiterung (aktuell nicht geplant)
 
 ### Einsatzplanung
