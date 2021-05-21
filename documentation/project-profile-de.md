@@ -6,7 +6,7 @@ Webanwendung Vorlesungsplanung DHBW Lörrach
 ### Projektsponsor
 
 DHBW Lörrach,
-welche vertreten wird durch Hr. Prof. Erik Behrends & Fr. Dr. Kristina Birn
+welche vertreten wird durch Hr. Prof. Dr. Erik Behrends & Fr. Dr. Kristina Birn
 
 ### Projektleitung
 
@@ -19,7 +19,7 @@ N/A
 
 ## Projektziele (SMART Methode)
 ### Globalziel
-Das Sekretariat des SZI an der DHBW Lörrach soll einen Zeitersparnis bei der Vorlesungsplanung erfahren, mithilfe einer grundlegenden Konzeptionierung und Implementierung eines entsprechenden Webanwendungsprototypen. Dabei soll der zetiliche und organisatorische Aufwand um t-n Zeiteinheiten, gegenüber dem bisherigen Zeitaufwand t, reduziert werden.
+Das Sekretariat des SZI an der DHBW Lörrach soll Zeit bei der Vorlesungsplanung einsparen können, mithilfe einer grundlegenden Konzeptionierung und Implementierung eines entsprechenden Webanwendungsprototypen. Dabei soll der zeitliche und organisatorische Aufwand um t-n Zeiteinheiten, gegenüber dem bisherigen Zeitaufwand t, reduziert werden.
 Die Anwendung soll es insgesamt dem Sekretariat erlauben einen oder mehrere Kurse der DHBW Lörrach zu verwalten.
 
 Ein Prototyp / MVP soll hierbei bis einschließlich den 20. Juni 2021 durch den Lenkungskreis und das Kernteam, sowie mithilfe der internen und externen Fachpromotern, realisiert und den Stakeholdern zur weiteren Evaluierung zur Verfügung gestellt werden.
