@@ -313,7 +313,7 @@ Das MVP bzw. der entwickelte Prototyp soll auf Basis der getroffenen Technologie
 - Realisierung (ca. 06.06.2021)
 - Zwischentests (ca 08.06.2021)
 - Abschließende Integrationstests (ca. 10.06.2021)
-- User Experience Validierung (aktuell nicht geplant)
+- User Experience Validation (aktuell nicht geplant)
 - Feature Erweiterung (aktuell nicht geplant)
 
 ### Einsatzplanung
