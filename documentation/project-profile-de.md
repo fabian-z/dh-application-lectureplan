@@ -19,7 +19,7 @@ N/A
 
 ## Projektziele (SMART Methode)
 ### Globalziel
-Das Sekretariat des SZI an der DHBW Lörrach soll Zeit bei der Vorlesungsplanung einsparen können, mithilfe einer grundlegenden Konzeptionierung und Implementierung eines entsprechenden Webanwendungsprototypen. Dabei soll der zeitliche und organisatorische Aufwand um t-n Zeiteinheiten, gegenüber dem bisherigen Zeitaufwand t, reduziert werden.
+Das Sekretariat des SZI an der DHBW Lörrach soll Zeit bei der Vorlesungsplanung einsparen können, mithilfe einer grundlegenden Konzeptionierung und Implementierung eines entsprechenden Webanwendungsprototypen. Dabei soll der zeitliche und organisatorische Aufwand um ```t-n``` Zeiteinheiten, gegenüber dem bisherigen Zeitaufwand ```t```, reduziert werden.
 Die Anwendung soll es insgesamt dem Sekretariat erlauben einen oder mehrere Kurse der DHBW Lörrach zu verwalten.
 
 Ein Prototyp / MVP soll hierbei bis einschließlich den 20. Juni 2021 durch den Lenkungskreis und das Kernteam, sowie mithilfe der internen und externen Fachpromotern, realisiert und den Stakeholdern zur weiteren Evaluierung zur Verfügung gestellt werden.
@@ -49,7 +49,7 @@ Für die Messbarkeit der Unterziele siehe Erfolgsmessung
 - Kursangabe beziehungsweise Kursauswahl
 - Planungsmöglichkeiten der Vorlesung durch die Möglichkeit...
   - ...noch zu planende Vorlesungen mit Namen, Stundenzahl und ggf. mit Prüfungsleistungen zu versehen  
-  - ...Termine (innerhalb der jeweiligen Theoriephase) einzutragen, zu berbeiten und zu löschen
+  - ...Termine (innerhalb der jeweiligen Theoriephase) einzutragen, zu bearbeiten und zu löschen
   - ...Termine im Kurskalender in Wochen- und/oder Monatsansicht erscheinen zu lassen
   - ...Termine mit einer Start- und einer Endzeit zu versehen, denen ein Vorlesungstitel und den Namen des Dozierenden zu hinterlegen
   - ..., dass Vorlesungen lediglich im Rahmen von 08:00 - 17:00 Uhr zu veranstalten sind
@@ -103,7 +103,7 @@ Beteiligte:
 ### Terminplanung
 
 - 07.05.2021: Kontrollabgabe Projektsteckbrief und Projektstrukturplan (Abgabe bei: Prof. Behrends)
-- 21.05.2021: Kontrollabgabe überarbeiteter Projektsteckbrief / PSP, Pflichtenheft, Zugang zum PM-Tool für die Einsicht der konkreten und detaillierten Planung für Kunde/Dozenten (Abgabe bei: Prof. Behrends)
+- 21.05.2021: Kontrollabgabe überarbeiteter Projektsteckbrief / PSP, Pflichtenheft, Zugang zum PM-Tool für die Einsicht der konkreten und detaillierten Planung für Kunde / Dozenten (Abgabe bei: Prof. Behrends)
 - 04.06.2021: Abgabe aller Projektmanagement Dokumentationen auf Moodle bis 17:00 Uhr (Abgabe bei: Dr. Birn)
 - 07.06.2021: Elevator Pitch (Referat) ab 14:00 Uhr (Durchführung durch: Dr. Birn, Prof. Behrends)
 - 15.06.2021 - 20.06.2021: Projektabschluss und letzte Fragen vor der Abgabe (Abgabe bei: Prof. Behrends)
@@ -120,7 +120,7 @@ Beteiligte:
 ## Erfolgsmessung
 
 - Ziel: Prototyp/Konzept der Webanwendung zur Vorlesungsplanung
-  -  Erfolgskriterium: Reduzierung des organisatorischen Aufwandes von t-n Zeiteinheiten (t: bisheriger Zeitaufwand, n: geplanter Zeitaufwand)
+  -  Erfolgskriterium: Reduzierung des organisatorischen Aufwandes von ```t-n``` Zeiteinheiten (```t```: bisheriger Zeitaufwand, ```n```: geplanter Zeitaufwand)
   -  Akzeptanz: Freigabe zur Implementierung der Webanwendung (MVP) durch positive Evaluierung der Stakeholder
   -  Zeitrahmen: Prototyp bis einschließlich den 20. Juni 2021
 
@@ -130,13 +130,11 @@ Beteiligte:
   -  Zeitrahmen: Abgabe bei Dr. Birn im gegebenen Zeitrahmen bis 04. Juni 2021, Zusätzliche Abgabe bei Prof. Behrends bis 20. Juni 2021
   
 - Ziel: Implementierung aller MUST-HAVEs in funktionsfähiger Webanwendung
-  -  Erfolgskriterium: Reduzierung des organisatorischen Aufwandes von t-n Zeiteinheiten (t: bisheriger Zeitaufwand, n: geplanter Zeitaufwand)
+  -  Erfolgskriterium: Reduzierung des organisatorischen Aufwandes von ```t-n``` Zeiteinheiten (```t```: bisheriger Zeitaufwand, ```n```: geplanter Zeitaufwand)
   -  Akzeptanz: Erfolgreicher Einsatz (d.h. Prototyp / MVP wird mind. 1 mal benutzt) durch den Key-User
   -  Zeitrahmen: Ausführbares MVP bis einschließlich den 20. Juni 2021
  
 Die Akzeptanz der Stakeholder wird bei einer funktionsfähigen Anwendung an der Häufigkeit des praktischen Einsatzes und der tatsächlichen Reduzierung des zeitlichen Aufwandes zur Organisation und Planung der Vorlesungen eines oder mehrerer Kurse bestimmt. Der aktuell benötigte zeitliche Aufwand hierfür ist auf Grund des analogen Prozesses und fehlender Dokumentation aktuell unbekannt.
-
-Damit hierbei kein Ergebnisrisiko (siehe Projektrisiken 3. Risikobeispiel) entsteht, soll während der gesamten zeitlichen Projektspanne mindestens jede Woche eine Rücksprache mit den entprechenden Stakeholdern Prof. Behrends und Fr. Dr. Birn gehalten werden bis zur terminlichen Abgabe am 20. Juni 2021 
 
 ## Projektbudget - Finanzielles Budget
 - Personalstunden
@@ -150,54 +148,34 @@ Damit hierbei kein Ergebnisrisiko (siehe Projektrisiken 3. Risikobeispiel) entst
 
 ## Stakeholder
 
-|                      | Intern                                    |
-| -------------------- | ----------------------------------------- |
-| Projektmanager       | Jennifer Krüger                           |
-| Stellvertreter       | Fabian Zaremba                            |
-| Lenkungskreis        | Krüger, Zaremba                           |
-| Kernteam             | Weishar, Meier, Bieringer, Zaremba, Kubon |
-| Machtpromotor        | Prof. Behrends                            |
-| Fachpromotor         | Prof. Behrends                            |
-| Weitere Stakeholder  |                                           |
+|                      | Intern                                    | Stakeholdergruppe  |
+| -------------------- | ----------------------------------------- |--------------------|
+| Projektmanager       | Jennifer Krüger                           | Mitarbeiter        |
+| Stellvertreter       | Fabian Zaremba                            | Mitarbeiter        |
+| Lenkungskreis        | Krüger, Zaremba                           | Mitarbeiter        |
+| Kernteam             | Weishar, Meier, Bieringer, Zaremba, Kubon | Mitarbeiter        |
+| Machtpromotor        | Prof. Behrends                            | Mitarbeiter        |
+| Fachpromotor         | Prof. Behrends                            | Mitarbeiter        |
+| Weitere Stakeholder  |                                           |                    |
 
-|                      | Extern                                       |
-| -------------------- | ---------------------------------------------|
-| Projektmanager       | Prof. Behrends                               |
-| Stellvertreter       | Dr. Birn                                     |
-| Lenkungskreis        | Dr. Birn, Prof. Behrends                     |
-| Kernteam             | Dr. Birn, Prof. Behrends                     |
-| Machtpromotor        | Prof. Hanser                                 |
-| Fachpromotor         | Prof. Behrends, IT-Services der DH           |
-| Weitere Stakeholder  | Sekretariat SZI, Dozierende (extern & intern)|
+|                      | Extern                                       |Stakeholdergruppen  |
+| -------------------- | ---------------------------------------------|--------------------|
+| Projektmanager       | Prof. Behrends                               | Projektauftraggeber|
+| Stellvertreter       | Dr. Birn                                     | Projektauftraggeber|
+| Lenkungskreis        | Dr. Birn, Prof. Behrends                     | Projektauftraggeber|
+| Kernteam             | Dr. Birn, Prof. Behrends                     | Projektauftraggeber|
+| Machtpromotor        | Prof. Hanser                                 | Gesellschaft       |
+| Fachpromotor         | Prof. Behrends, IT-Services der DH           | Lieferanten        |
+| Weitere Stakeholder  | Sekretariat SZI, Dozierende (extern & intern)| Kunden             |
 
 ## Projektrisiken
 
-1. Risiko (Vorgehensrisiko)
+1. Risiko
 
 
 ***Beschreibung***
 
-Die Implementierung der gesamten Gruppe nimmt einen zu großen Ausmaß an.
-
-***Eintrittswahrscheinlichkeit***
-
-Hoch
-
-***Schadenspotential***
-
-Hoch
-
-***Gegenmaßnahmen***
-
-Regelmäßige Rücksprache mit Fachpromoter und Stakeholder
-
-
-2. Risiko (Vorgehensrisiko)
-
-
-***Beschreibung***
-
-Die Anforderungen an die Webanwendung und an die einzelnen Gruppen steigen kontinuierlich
+Eine fehlerhafte Terminierung führt zu keiner zeitgerechten Terminabgabe des MVPs / Prototypen.
 
 ***Eintrittswahrscheinlichkeit***
 
@@ -205,19 +183,42 @@ Mittel
 
 ***Schadenspotential***
 
-Mittel
+Kritisch
 
 ***Gegenmaßnahmen***
 
-Evaluierung der Notwendigkeit einzelner Features bei Umsetzung eines MVP
+Regelmäßige Rücksprache mit Fachpromoter und Stakeholder.
+Sollte das Risiko dennoch Eintreten, so ist eine terminliche Neuplanung und eine eventuelle Kürzung einiger Arbeitspakete von Nöten.
 
 
-3. Risiko (Ergebnisrisiko)
+2. Risiko
 
 
 ***Beschreibung***
 
-Sowohl Dozenten (extern und/oder intern), als auch das Sekretariat sind unzufrieden mit der entsprechenden Webanwendung zur Vorlesungplanung.
+Fehlende Ressource können fehlendes Fachwissen der Teammitgliedern mit sich führen.
+Dies hätte wiederrum zur Auswirkung, dass ein Fortschritt des Projektes gar nicht bis kaum möglich ist.
+
+***Eintrittswahrscheinlichkeit***
+
+Sehr Hoch
+
+***Schadenspotential***
+
+Hoch
+
+***Gegenmaßnahmen***
+
+Terminliche Einplanung von Pufferzeiten zu Schulungszwecken der einzelnen Teammitglieder.
+Für den Falle, dass das Risiko dennoch eintritt, werden zeitnahe "Seminare" für das gesamte Team veranlasst, zu einer sofortigen Klärung von auftretenden Problemen und Fragen.
+
+
+3. Risiko
+
+
+***Beschreibung***
+
+Eine ungenügende Erfahrung und/oder unzureichende Guidlines, innerhalb der Codestruktur und der daraus resultierenden Codequalität, führen sowohl zu Verständlichkeitsproblemen Dritter gegenüber, als auch zu auftretenden Schwierigkeiten bei der Weiterentwicklung.
 
 ***Eintrittswahrscheinlichkeit***
 
@@ -228,5 +229,4 @@ Mittel
 Hoch
 
 ***Gegenmaßnahmen***
-
-Regelmäßige Rücksprache mit Stakeholder 
+Eine Regelmäßige Code Review, sowie eine Überarbeitung des Codes durch den Autor anhand festgelegter Guidlines (z. Bsp. Good-Coding-Practices) soll dieses Risiko vermindern.
