@@ -39,7 +39,14 @@
         "webpack-cli": "^4.6.0"
     },
     "dependencies": {
+        "@fullcalendar/bootstrap": "^5.7.0",
+        "@fullcalendar/core": "^5.7.0",
+        "@fullcalendar/daygrid": "^5.7.0",
+        "@fullcalendar/interaction": "^5.7.0",
+        "@fullcalendar/list": "^5.7.0",
+        "@fullcalendar/scrollgrid": "^5.7.0",
+        "@fullcalendar/timegrid": "^5.7.0",
         "@popperjs/core": "^2.9.2",
-        "bootstrap": "^5.0.0-beta3"
+        "bootstrap": "^5.0.1"
     }
 }
