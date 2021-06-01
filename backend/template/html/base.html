@@ -10,9 +10,11 @@
     <link rel="stylesheet" href="css/bundle.css">
     <script type="module" src="js/bundle.js"></script>
 
-    <title>Hello, world!</title>
+    <title>{{ $.Title }}</title>
   </head>
-  <body>
-    <h1>Hello, world!</h1>
+  <body class="d-flex flex-column min-vh-100">
+    <header>{{ template "nav" . }}</header>
+    <content>Hello, world! I am content</content>
+    {{ template "footer" . }}
   </body>
 </html>
