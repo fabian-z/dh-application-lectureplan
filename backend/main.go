@@ -50,6 +50,8 @@ func main() {
 
 	// Setup router and HTTP server
 
+	openDB()
+
 	router := chi.NewRouter()
 
 	// Set security headers
@@ -79,7 +81,7 @@ func main() {
 		IdleTimeout:       30 * time.Second,
 		ReadHeaderTimeout: 2 * time.Second,
 		Handler:           router,
-		Addr:              ":8080",
+		Addr:              ":8888",
 	}
 
 	// Initialize additional routines
