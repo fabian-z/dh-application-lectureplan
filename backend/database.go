@@ -730,7 +730,7 @@ func (pd *PreferredDay) Delete(tx *sqlx.Tx) error {
 	return nil
 }
 
-func openDB() {
+func openDB() *sqlx.DB {
 	// this Pings the database trying to connect
 	// use sqlx.Open() for sql.Open() semantics
 	db, err := sqlx.Connect("mysql", "mysql:mysql@/lectureplan?parseTime=true")
@@ -742,7 +742,9 @@ func openDB() {
 	db.SetMaxOpenConns(10)
 	db.SetMaxIdleConns(10)
 
-	tx := db.MustBegin()
+	return db
+
+	/*tx := db.MustBegin()
 
 	var event Event
 	err = event.Get(tx, "SELECT * FROM events WHERE id=?", 2)
@@ -765,9 +767,12 @@ func openDB() {
 		tx.Rollback()
 	}
 
+	lecturer.Delete(tx)
+
 	err = tx.Commit()
 
 	log.Println(event)
 	log.Println(lecturer)
-	log.Println(err)
+	log.Println(err)*/
+
 }

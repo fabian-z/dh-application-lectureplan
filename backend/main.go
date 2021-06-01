@@ -12,12 +12,14 @@ import (
 	"github.com/fabian-z/dh-application-lectureplan/backend/template"
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
+	"github.com/jmoiron/sqlx"
 )
 
 var (
 	// Globals must be either:
 	// already concurrency safe, protected with locks or not be changed after init
 	templates           *template.Templates
+	db                  *sqlx.DB
 	executableDirectory string
 )
 
@@ -48,10 +50,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// Setup database
+	db = openDB()
+
 	// Setup router and HTTP server
-
-	openDB()
-
 	router := chi.NewRouter()
 
 	// Set security headers
