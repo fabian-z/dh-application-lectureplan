@@ -27,7 +27,7 @@ Ausgangssituation ist die zeitaufwändige manuelle Planung von Vorlesungstermine
 
 Ziel des Projektes ist eine Minimierung des personellen Aufwandes zur Organisation der Vorlesungsterminen eines oder mehrerer Kurse.
 Umgesetzt werden soll eine grundlegenden Konzeptionierung und die Implementierung eines entsprechenden Webanwendungsprototypen.
-Dabei soll der zeitliche und organisatorische Aufwand um t-n Zeiteinheiten, gegenüber dem bisherigen Zeitaufwand t, reduziert werden.
+Dabei soll der zeitliche und organisatorische Aufwand um ```t-n``` Zeiteinheiten, gegenüber dem bisherigen Zeitaufwand ```t```, reduziert werden.
 
 Ein Prototyp / MVP soll bis einschließlich den 20. Juni 2021 durch den Lenkungskreis und das Kernteam, sowie mithilfe der internen und externen Fachpromotern, realisiert und den Stakeholdern zur weiteren Evaluierung zur Verfügung gestellt werden.
 
@@ -88,7 +88,7 @@ Besonderer Kundennutzen:
   Insbesondere ist die Distribution kostenfrei erhältlich, legt Wert auf die Auswahl freier Software in den Paketquellen und bietet zeitnahe sowie langfristige Sicherheitsupdates.
   Debian 11 Bullseye befindet sich zum Zeitpunkt der Erstellung dieses Dokumentes im "Hard Freeze" vor dem eigentlichen Release und durchläuft somit keine gravierenden Änderungszyklen mehr.
 
-- Hostingplatform bwCloud (OpenStack, Verwaltung durch OpenSSH)
+- Hostingplattform bwCloud (OpenStack, Verwaltung durch OpenSSH)
 
   bwCloud ist ein IaaS Angebot für Forschung und Lehre in Baden-Württemberg basierend auf OpenStack und Ceph.
   Die uns im Rahmen des Studiums zur Verfügung gestellten Ressourcen eignen sich optimal zum Hosting des Projektmanagements und des daraus resultierenden Prototypes.
@@ -166,7 +166,7 @@ Besonderer Kundennutzen:
   HTML5 (Hypertext Markup Language) ist eine deklarative Markupsprache für den strukturierten Aufbau von Websiten und Webanwendungen.
   CSS3 (Cascading Style Sheets) wird verwendet, um HTML Elemente nach Selektoren unterteilt mit bestimmten Gestaltungen zu versehen.
   Beide Sprachen werden als Living Standard von dem W3C Konsortium verschiedener Browserhersteller entwickelt.
-  Bei der Kombination handelt es sich um die derzeit modernste Möglichkeit zur Entwicklung von Webanwendungen für aktuelle Versionen der meistgenutzten Browserengines (Firefox, Chromium und Safari).
+  Bei der Kombination handelt es sich um die derzeit modernste Möglichkeit zur Entwicklung von Webanwendungen für aktuelle Versionen der meistgenutzten Browser Engines (Firefox, Chromium und Safari).
 
 - Erstellung von Mockups & Klickprototypen mit https://mockplus.com
 
