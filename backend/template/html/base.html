@@ -12,9 +12,23 @@
 
     <title>{{ $.Title }}</title>
   </head>
-  <body class="d-flex flex-column min-vh-100">
-    <header>{{ template "nav" . }}</header>
-    <content>{{ template "content" . }}</content>
-    {{ template "footer" . }}
+  <body>
+    <div class="grid-container">
+      <div class="header">
+        {{ template "nav" . }}
+        <!--<div class="logo"></div>
+        <div class="title"></div>
+        <div class="buttons"></div>-->
+      </div>
+      <div class="content">
+        <div class="main">{{ template "content" . }}</div>
+        <div class="actions"></div>
+      </div>
+      <div class="footer">
+        <div class="left"></div>
+        <div class="middle">{{ template "footer". }}</div>
+        <div class="right"></div>
+      </div>
+    </div>
   </body>
 </html>

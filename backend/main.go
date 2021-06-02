@@ -75,6 +75,9 @@ func main() {
 	router.Get("/gfx/*", http.FileServer(http.Dir(staticPath)).ServeHTTP)
 	router.Get("/fonts/*", http.FileServer(http.Dir(staticPath)).ServeHTTP)
 
+	router.Get("/api/listEvents", handleListEvents)
+	//router.Post("/api/changeEvent", handleChangeEvents)
+
 	router.Get("/", handleRoot)
 
 	// Manually specify timeout values

@@ -10844,12 +10844,71 @@ select {
     font-size: inherit;
 }
 
-/* Test styling, switch to grid later */
+/* FullCalendar is used under OSS License */
+.fc-license-message {
+    display: none;
+}
+
+/* Test styling, switch to grid later 
 content {
 height: 83%;
 width: 100%;
 display: block;
+}*/
+
+footer {
+    background: #262626;
 }
+
+/* Grid layout 
+TODO: minmax!*/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 1fr 0.3fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "header header header header"
+      "content content content content"
+      "footer footer footer footer";
+  }
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.9fr 0.1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "main main main"
+      "actions actions actions";
+    grid-area: content;
+  }
+  .main { grid-area: main; }
+  .actions { grid-area: actions; }
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 5px 5px;
+    grid-template-areas:
+      "left middle right";
+    grid-area: footer;
+  }
+  .left { grid-area: left; }
+  .middle { grid-area: middle; }
+  .right { grid-area: right; }
+  .header {
+    /*display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "buttons title logo";*/
+    grid-area: header;
+  }
+  .logo { grid-area: logo; }
+  .title { grid-area: title; }
+  .buttons { grid-area: buttons; }
 
 /* classes attached to <body> */
 
