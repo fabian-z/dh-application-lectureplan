@@ -15,10 +15,14 @@
   <body>
     <div class="grid-container">
       <div class="header">
-        {{ template "nav" . }}
-        <!--<div class="logo"></div>
-        <div class="title"></div>
-        <div class="buttons"></div>-->
+        {{ /* template "navbar" . */ }}
+        <div class="buttons">
+          <i class="fas fa-bars"></i>
+        </div>
+        <div class="logo">
+          <a href="/" tabindex="-1"><img id="logo" style="height: 40px;" src="gfx/logo.svg"></a>
+        </div>
+        <div class="title">{{ $.PageTitle }}</div>
       </div>
       <div class="content">
         <div class="main">{{ template "content" . }}</div>
