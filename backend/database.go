@@ -150,6 +150,27 @@ func (e *Event) Delete(tx *sqlx.Tx) error {
 	return nil
 }
 
+type Events []Event
+
+func GetEvents(tx *sqlx.Tx, query string, args ...interface{}) (Events, error) {
+	var events Events
+	err := tx.Select(&events, query, args...)
+
+	if err != nil {
+		return nil, err
+	}
+
+	for index, event := range events {
+		err = event.Lecture.Get(tx, "SELECT * FROM lectures WHERE id=?", event.LectureID)
+		if err != nil {
+			return nil, err
+		}
+		events[index] = event
+	}
+
+	return events, nil
+}
+
 type Course struct {
 	ID      int64     `db:"id"`
 	Created time.Time `db:"created"`

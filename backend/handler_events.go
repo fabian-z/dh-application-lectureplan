@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"log"
 	"net/http"
 )
@@ -11,8 +12,18 @@ func handleListEvents(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		panic(err)
 	}
-	var events []Event
-	tx.Select(&events, "SELECT * FROM events")
+	events, err := GetEvents(tx, "SELECT * FROM events")
+	if err != nil {
+		panic(err)
+	}
+	err = tx.Commit()
+	if err != nil {
+		panic(err)
+	}
+	err = json.NewEncoder(w).Encode(events)
+	if err != nil {
+		panic(err)
+	}
 }
 
 // Basic endpoint
