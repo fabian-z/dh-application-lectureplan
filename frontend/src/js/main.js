@@ -15,8 +15,8 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction';
-import bootstrapPlugin from '@fullcalendar/bootstrap'
-import scrollgridPlugin from '@fullcalendar/scrollgrid'
+import bootstrapPlugin from '@fullcalendar/bootstrap';
+import scrollgridPlugin from '@fullcalendar/scrollgrid';
 
 document.addEventListener('DOMContentLoaded', function() {
     // Setup handlers when DOM is ready
@@ -31,18 +31,18 @@ document.addEventListener('DOMContentLoaded', function() {
         headerToolbar: {
           left: 'prev,next today',
           center: 'title',
-          right: 'dayGridMonth,timeGridWeek,listWeek'
+          right: 'dayGridMonth,timeGridWeek,listWeek',
         },
         bootstrapFontAwesome: {
             close: 'fa-times',
             prev: 'fa-chevron-left',
             next: 'fa-chevron-right',
             prevYear: 'fa-angle-double-left',
-            nextYear: 'fa-angle-double-right'
+            nextYear: 'fa-angle-double-right',
           },
           
       });
-    calendar.render()      
+    calendar.render();
 
     document.getElementById("submit").addEventListener("click", function() {
        // Example click handler
