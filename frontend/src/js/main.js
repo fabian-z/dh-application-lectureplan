@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let calendar = new Calendar(calendarEl, {
         plugins: [ dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin, bootstrapPlugin, scrollgridPlugin ],
         initialView: 'dayGridMonth',
+        weekNumberCalculation: 'ISO',
         themeSystem: 'bootstrap',
         headerToolbar: {
           left: 'prev,next today',
@@ -43,8 +44,8 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     calendar.render();
 
-    document.getElementById("submit").addEventListener("click", function() {
+    /*document.getElementById("submit").addEventListener("click", function() {
        // Example click handler
-    }, false);
+    }, false);*/
 
 }, false);

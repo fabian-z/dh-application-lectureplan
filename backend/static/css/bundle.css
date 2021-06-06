@@ -12417,14 +12417,5 @@ select {
     color: white;
 }
 
-/* Redefine Bootstrap colors or use SASS pipeline??*/
-.btn-primary,
-.btn-primary:hover,
-.btn-primary:active,
-.btn-primary:visited,
-.btn-primary:focus {
-    background-color: #e2001a;
-    border-color: #e2001a;
-}
 
 /*# sourceMappingURL=bundle.css.map*/
