@@ -13,7 +13,6 @@ import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction';
 import bootstrapPlugin from '@fullcalendar/bootstrap';
 import scrollgridPlugin from '@fullcalendar/scrollgrid';
-
 import "../css/main.css";
 
 
@@ -27,6 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
         plugins: [ dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin, bootstrapPlugin, scrollgridPlugin ],
         initialView: 'dayGridMonth',
         weekNumberCalculation: 'ISO',
+        locales: [calendar_de],
+        locale: 'de',
         themeSystem: 'bootstrap',
         headerToolbar: {
           left: 'prev,next today',
@@ -49,3 +50,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }, false);*/
 
 }, false);
+
+// Translate here because import of locale submodule gives Webpack errors
+// "Parsed request is a module" and "Field 'browser' doesn't contain a valid alias configuration"
+var calendar_de = {
+  code: 'de',
+  week: {
+    dow: 1, // Monday is the first day of the week.
+    doy: 4, // The week that contains Jan 4th is the first week of the year.
+  },
+  buttonText: {
+    prev: 'Zurück',
+    next: 'Vor',
+    today: 'Heute',
+    year: 'Jahr',
+    month: 'Monat',
+    week: 'Woche',
+    day: 'Tag',
+    list: 'Terminübersicht',
+  },
+  weekText: 'KW',
+  allDayText: 'Ganztägig',
+  moreLinkText: function(n) {
+    return '+ weitere ' + n
+  },
+  noEventsText: 'Keine Ereignisse anzuzeigen',
+};

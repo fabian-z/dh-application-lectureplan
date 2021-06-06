@@ -24094,6 +24094,8 @@ document.addEventListener('DOMContentLoaded', function () {
     plugins: [_fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_4__.default, _fullcalendar_timegrid__WEBPACK_IMPORTED_MODULE_5__.default, _fullcalendar_list__WEBPACK_IMPORTED_MODULE_6__.default, _fullcalendar_interaction__WEBPACK_IMPORTED_MODULE_7__.default, _fullcalendar_bootstrap__WEBPACK_IMPORTED_MODULE_8__.default, _fullcalendar_scrollgrid__WEBPACK_IMPORTED_MODULE_9__.default],
     initialView: 'dayGridMonth',
     weekNumberCalculation: 'ISO',
+    locales: [calendar_de],
+    locale: 'de',
     themeSystem: 'bootstrap',
     headerToolbar: {
       left: 'prev,next today',
@@ -24112,7 +24114,34 @@ document.addEventListener('DOMContentLoaded', function () {
   /*document.getElementById("submit").addEventListener("click", function() {
      // Example click handler
   }, false);*/
-}, false);
+}, false); // Translate here because import of locale submodule gives Webpack errors
+// "Parsed request is a module" and "Field 'browser' doesn't contain a valid alias configuration"
+
+var calendar_de = {
+  code: 'de',
+  week: {
+    dow: 1,
+    // Monday is the first day of the week.
+    doy: 4 // The week that contains Jan 4th is the first week of the year.
+
+  },
+  buttonText: {
+    prev: 'Zurück',
+    next: 'Vor',
+    today: 'Heute',
+    year: 'Jahr',
+    month: 'Monat',
+    week: 'Woche',
+    day: 'Tag',
+    list: 'Terminübersicht'
+  },
+  weekText: 'KW',
+  allDayText: 'Ganztägig',
+  moreLinkText: function moreLinkText(n) {
+    return '+ weitere ' + n;
+  },
+  noEventsText: 'Keine Ereignisse anzuzeigen'
+};
 })();
 
 /******/ })()
