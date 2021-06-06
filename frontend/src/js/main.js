@@ -1,15 +1,11 @@
-// ES6 module imports here
-import 'bootstrap';
+import "../css/fonts.css";
 
-// Webpack CSS imports
+import 'bootstrap';
 // Could use Bootstrap SCSS sources here
 // see https://getbootstrap.com/docs/5.0/getting-started/webpack/#importing-styles
 // precompiled CSS works for now
 import 'bootstrap/dist/css/bootstrap.css';
 
-import "../css/main.css";
-
-// npm install @fullcalendar/core @fullcalendar/daygrid @fullcalendar/timegrid @fullcalendar/list
 import { Calendar } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
@@ -17,6 +13,9 @@ import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction';
 import bootstrapPlugin from '@fullcalendar/bootstrap';
 import scrollgridPlugin from '@fullcalendar/scrollgrid';
+
+import "../css/main.css";
+
 
 document.addEventListener('DOMContentLoaded', function() {
     // Setup handlers when DOM is ready

@@ -1,3 +1,7 @@
+/* webpackIgnore: true */
+@import "roboto.css";
+/* webpackIgnore: true */
+@import "fontawesome.css";
 @charset "UTF-8";
 /*!
  * Bootstrap v5.0.1 (https://getbootstrap.com/)
@@ -10818,99 +10822,6 @@ textarea.form-control-lg {
 }
 
 /*# sourceMappingURL=bootstrap.css.map */
-/* webpackIgnore: true */ @import "roboto.css";
-/* webpackIgnore: true */ @import "fontawesome.css";
-
-* {
-    box-sizing: border-box;
-}
-
-html,
-body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: "roboto", sans-serif;
-    overflow: hidden;
-    background-color: #f5f5f5;
-}
-
-textarea,
-input,
-button,
-select {
-    font-family: inherit;
-    font-size: inherit;
-}
-
-/* FullCalendar is used under OSS License */
-.fc-license-message {
-    display: none;
-}
-
-/* Test styling, switch to grid later 
-content {
-height: 83%;
-width: 100%;
-display: block;
-}*/
-
-footer {
-    
-}
-
-/* Grid layout 
-TODO: minmax!*/
-
-.grid-container {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
-    grid-template-rows: minmax(0, 0.1fr) minmax(0, 1fr) minmax(0, 0.2fr);
-    gap: 0px 0px;
-    grid-template-areas:
-      "header header header header"
-      "content content content content"
-      "footer footer footer footer";
-  }
-  .content {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
-    grid-template-rows: minmax(0, 0.9fr) minmax(0, 0.1fr);
-    gap: 0px 0px;
-    grid-template-areas:
-      "main main main"
-      "actions actions actions";
-    grid-area: content;
-  }
-  .main { grid-area: main; }
-  .actions { grid-area: actions; }
-  .footer {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
-    grid-template-rows: minmax(0, 1fr);
-    gap: 5px 5px;
-    grid-template-areas:
-      "left middle right";
-    grid-area: footer;
-    background: #262626;
-    color: white;
-  }
-  .left { grid-area: left; }
-  .middle { grid-area: middle; }
-  .right { grid-area: right; }
-  .header {
-    /*display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 0px 0px;
-    grid-template-areas:
-      "buttons title logo";*/
-    grid-area: header;
-  }
-  .logo { grid-area: logo; }
-  .title { grid-area: title; }
-  .buttons { grid-area: buttons; }
 
 /* classes attached to <body> */
 
@@ -12363,5 +12274,157 @@ A VERTICAL event
     color: inherit; /* natural color for navlinks */
   }
 
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "roboto", sans-serif;
+    overflow: hidden;
+    background-color: #f5f5f5;
+}
+
+textarea,
+input,
+button,
+select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* FullCalendar is used under OSS License */
+.fc-license-message {
+    display: none;
+}
+
+#calendar {
+  height: 100%;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid layout */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: minmax(0, 0.05fr) minmax(0, 0.9fr) minmax(0, 0.05fr);
+    gap: 5px 5px;
+    grid-template-areas:
+        "header header header header"
+        "content content content content"
+        "footer footer footer footer";
+    height: 100%;
+    width: 100%;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: minmax(0, 0.95fr) minmax(0, 0.05fr);
+    gap: 5px 5px;
+    grid-template-areas:
+        "main main main"
+        "actions actions actions";
+    grid-area: content;
+}
+
+.main {
+    grid-area: main;
+}
+
+.actions {
+    grid-area: actions;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+    gap: 5px 5px;
+    grid-template-areas:
+        "left middle right";
+    grid-area: footer;
+}
+
+.left {
+    grid-area: left;
+}
+
+.middle {
+    grid-area: middle;
+}
+
+.right {
+    grid-area: right;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+    gap: 0px 0px;
+    grid-template-areas:
+        "buttons title logo";
+    grid-area: header;
+}
+
+.logo {
+    grid-area: logo;
+}
+
+.title {
+    grid-area: title;
+}
+
+.buttons {
+    grid-area: buttons;
+}
+
+/* Design */
+
+
+.header {
+    justify-items: center;
+    align-items: center;
+    background: #e4e4e4;
+}
+
+.buttons {
+    width: 85%;
+    text-align: left;
+}
+
+.title {
+    font-size: max(15px, 2vh);
+}
+
+.logo {
+    width: 85%;
+    text-align: right;
+}
+
+.footer {
+    justify-items: center;
+    align-items: center;
+    background: #262626;
+    color: white;
+}
+
+/* Redefine Bootstrap colors or use SASS pipeline??*/
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+    background-color: #e2001a;
+    border-color: #e2001a;
+}
 
 /*# sourceMappingURL=bundle.css.map*/
