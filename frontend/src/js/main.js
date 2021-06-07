@@ -72,7 +72,7 @@ var calendar_de = {
   weekText: 'KW',
   allDayText: 'Ganztägig',
   moreLinkText: function(n) {
-    return '+ weitere ' + n
+    return '+ weitere ' + n;
   },
   noEventsText: 'Keine Ereignisse anzuzeigen',
 };
