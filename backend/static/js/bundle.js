@@ -24108,7 +24108,24 @@ document.addEventListener('DOMContentLoaded', function () {
       next: 'fa-chevron-right',
       prevYear: 'fa-angle-double-left',
       nextYear: 'fa-angle-double-right'
-    }
+    },
+    eventSources: [// your event source
+    {
+      url: '/api/events',
+      method: 'GET',
+      extraParams: {
+        custom_param1: 'something' // specify course, etc.?
+
+      },
+      failure: function failure() {
+        console.log('there was an error while fetching events!');
+      },
+      color: 'red',
+      // a non-ajax option
+      textColor: 'black' // a non-ajax option
+
+    } // any other sources...
+    ]
   });
   calendar.render();
   /*document.getElementById("submit").addEventListener("click", function() {
