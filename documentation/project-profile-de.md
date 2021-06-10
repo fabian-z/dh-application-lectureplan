@@ -3,19 +3,20 @@
 
 Webanwendung Vorlesungsplanung DHBW Lörrach
 
-### Projektsponsor
 
+### Projektsponsor
 DHBW Lörrach,
 welche vertreten wird durch Hr. Prof. Dr. Erik Behrends & Fr. Dr. Kristina Birn
 
-### Projektleitung
 
+### Projektleitung
 - Organisatorische Leitung: Jennifer Krüger, Fabian Zaremba
 - Technische Leitung: Fabian Zaremba
 
-### Kostenstelle
 
+### Kostenstelle
 N/A
+
 
 ## Projektziele (SMART Methode)
 ### Globalziel
@@ -23,6 +24,7 @@ Das Sekretariat des SZI an der DHBW Lörrach soll Zeit bei der Vorlesungsplanung
 Die Anwendung soll es insgesamt dem Sekretariat erlauben einen oder mehrere Kurse der DHBW Lörrach zu verwalten.
 
 Ein Prototyp / MVP soll hierbei bis einschließlich den 20. Juni 2021 durch den Lenkungskreis und das Kernteam, sowie mithilfe der internen und externen Fachpromotern, realisiert und den Stakeholdern zur weiteren Evaluierung zur Verfügung gestellt werden.
+
 
 ### Unterziele zur Erfüllung des Globalzieles
 Für die Messbarkeit der Unterziele siehe Erfolgsmessung
@@ -32,15 +34,16 @@ Für die Messbarkeit der Unterziele siehe Erfolgsmessung
 - Interface für Dozenten (bpsw. E-Mail Benachrichtigung, Eintragung von Wunschterminen, Terminbestätigung, etc.)
 - Algorithmische Planung mit dem Ziel der Ausgabe von Planungsvorschlägen, welche mittels diversen Kriterien (Constraints) in aussagenlogischer Form definiert werden
 
-## Projektnutzen (Erwarteter Nutzen für Unternehmen)
 
+## Projektnutzen (Erwarteter Nutzen für Unternehmen)
 - Minimierung des personellen Aufwandes zur Organisation der Vorlesungsterminen eines Kurses
 
-## Strategisches Ziel (Unternehmensziel)
 
+## Strategisches Ziel (Unternehmensziel)
 - Erhöhung der organisatorischen Effizienz (Verringerung des Zeitaufwandes)
 - Steigerung der Attraktivität der DHBW für Dozenten
 - Überführung analoger Planungsprozesse des Studienbetriebes in digitale Lösungenansätze zur Vereinheitlichung der Optimierung der Planungsabläufe
+
 
 ## Projektumfang
 ### Doing (Welche Maßnahmen werden umgesetzt?)
@@ -58,6 +61,7 @@ Für die Messbarkeit der Unterziele siehe Erfolgsmessung
   - ...der Bestätigung des Vorlesungsplanes, sodass dieser endgültig Veröffentlicht werden kann
 - Einhaltung der DSGVO für Produktivdaten  
 
+
 #### NICE-TO-HAVEs
 - Planung für mehrere Kurse
 - Einführung optimaler Vorlesungszeiten (von 09:00 - 12:15 Uhr und von 13:00 - 16:15 Uhr)
@@ -67,8 +71,8 @@ Für die Messbarkeit der Unterziele siehe Erfolgsmessung
 - Export als PDF zum Drucken bzw. per E-Mail verschicken
 - Usability und Vereinfachung: Vorlesungen beginnen und/oder enden immer :00; :15; :30; :45; (mithilfe von Autovervollständigung oder Suchfunktion)
 
-### Not-Doing (Keine Umsetzung im Basisprojekt)
 
+### Not-Doing (Keine Umsetzung im Basisprojekt)
 - E-Mail Ersatz für Individualkommunikation
 - Dozierendenmanagement
 - Responsive Design (für Geräte mit kleineren Displays bzw. Smartphones im Hochkantformat)
@@ -76,16 +80,16 @@ Für die Messbarkeit der Unterziele siehe Erfolgsmessung
 - Benachrichtigung und Erinnerungen für das Sekretariat und/oder der Dozierenden (z.B. per E-Mail)
 - Schnittstellen zu anderen Anwendungen (Veröffentlichung über Exchange, Moodle, usw.)
 
+
 ## Projektkontext
 ### Ausgangssituation (Anlass, Auslöser)
-
 - Zeitaufwendige manuelle Organisation und Verschiebung von Vorlesungsterminen
 - Häufige Absprachen zwischen Dozent / Sekretariat
 - Planung mit internen / externen Dozenten
 - Bisher: Tischkalender & Bleistift
 
-### Projektumfeld (Ort, Rahmen, Beteiligte)
 
+### Projektumfeld (Ort, Rahmen, Beteiligte)
 Ort: DHBW Lörrach
 
 Rahmen: Vorlesung Anwendungsprojekt / Projektmanagement, Kurs TIF20A
@@ -93,23 +97,23 @@ Rahmen: Vorlesung Anwendungsprojekt / Projektmanagement, Kurs TIF20A
 Beteiligte: 
 - siehe Stakeholder
 - externe Fachpromoter
-            
+      
+     
 ## Termine
 ### Geplanter Projektstart / Geplantes Ende
-
 - Das Projekt beginnt in der 16. KW
 - Abgabe der Ergebnisse erfolgt bis einschließlich Sonntag, den 20. Juni 2021
 
-### Terminplanung
 
+### Terminplanung
 - 07.05.2021: Kontrollabgabe Projektsteckbrief und Projektstrukturplan (Abgabe bei: Prof. Behrends)
 - 21.05.2021: Kontrollabgabe überarbeiteter Projektsteckbrief / PSP, Pflichtenheft, Zugang zum PM-Tool für die Einsicht der konkreten und detaillierten Planung für Kunde / Dozenten (Abgabe bei: Prof. Behrends)
 - 04.06.2021: Abgabe aller Projektmanagement Dokumentationen auf Moodle bis 17:00 Uhr (Abgabe bei: Dr. Birn)
 - 07.06.2021: Elevator Pitch (Referat) ab 14:00 Uhr (Durchführung durch: Dr. Birn, Prof. Behrends)
 - 15.06.2021 - 20.06.2021: Projektabschluss und letzte Fragen vor der Abgabe (Abgabe bei: Prof. Behrends)
 
-### Abschlusstermine der Meilensteine
 
+### Abschlusstermine der Meilensteine
 - 15.05.2021: Einrichtung Infrastruktur
 - 26.05.2021: Konzeptionierung
 - 06.08.2021: Realisierung 
@@ -117,8 +121,8 @@ Beteiligte:
 - 10.06.2021: Abschließende Integrationstests
 (- Feature Erweiterung (aktuell nicht geplant))
 
-## Erfolgsmessung
 
+## Erfolgsmessung
 - Ziel: Prototyp/Konzept der Webanwendung zur Vorlesungsplanung
   -  Erfolgskriterium: Reduzierung des organisatorischen Aufwandes von ```t-n``` Zeiteinheiten (```t```: bisheriger Zeitaufwand, ```n```: geplanter Zeitaufwand)
   -  Akzeptanz: Freigabe zur Implementierung der Webanwendung (MVP) durch positive Evaluierung der Stakeholder
@@ -136,6 +140,7 @@ Beteiligte:
  
 Die Akzeptanz der Stakeholder wird bei einer funktionsfähigen Anwendung an der Häufigkeit des praktischen Einsatzes und der tatsächlichen Reduzierung des zeitlichen Aufwandes zur Organisation und Planung der Vorlesungen eines oder mehrerer Kurse bestimmt. Der aktuell benötigte zeitliche Aufwand hierfür ist auf Grund des analogen Prozesses und fehlender Dokumentation aktuell unbekannt.
 
+
 ## Projektbudget - Finanzielles Budget
 - Personalstunden
   - Pro Mitglied: 50 Stunden pro Teammitglied
@@ -146,8 +151,8 @@ Die Akzeptanz der Stakeholder wird bei einer funktionsfähigen Anwendung an der 
   - IT-Services der DHBW Lörrach: Betreuung & Einrichtung SSO (= Bewirtungskosten)
 - (Jira: 0€ zur Zeit)
 
-## Stakeholder
 
+## Stakeholder
 |                      | Intern                                    | Stakeholdergruppe  |
 | -------------------- | ----------------------------------------- |--------------------|
 | Projektmanager       | Jennifer Krüger                           | Mitarbeiter        |
@@ -168,8 +173,8 @@ Die Akzeptanz der Stakeholder wird bei einer funktionsfähigen Anwendung an der 
 | Fachpromotor         | Prof. Behrends, IT-Services der DH           | Lieferanten        |
 | Weitere Stakeholder  | Sekretariat SZI, Dozierende (extern & intern)| Kunden             |
 
-## Projektrisiken
 
+## Projektrisiken
 1. Risiko
 
 
