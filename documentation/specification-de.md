@@ -16,8 +16,8 @@ Gruppenmitglieder:
 - Weishar, Luc Rémi
 - Zaremba, Fabian
 
-## Einleitung
 
+## Einleitung
 Ausgangssituation ist die zeitaufwändige manuelle Planung von Vorlesungsterminen mittels Tischkalender und manueller Absprache des Sekretariats mit einzelnen Dozenten.
 
 - Zeitaufwendige manuelle Organisation und Verschiebung von Vorlesungsterminen
@@ -36,8 +36,8 @@ Besonderer Kundennutzen:
 - Steigerung der Attraktivität der DHBW für Dozenten
 - Überführung analoger Planungsprozesse des Studienbetriebes in digitale Lösungenansätze zur Vereinheitlichung der Optimierung der Planungsabläufe
 
-## Technische Lösung
 
+## Technische Lösung
 ### Rahmenbedingungen
 
 - Umsetzung als Free / Libre Open Source Software unter MIT Lizenz
@@ -113,6 +113,7 @@ Besonderer Kundennutzen:
   Ziel der Community ist die Bereitstellung eines freien Datenbankservers mit hoher Stabilität, guter Performance und Binärkompatibilität mit MySQL.
   Die Entwicklung neuer Features weicht von MySQL ab.
 
+
 ### Backend
 
 - Backendentwicklung mit Go (memory-safe, high performance)
@@ -158,6 +159,7 @@ Besonderer Kundennutzen:
   TLS garantiert die Sicherheit (genauer Integrität und Vertraulichkeit) des ausgelieferten Frontendcodes sowie der Kommunikation zwischen Frontend & Backend.
   Kommunikation über den HTTP Port 80 wird weitergeleitet auf den TLS gesicherten HTTPS Port 443.
   Die Verwendung der Mindestversion v1.2 vermeidet Sicherheitsprobleme in früheren SSL / TLS Versionen auf Kosten der Kompatiblität mit sehr alten Clients (z.B. Android < v4)
+
 
 ### Frontend
 
@@ -214,10 +216,9 @@ Besonderer Kundennutzen:
   Die frei verfügbaren und lizenzierten Fonts Robot und der FontAwesome bieten einen einheitlichen, plattformübergreifenden und ansprechenden Look für die Anwendung im Browser.
   Eine gute Auswahl von Icons unterstützt die Entwicklung des Userinterfaces und ermöglicht eine positive User Experience.
 
+
 ## Beschreibung der Anforderungen bzw. Komponenten
-
 ### Scope / Anforderungen
-
 #### Must-Haves
 - Vorlesungszeitraum zur Planung festlegen
 - Kursangabe beziehungsweise Kursauswahl
@@ -232,6 +233,7 @@ Besonderer Kundennutzen:
   - ...der Bestätigung des Vorlesungsplanes, sodass dieser endgültig Veröffentlicht werden kann
 - Einhaltung der DSGVO für Produktivdaten
 
+
 #### Nice-to-haves
 - Planung für mehrere Kurse
 - Einführung optimaler Vorlesungszeiten (von 09:00 - 12:15 Uhr und von 13:00 - 16:15 Uhr)
@@ -241,6 +243,7 @@ Besonderer Kundennutzen:
 - Export als PDF zum Drucken bzw. Versand per E-Mail
 - Usability und Vereinfachung: Vorlesungen beginnen und/oder enden immer :00; :15; :30; :45; (mithilfe von Autovervollständigung oder Suchfunktion)
 
+
 #### Not-Doing (Keine Umsetzung im Basisprojekt)
 - E-Mail Ersatz für Individualkommunikation
 - Dozierendenmanagement
@@ -249,21 +252,21 @@ Besonderer Kundennutzen:
 - Benachrichtigung und Erinnerungen für das Sekretariat und/oder der Dozierenden (z.B. per E-Mail)
 - Schnittstellen zu anderen Anwendungen (Veröffentlichung über Exchange, Moodle, usw.)
 
-### Lieferobjekt: Mockups / Konzeption
 
+### Lieferobjekt: Mockups / Konzeption
 - Konzeption des Userinterfaces mit den oben aufgeführten Features
 - Erstellung von Mockups zur Visualisierung und Unterstützung der Anwendungsentwicklung
 - Strukturierte Entwicklung der User Experience
 
-#### Vorschau
 
+#### Vorschau
 ![mockup-start-de](mockups/mockup-start-de.png)
 ![mockup-navigation-de](mockups/mockup-navigation-de.png)
 ![mockup-calendar-de](mockups/mockup-calendar-de.png)
 ![mockup-edit-de](mockups/mockup-edit-de.png)
 
-### Lieferobjekt: Minimum Viable Product / Prototyp
 
+### Lieferobjekt: Minimum Viable Product / Prototyp
 Das MVP bzw. der entwickelte Prototyp soll auf Basis der getroffenen Technologieauswahl und basierend auf den erstellen Konzepten und Mockups einen möglichst großen Teil der geplanten Features abbilden und als funktionsfähige Webanwendung ausgeliefert werden.
 
 - Backend
@@ -277,13 +280,13 @@ Das MVP bzw. der entwickelte Prototyp soll auf Basis der getroffenen Technologie
   - HTML5 / CSS3 / JS
   - Entwickelt für aktuelle Browserversionen von Firefox, Chromium und Safari
 
-## Bereitstellung der Mockups und der Webanwendung
 
+## Bereitstellung der Mockups und der Webanwendung
 - Bereitstellung und Auslieferung der Mockups erfolgt über Screenshots im Rahmen der Dokumentation sowie als Klickprototypen über das Cloudangebot von https://mockplus.com
 - Der Prototyp der Webanwendung / das MVP wird funktionsfähig auf einer Serverinstanz der bwCloud bereitgestellt (siehe oben).
 
-## Qualität und Test
 
+## Qualität und Test
 - Statische Analyse für Backend & Frontend Code
 - Ausschluss von Sicherheitslücken durch OOB Fehler, Memory Safety Problemen und Type Confusion im Backend durch Auswahl der passenden Programmiersprache
 - Kontinuierliche statische Prüfung von dynamisch typisiertem JS Code zur Reduzierung von Type Confusion
@@ -296,18 +299,17 @@ Das MVP bzw. der entwickelte Prototyp soll auf Basis der getroffenen Technologie
 - Enduser (Alpha / Beta) Testing
 - User Experience Validation
 
+
 ## Projektplanung
-
 ### Terminplanung
-
 - 07.05.2021: Kontrollabgabe Projektsteckbrief und Projektstrukturplan (Abgabe bei: Prof. Behrends)
 - 21.05.2021: Kontrollabgabe überarbeiteter Projektsteckbrief / PSP, Pflichtenheft, Zugang zum PM-Tool für die Einsicht der konkreten und detaillierten Planung für Kunde/Dozenten (Abgabe bei: Prof. Behrends)
 - 04.06.2021: Abgabe aller Projektmanagement Dokumentationen auf Moodle bis 17:00 Uhr (Abgabe bei: Dr. Birn)
 - 07.06.2021: Elevator Pitch (Referat) ab 14:00 Uhr (Durchführung durch: Dr. Birn, Prof. Behrends)
 - 15.06.2021 - 20.06.2021: Projektabschluss und letzte Fragen vor der Abgabe (Abgabe bei: Prof. Behrends)
 
-### Meilensteine
 
+### Meilensteine
 - Einrichtung Infrastruktur (ca. 15.05.2021)
 - Konzeption (ca. 26.05.2021)
 - Realisierung (ca. 06.06.2021)
@@ -316,8 +318,8 @@ Das MVP bzw. der entwickelte Prototyp soll auf Basis der getroffenen Technologie
 - User Experience Validation (aktuell nicht geplant)
 - Feature Erweiterung (aktuell nicht geplant)
 
-### Einsatzplanung
 
+### Einsatzplanung
 | Rolle                | Person                    |
 | -------------------- | --------------------------|
 | Projektmanager       | Jennifer Krüger           |
@@ -328,17 +330,16 @@ Das MVP bzw. der entwickelte Prototyp soll auf Basis der getroffenen Technologie
 | Backendentwicklung   | Zaremba                   |
 | API Entwicklung      | Bieringer                 |
 
+
 ## Anhang
-
 ### Wartung
-
 - Betrieb mit regelmäßigen Updates über stabile Linuxdistribution für den Servereinsatz (Debian)
   - Bullseye Sicherheitsupdates bis voraussichtlich ca. 2024
   
 - Go v1 Kompatiblität ermöglicht langfristigen Betrieb einer sicheren Anwendung ohne großen Wartungsaufwand  
 
-### Weiterentwicklung: Algorithmische Planung
 
+### Weiterentwicklung: Algorithmische Planung
 - Weiterentwicklung der Planung von manueller Terminfestlegung
   - Festlegung von Constraints und Darstellung als SAT Problem
   - Verwendung etablierter SAT Solver zur approximativen zeitlich begrenzten Lösung (Partial MaxSAT)
