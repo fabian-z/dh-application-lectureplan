@@ -224,7 +224,7 @@ Besonderer Kundennutzen:
 - Kursangabe beziehungsweise Kursauswahl
 - Planungsmöglichkeiten der Vorlesung durch die Möglichkeit...
   - ...noch zu planende Vorlesungen mit Namen, Stundenzahl und ggf. mit Prüfungsleistungen zu versehen  
-  - ...Termine (innerhalb der jeweiligen Theoriephase) einzutragen, zu berbeiten und zu löschen
+  - ...Termine (innerhalb der jeweiligen Theoriephase) einzutragen, zu bearbeiten und zu löschen
   - ...Termine im Kurskalender in Wochen- und/oder Monatsansicht erscheinen zu lassen
   - ...Termine mit einer Start- und einer Endzeit zu versehen, denen ein Vorlesungstitel und den Namen des Dozierenden zu hinterlegen
   - ..., dass Vorlesungen lediglich im Rahmen von 08:00 - 17:00 Uhr zu veranstalten sind
