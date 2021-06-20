@@ -24,13 +24,19 @@ var (
 )
 
 func handleRoot(w http.ResponseWriter, r *http.Request) {
+	http.Redirect(w, r, "/events", http.StatusTemporaryRedirect)
+}
+
+func handleDataProtection(w http.ResponseWriter, r *http.Request) {
 	// TODO initial session creation
-	err := templates.Events.Execute(w, struct {
-		Title     string
-		PageTitle string
+	err := templates.DataProtection.Execute(w, struct {
+		Title       string
+		PageTitle   string
+		ShowActions bool
 	}{
 		"DHBW Lörrach - Vorlesungsplanung",
-		"Termine",
+		"Datenschutz",
+		false,
 	})
 	if err != nil {
 		log.Println("Request error: ", err)
@@ -81,6 +87,9 @@ func main() {
 
 	router.Get("/api/events", handleListEvents)
 	//router.Post("/api/changeEvent", handleChangeEvents)
+
+	router.Get("/events", handleEvents)
+	router.Get("/dataprotection", handleDataProtection)
 
 	router.Get("/", handleRoot)
 

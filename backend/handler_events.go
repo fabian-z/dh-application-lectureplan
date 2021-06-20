@@ -51,8 +51,14 @@ func handleListEvents(w http.ResponseWriter, r *http.Request) {
 // Basic endpoint
 func handleEvents(w http.ResponseWriter, r *http.Request) {
 	// TODO initial session creation
-	err := templates.Events.Execute(w, struct{ Title string }{
+	err := templates.Events.Execute(w, struct {
+		Title       string
+		PageTitle   string
+		ShowActions bool
+	}{
 		"DHBW Lörrach - Vorlesungsplanung",
+		"Termine",
+		true,
 	})
 	if err != nil {
 		log.Println("Request error: ", err)
