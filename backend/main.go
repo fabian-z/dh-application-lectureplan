@@ -19,6 +19,7 @@ import (
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
 	"github.com/jmoiron/sqlx"
+	"golang.org/x/crypto/acme/autocert"
 )
 
 var (
@@ -27,6 +28,10 @@ var (
 	templates           *template.Templates
 	db                  *sqlx.DB
 	executableDirectory string
+
+	useTLS        = false
+	useSSO        = false
+	listeningAddr = ":8888"
 )
 
 func handleRoot(w http.ResponseWriter, r *http.Request) {
@@ -59,7 +64,9 @@ func loadSSO() *samlsp.Middleware {
 		panic(err) // TODO handle error
 	}
 
-	idpMetadataURL, err := url.Parse("https://idp.dhbw-loerrach.de/idp/shibboleth")
+	// TODO fix bug with upstream Shibboleth IdP (DHBW Lörrach)
+	// should be: https://idp.dhbw-loerrach.de/idp/shibboleth
+	idpMetadataURL, err := url.Parse("https://samltest.id/saml/idp")
 	if err != nil {
 		panic(err) // TODO handle error
 	}
@@ -68,6 +75,7 @@ func loadSSO() *samlsp.Middleware {
 	if err != nil {
 		panic(err) // TODO handle error
 	}
+	log.Println(idpMetadata.EntityID)
 
 	rootURL, err := url.Parse("https://dh-application.nerdwiese.de")
 	if err != nil {
@@ -79,6 +87,7 @@ func loadSSO() *samlsp.Middleware {
 		Key:         keyPair.PrivateKey.(*rsa.PrivateKey),
 		Certificate: keyPair.Leaf,
 		IDPMetadata: idpMetadata,
+		SignRequest: true,
 	})
 
 	return samlSP
@@ -112,12 +121,12 @@ func main() {
 	// Setup database
 	db = openDB()
 
-	useSSO := true
 	ssoHandler := emptyHandler
+	var ssoMiddleware *samlsp.Middleware
 	// Setup SSO Handler if enable
 	if useSSO {
-		middleware := loadSSO()
-		ssoHandler = middleware.RequireAccount
+		ssoMiddleware = loadSSO()
+		ssoHandler = ssoMiddleware.RequireAccount
 	}
 
 	// Setup router and HTTP server
@@ -140,10 +149,14 @@ func main() {
 	router.Get("/gfx/*", http.FileServer(http.Dir(staticPath)).ServeHTTP)
 	router.Get("/fonts/*", http.FileServer(http.Dir(staticPath)).ServeHTTP)
 
+	if useSSO {
+		router.Handle("/saml/*", ssoMiddleware)
+	}
+
 	router.Group(func(r chi.Router) {
 		// Enforce SSO policy for these routes
 		r.Use(ssoHandler)
-		router.Get("/api/events", handleListEvents)
+		r.Get("/api/events", handleListEvents)
 		//router.Post("/api/changeEvent", handleChangeEvents)
 
 		r.Get("/events", handleEvents)
@@ -160,7 +173,7 @@ func main() {
 		IdleTimeout:       30 * time.Second,
 		ReadHeaderTimeout: 2 * time.Second,
 		Handler:           router,
-		Addr:              ":8888",
+		Addr:              listeningAddr,
 	}
 
 	// Initialize additional routines
@@ -182,5 +195,9 @@ func main() {
 
 	// Start listening for client requests
 
-	log.Fatal(srv.ListenAndServe())
+	if useTLS {
+		log.Fatal(srv.Serve(autocert.NewListener("dh-application.nerdwiese.de")))
+	} else {
+		log.Fatal(srv.ListenAndServe())
+	}
 }
