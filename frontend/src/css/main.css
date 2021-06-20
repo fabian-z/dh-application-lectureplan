@@ -163,6 +163,6 @@ select {
     margin-left: auto;
     overflow-y: scroll;
 }
-#awesome {
+.arrow {
 	padding: 15px;
 }
