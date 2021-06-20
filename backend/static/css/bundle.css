@@ -12004,4 +12004,8 @@ select {
   overflow-y: scroll;
 }
 
+#awesome {
+  padding: 15px;
+}
+
 /*# sourceMappingURL=bundle.css.map*/

@@ -12,20 +12,67 @@
         <div class="modal-body">
             <form action="/addEvent" method="POST">
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                  <label for="lecture" class="form-label">Vorlesung</label>
+                  <input type="text" class="form-control" id="lecture" aria-describedby="lectureHelp">
                 </div>
                 <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
-                </div>
-                <div class="mb-3 form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
+                    <label for="date" class="form-label">Datum</label>
+                    <input type="date" class="form-control" id="date" aria-describedby="dateHelp">
+                  </div>
+                  <div class="mb-3">
+                    <label for="startTime" class="form-label">Startzeit</label>
+                    <input type="time" class="form-control" id="startTime" aria-describedby="startTimeHelp">
+                  </div>
+                  <div class="mb-3">
+                    <label for="endTime" class="form-label">Endzeit</label>
+                    <input type="time" class="form-control" id="endTime" aria-describedby="endTimeHelp">
+                  </div>
+                  <div class="mb-3">
+                    <label for="room" class="form-label">Raum</label>
+                    <input type="text" class="form-control" id="room" aria-describedby="roomHelp">
+                  </div>
+                  <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="confirmed" name="confirmed">
+                    <label class="form-check-label" for="confirmed">Bestätigt</label>
+                  </div>
+                  <div class="mb-3">
+                    <label for="comment" class="form-label">Kommentar</label>
+                    <input type="text" class="form-control" id="comment" aria-describedby="commentHelp">
+                  </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
               </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Course Selection Modal -->
+  <div class="modal fade" id="courseSelectionModal" tabindex="-1" aria-labelledby="courseSelectionModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="courseSelectionModalLabel">Kurs auswählen</h5>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Information Modal -->
+  <div class="modal fade" id="informationModal" tabindex="-1" aria-labelledby="informationModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="informationModalLabel">Kursinformationen</h5>
+        </div>
+        <div class="modal-body">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
