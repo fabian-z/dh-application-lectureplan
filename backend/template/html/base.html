@@ -16,7 +16,9 @@
     <div class="grid-container">
       <div class="header">
         <div class="buttons">
-          <i class="fas fa-bars"></i>
+          <a data-bs-toggle="offcanvas" href="#offcanvasNavigation" role="button" aria-controls="offcanvasNavigation">
+            <i class="fas fa-bars"></i>
+          </a>
           <i class="fas fa-home"></i>
         </div>
         <div class="logo">
@@ -42,6 +44,21 @@
         <div class="left"></div>
         <div class="middle">{{ template "footer". }}</div>
         <div class="right"></div>
+      </div>
+    </div>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavigation" aria-labelledby="offcanvasNavigationLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavigationLabel">Navigation</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="d-flex flex-column bd-highlight mb-3">
+          <div class="p-2 bd-highlight">Vorlesungsverwaltung</div>
+          <div class="p-2 bd-highlight">Kursverwaltung</div>
+          <div class="p-2 bd-highlight">Dozentenverwaltung</div>
+          <div class="p-2 bd-highlight">Semesterverwaltung</div>
+        </div>
       </div>
     </div>
   </body>

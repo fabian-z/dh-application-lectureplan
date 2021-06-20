@@ -140,3 +140,7 @@ select {
     background: #262626;
     color: white;
 }
+
+.header a {
+    color: #262626;
+}
