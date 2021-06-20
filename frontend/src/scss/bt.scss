@@ -1,0 +1,15 @@
+@import "bootstrap/scss/functions";
+
+// some elements still use blue instead of primary theme color
+$colors: (
+  blue: #e2001a,
+);
+
+/* 80 required to bring primary color to AAA standards */
+$theme-colors: (
+  primary: #e2001a,
+  danger: #83001a,
+);
+
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/bootstrap";

@@ -4,7 +4,7 @@ import 'bootstrap';
 // Could use Bootstrap SCSS sources here
 // see https://getbootstrap.com/docs/5.0/getting-started/webpack/#importing-styles
 // precompiled CSS works for now
-import 'bootstrap/dist/css/bootstrap.css';
+import '../scss/bt.scss';
 
 import { Calendar } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';

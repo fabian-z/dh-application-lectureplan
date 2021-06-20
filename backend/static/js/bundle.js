@@ -16,7 +16,7 @@
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fullcalendar/common */ "./node_modules/@fullcalendar/common/main.js");
 /*!
-FullCalendar v5.7.0
+FullCalendar v5.8.0
 Docs & License: https://fullcalendar.io/
 (c) 2021 Adam Shaw
 */
@@ -195,6 +195,7 @@ var plugin = (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.createPlugin)(
 /* harmony export */   "interactionSettingsToStore": () => (/* binding */ interactionSettingsToStore),
 /* harmony export */   "intersectRanges": () => (/* binding */ intersectRanges),
 /* harmony export */   "intersectRects": () => (/* binding */ intersectRects),
+/* harmony export */   "intersectSpans": () => (/* binding */ intersectSpans),
 /* harmony export */   "isArraysEqual": () => (/* binding */ isArraysEqual),
 /* harmony export */   "isColPropsEqual": () => (/* binding */ isColPropsEqual),
 /* harmony export */   "isDateSelectionValid": () => (/* binding */ isDateSelectionValid),
@@ -231,12 +232,12 @@ var plugin = (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.createPlugin)(
 /* harmony export */   "whenTransitionDone": () => (/* binding */ whenTransitionDone),
 /* harmony export */   "wholeDivideDurations": () => (/* binding */ wholeDivideDurations)
 /* harmony export */ });
-/* unused harmony exports BASE_OPTION_REFINERS, CalendarDataProvider, ContentHook, DateEnv, EventSourceApi, MountHook, NamedTimeZoneImpl, ScrollResponder, TableDateCell, TableDowCell, ViewApi, addMs, asCleanDays, asRoughMinutes, asRoughSeconds, buildClassNameNormalizer, buildHashFromArray, buildSegCompareObj, combineEventUis, compareByFieldSpec, compareByFieldSpecs, computeFallbackHeaderFormat, computeHeightAndMargins, computeSegDraggable, computeSegEndResizable, computeSegStartResizable, computeSmallestCellWidth, computeVisibleDayRange, createEventUi, diffDayAndTime, diffWholeDays, diffWholeWeeks, filterEventStoreDefs, filterHash, findDirectChildren, flexibleCompare, formatDate, formatRange, getEventClassNames, getSlotClassNames, getUnequalProps, globalLocales, globalPlugins, greatestDurationDenominator, guid, isInt, isPropsValid, listenBySelector, memoizeObjArg, mergeEventStores, padStart, parseBusinessHours, parseClassNames, parseFieldSpecs, parseMarker, preventDefault, rangesEqual, rangesIntersect, refineProps, removeExact, requestJson, setElSeg, sliceEvents, unpromisify, version */
+/* unused harmony exports BASE_OPTION_REFINERS, CalendarDataProvider, ContentHook, DateEnv, EventSourceApi, MountHook, NamedTimeZoneImpl, ScrollResponder, TableDateCell, TableDowCell, ViewApi, addMs, asCleanDays, asRoughMinutes, asRoughSeconds, buildClassNameNormalizer, buildHashFromArray, buildSegCompareObj, combineEventUis, compareByFieldSpec, compareByFieldSpecs, computeFallbackHeaderFormat, computeHeightAndMargins, computeSegDraggable, computeSegEndResizable, computeSegStartResizable, computeSmallestCellWidth, computeVisibleDayRange, createEventUi, diffDayAndTime, diffWholeDays, diffWholeWeeks, filterEventStoreDefs, filterHash, findDirectChildren, flexibleCompare, formatDate, formatRange, getEventClassNames, getSlotClassNames, getUnequalProps, globalLocales, globalPlugins, greatestDurationDenominator, guid, isInt, isPropsValid, joinSpans, listenBySelector, memoizeObjArg, mergeEventStores, padStart, parseBusinessHours, parseClassNames, parseFieldSpecs, parseMarker, preventDefault, rangesEqual, rangesIntersect, refineProps, removeExact, requestJson, setElSeg, sliceEvents, unpromisify, version */
 /* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main.css */ "./node_modules/@fullcalendar/common/main.css");
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _vdom_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./vdom.js */ "./node_modules/@fullcalendar/common/vdom.js");
 /*!
-FullCalendar v5.7.0
+FullCalendar v5.8.0
 Docs & License: https://fullcalendar.io/
 (c) 2021 Adam Shaw
 */
@@ -1003,7 +1004,7 @@ function parseObject(obj) {
         milliseconds: (obj.hours || obj.hour || 0) * 60 * 60 * 1000 + // hours
             (obj.minutes || obj.minute || 0) * 60 * 1000 + // minutes
             (obj.seconds || obj.second || 0) * 1000 + // seconds
-            (obj.milliseconds || obj.millisecond || obj.ms || 0),
+            (obj.milliseconds || obj.millisecond || obj.ms || 0), // ms
     };
     var weeks = obj.weeks || obj.week;
     if (weeks) {
@@ -2091,7 +2092,7 @@ function createEventUi(refined, context) {
         backgroundColor: refined.backgroundColor || refined.color || '',
         borderColor: refined.borderColor || refined.color || '',
         textColor: refined.textColor || '',
-        classNames: (refined.className || []).concat(refined.classNames || []),
+        classNames: (refined.className || []).concat(refined.classNames || []), // join singular and plural
     };
 }
 // TODO: prevent against problems with <2 args!
@@ -2573,7 +2574,7 @@ startOverride, endOverride) {
             });
         }
         return dateEnv.format(segStart, timeFormat, {
-            forcedTzo: startOverride ? null : eventInstance.forcedStartTzo,
+            forcedTzo: startOverride ? null : eventInstance.forcedStartTzo, // nooooo, same
         });
     }
     return '';
@@ -3039,7 +3040,7 @@ var CalendarApi = /** @class */ (function () {
         for (var _i = 1; _i < arguments.length; _i++) {
             args[_i - 1] = arguments[_i];
         }
-        (_a = this.currentDataManager.emitter).trigger.apply(_a, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArrays)([handlerName], args));
+        (_a = this.currentDataManager.emitter).trigger.apply(_a, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArray)([handlerName], args));
     };
     // View
     // -----------------------------------------------------------------------------------------------------------------
@@ -3241,7 +3242,7 @@ var CalendarApi = /** @class */ (function () {
             if (!currentData.eventStore.defs[def.defId]) {
                 this.dispatch({
                     type: 'ADD_EVENTS',
-                    eventStore: eventTupleToStore({ def: def, instance: instance }),
+                    eventStore: eventTupleToStore({ def: def, instance: instance }), // TODO: better util for two args?
                 });
                 this.triggerEventAdd(eventInput);
             }
@@ -3397,7 +3398,7 @@ var EventApi = /** @class */ (function () {
         else if (name === 'id') {
             val = EVENT_NON_DATE_REFINERS[name](val);
             this.mutate({
-                standardProps: { publicId: val },
+                standardProps: { publicId: val }, // hardcoded internal name
             });
         }
         else if (name in EVENT_NON_DATE_REFINERS) {
@@ -4213,7 +4214,7 @@ var RAW_EN_LOCALE = {
     code: 'en',
     week: {
         dow: 0,
-        doy: 4,
+        doy: 4, // 4 days need to be within the year to be considered the first week
     },
     direction: 'ltr',
     buttonText: {
@@ -4237,7 +4238,7 @@ function organizeRawLocales(explicitRawLocales) {
     var defaultCode = explicitRawLocales.length > 0 ? explicitRawLocales[0].code : 'en';
     var allRawLocales = globalLocales.concat(explicitRawLocales);
     var rawLocaleMap = {
-        en: RAW_EN_LOCALE,
+        en: RAW_EN_LOCALE, // necessary?
     };
     for (var _i = 0, allRawLocales_1 = allRawLocales; _i < allRawLocales_1.length; _i++) {
         var rawLocale = allRawLocales_1[_i];
@@ -4287,7 +4288,7 @@ function parseLocale(codeArg, codes, raw) {
 
 function formatDate(dateInput, options) {
     if (options === void 0) { options = {}; }
-    var dateEnv = buildDateEnv(options);
+    var dateEnv = buildDateEnv$1(options);
     var formatter = createFormatter(options);
     var dateMeta = dateEnv.createMarkerMeta(dateInput);
     if (!dateMeta) { // TODO: warning?
@@ -4298,7 +4299,7 @@ function formatDate(dateInput, options) {
     });
 }
 function formatRange(startInput, endInput, options) {
-    var dateEnv = buildDateEnv(typeof options === 'object' && options ? options : {}); // pass in if non-null object
+    var dateEnv = buildDateEnv$1(typeof options === 'object' && options ? options : {}); // pass in if non-null object
     var formatter = createFormatter(options);
     var startMeta = dateEnv.createMarkerMeta(startInput);
     var endMeta = dateEnv.createMarkerMeta(endInput);
@@ -4313,7 +4314,7 @@ function formatRange(startInput, endInput, options) {
     });
 }
 // TODO: more DRY and optimized
-function buildDateEnv(settings) {
+function buildDateEnv$1(settings) {
     var locale = buildLocale(settings.locale || 'en', organizeRawLocales([]).map); // TODO: don't hardcode 'en' everywhere
     return new DateEnv((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ timeZone: BASE_OPTION_DEFAULTS.timeZone, calendarSystem: 'gregory' }, settings), { locale: locale }));
 }
@@ -4324,7 +4325,7 @@ var DEF_DEFAULTS = {
     daysOfWeek: [1, 2, 3, 4, 5],
     display: 'inverse-background',
     classNames: 'fc-non-business',
-    groupId: '_businessHours',
+    groupId: '_businessHours', // so multiple defs get grouped
 };
 /*
 TODO: pass around as EventDefHash!!!
@@ -5717,7 +5718,7 @@ function buildViewSpec(viewDef, overrideConfigs, optionOverrides, dynamicOptionO
         buttonTextDefault: queryButtonText(localeDefaults) ||
             viewDef.defaults.buttonText ||
             queryButtonText(BASE_OPTION_DEFAULTS) ||
-            viewDef.type,
+            viewDef.type, // fall back to given view name
     };
 }
 // hack to get memoization working
@@ -5807,6 +5808,7 @@ var DateProfileGenerator = /** @class */ (function () {
             isValid: isValid,
             // how far the current date will move for a prev/next operation
             dateIncrement: this.buildDateIncrement(currentInfo.duration),
+            // pass a fallback (might be null) ^
         };
     };
     // Builds an object with optional start/end properties.
@@ -6065,12 +6067,7 @@ function reduceDateProfile(currentDateProfile, action, currentDate, dateProfileG
         case 'CHANGE_VIEW_TYPE':
             return dateProfileGenerator.build(action.dateMarker || currentDate);
         case 'CHANGE_DATE':
-            if (!currentDateProfile.activeRange ||
-                !rangeContainsMarker(currentDateProfile.currentRange, action.dateMarker) // don't move if date already in view
-            ) {
-                return dateProfileGenerator.build(action.dateMarker);
-            }
-            break;
+            return dateProfileGenerator.build(action.dateMarker);
         case 'PREV':
             dp = dateProfileGenerator.buildPrev(currentDateProfile, currentDate);
             if (dp.isValid) {
@@ -6470,7 +6467,7 @@ function parseSection(sectionStr, calendarOptions, calendarOptionOverrides, them
     })); });
 }
 
-var eventSourceDef = {
+var eventSourceDef$2 = {
     ignoreRange: true,
     parseMeta: function (refined) {
         if (Array.isArray(refined.events)) {
@@ -6485,7 +6482,7 @@ var eventSourceDef = {
     },
 };
 var arrayEventSourcePlugin = createPlugin({
-    eventSourceDefs: [eventSourceDef],
+    eventSourceDefs: [eventSourceDef$2],
 });
 
 var eventSourceDef$1 = {
@@ -6569,7 +6566,7 @@ var JSON_FEED_EVENT_SOURCE_REFINERS = {
     timeZoneParam: String,
 };
 
-var eventSourceDef$2 = {
+var eventSourceDef = {
     parseMeta: function (refined) {
         if (refined.url && (refined.format === 'json' || !refined.format)) {
             return {
@@ -6596,7 +6593,7 @@ var eventSourceDef$2 = {
 };
 var jsonFeedEventSourcePlugin = createPlugin({
     eventSourceRefiners: JSON_FEED_EVENT_SOURCE_REFINERS,
-    eventSourceDefs: [eventSourceDef$2],
+    eventSourceDefs: [eventSourceDef],
 });
 function buildRequestParams(meta, range, context) {
     var dateEnv = context.dateEnv, options = context.options;
@@ -6664,7 +6661,7 @@ var recurring = {
             return {
                 allDayGuess: Boolean(!refined.startTime && !refined.endTime),
                 duration: duration,
-                typeData: recurringData,
+                typeData: recurringData, // doesn't need endTime anymore but oh well
             };
         }
         return null;
@@ -6958,7 +6955,7 @@ var CalendarDataManager = /** @class */ (function () {
         this.organizeRawLocales = memoize(organizeRawLocales);
         this.buildLocale = memoize(buildLocale);
         this.buildPluginHooks = buildBuildPluginHooks();
-        this.buildDateEnv = memoize(buildDateEnv$1);
+        this.buildDateEnv = memoize(buildDateEnv);
         this.buildTheme = memoize(buildTheme);
         this.parseToolbars = memoize(parseToolbars);
         this.buildViewSpecs = memoize(buildViewSpecs);
@@ -7074,7 +7071,9 @@ var CalendarDataManager = /** @class */ (function () {
         }
         currentDate = reduceCurrentDate(currentDate, action);
         dateProfile = reduceDateProfile(dateProfile, action, currentDate, currentViewData.dateProfileGenerator);
-        if (!rangeContainsMarker(dateProfile.currentRange, currentDate)) {
+        if (action.type === 'PREV' || // TODO: move this logic into DateProfileGenerator
+            action.type === 'NEXT' || // "
+            !rangeContainsMarker(dateProfile.currentRange, currentDate)) {
             currentDate = dateProfile.currentRange.start;
         }
         var eventSources = reduceEventSources(state.eventSources, action, dateProfile, calendarContext);
@@ -7295,7 +7294,7 @@ var CalendarDataManager = /** @class */ (function () {
     };
     return CalendarDataManager;
 }());
-function buildDateEnv$1(timeZone, explicitLocale, weekNumberCalculation, firstDay, weekText, pluginHooks, availableLocaleData, defaultSeparator) {
+function buildDateEnv(timeZone, explicitLocale, weekNumberCalculation, firstDay, weekText, pluginHooks, availableLocaleData, defaultSeparator) {
     var locale = buildLocale(explicitLocale || availableLocaleData.defaultCode, availableLocaleData.map);
     return new DateEnv({
         calendarSystem: 'gregory',
@@ -7348,6 +7347,7 @@ function buildViewUiProps(calendarContext) {
             borderColor: options.eventBorderColor,
             textColor: options.eventTextColor,
             color: options.eventColor,
+            // classNames: options.eventClassNames // render hook will handle this
         }, calendarContext),
         selectionConfig: createEventUi({
             constraint: options.selectConstraint,
@@ -7435,16 +7435,11 @@ var SegHierarchy = /** @class */ (function () {
         this.entriesByLevel = []; // parallel with levelCoords
         this.stackCnts = {}; // TODO: use better technique!?
     }
-    SegHierarchy.prototype.addSegs = function (segInputs) {
+    SegHierarchy.prototype.addSegs = function (inputs) {
         var hiddenEntries = [];
-        for (var _i = 0, segInputs_1 = segInputs; _i < segInputs_1.length; _i++) {
-            var segInput = segInputs_1[_i];
-            this.insertEntry({
-                segInput: segInput,
-                spanStart: segInput.spanStart,
-                spanEnd: segInput.spanEnd,
-                thickness: segInput.thickness,
-            }, hiddenEntries);
+        for (var _i = 0, inputs_1 = inputs; _i < inputs_1.length; _i++) {
+            var input = inputs_1[_i];
+            this.insertEntry(input, hiddenEntries);
         }
         return hiddenEntries;
     };
@@ -7460,6 +7455,7 @@ var SegHierarchy = /** @class */ (function () {
         return (this.maxCoord === -1 || insertion.levelCoord + entry.thickness <= this.maxCoord) &&
             (this.maxStackCnt === -1 || insertion.stackCnt < this.maxStackCnt);
     };
+    // returns number of new entries inserted
     SegHierarchy.prototype.handleInvalidInsertion = function (insertion, entry, hiddenEntries) {
         if (this.allowReslicing && insertion.touchingEntry) {
             return this.splitEntry(entry, insertion.touchingEntry, hiddenEntries);
@@ -7470,72 +7466,97 @@ var SegHierarchy = /** @class */ (function () {
     SegHierarchy.prototype.splitEntry = function (entry, barrier, hiddenEntries) {
         var partCnt = 0;
         var splitHiddenEntries = [];
-        if (entry.spanStart < barrier.spanStart) {
-            partCnt += this.insertEntry((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({}, entry), { spanStart: entry.spanStart, spanEnd: barrier.spanStart }), splitHiddenEntries);
+        var entrySpan = entry.span;
+        var barrierSpan = barrier.span;
+        if (entrySpan.start < barrierSpan.start) {
+            partCnt += this.insertEntry({
+                index: entry.index,
+                thickness: entry.thickness,
+                span: { start: entrySpan.start, end: barrierSpan.start },
+            }, splitHiddenEntries);
         }
-        if (barrier.spanEnd < entry.spanEnd) {
-            partCnt += this.insertEntry((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({}, entry), { spanStart: barrier.spanEnd, spanEnd: entry.spanEnd }), splitHiddenEntries);
+        if (entrySpan.end > barrierSpan.end) {
+            partCnt += this.insertEntry({
+                index: entry.index,
+                thickness: entry.thickness,
+                span: { start: barrierSpan.end, end: entrySpan.end },
+            }, splitHiddenEntries);
         }
         if (partCnt) {
-            hiddenEntries.push.apply(hiddenEntries, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArrays)([(0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({}, entry), { spanStart: Math.max(barrier.spanStart, entry.spanStart), spanEnd: Math.min(barrier.spanEnd, entry.spanEnd) })], splitHiddenEntries));
+            hiddenEntries.push.apply(hiddenEntries, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArray)([{
+                    index: entry.index,
+                    thickness: entry.thickness,
+                    span: intersectSpans(barrierSpan, entrySpan), // guaranteed to intersect
+                }], splitHiddenEntries));
             return partCnt;
         }
         hiddenEntries.push(entry);
         return 0;
     };
     SegHierarchy.prototype.insertEntryAt = function (entry, insertion) {
-        var nextLevel = insertion.nextLevel;
-        // create a new level
-        if (!nextLevel || this.levelCoords[nextLevel - 1] < insertion.levelCoord) {
-            insertAt(this.levelCoords, nextLevel, insertion.levelCoord);
-            insertAt(this.entriesByLevel, nextLevel, [entry]);
-            // insert into existing level
+        var _a = this, entriesByLevel = _a.entriesByLevel, levelCoords = _a.levelCoords;
+        var destLevel = insertion.level;
+        if (destLevel >= levelCoords.length || // level doesn't exist yet
+            levelCoords[destLevel] > insertion.levelCoord // destLevel needs to be pushed forward to make way
+        ) {
+            // create a new level
+            insertAt(levelCoords, destLevel, insertion.levelCoord);
+            insertAt(entriesByLevel, destLevel, [entry]);
         }
         else {
-            insertAt(this.entriesByLevel[nextLevel - 1], insertion.lateralEnd, entry);
+            // insert into existing level
+            insertAt(entriesByLevel[destLevel], insertion.lateralEnd, entry);
         }
         this.stackCnts[buildEntryKey(entry)] = insertion.stackCnt;
     };
     SegHierarchy.prototype.findInsertion = function (newEntry) {
         var _a = this, levelCoords = _a.levelCoords, entriesByLevel = _a.entriesByLevel, stackCnts = _a.stackCnts, strictOrder = _a.strictOrder;
         var levelCnt = levelCoords.length;
-        var level; // running value while iterating all segs
-        var levelCoord; // "
-        var lateralStart = 0; // "
-        var lateralEnd = 0; // "
-        var resCoord = 0; // the levelCoord for newSeg
-        var touchingEntry = null;
-        for (level = 0; level < levelCnt; level += 1) {
-            levelCoord = levelCoords[level];
-            // if the current level is past the placed entry, we have found a good
-            // empty space and can stop. only if not strict-ordering mode.
-            if (!strictOrder && levelCoord >= resCoord + newEntry.thickness) {
+        var resLevelCoord = 0;
+        var resLevel = 0;
+        var lateralStart = 0;
+        var lateralEnd = 0;
+        var touchingLevel = -1;
+        var touchingEntry = null; // last touch entry
+        for (var level = 0; level < levelCnt; level += 1) {
+            var levelCoord = levelCoords[level];
+            // if the current level is past the placed entry, we have found a good empty space and can stop.
+            // if strictOrder, keep finding more lateral intersections.
+            if (!strictOrder && levelCoord >= resLevelCoord + newEntry.thickness) {
                 break;
             }
             var entries = entriesByLevel[level];
             var entry = void 0;
-            var searchRes = binarySearch(entries, newEntry.spanStart, getEntrySpanEnd);
+            var searchRes = binarySearch(entries, newEntry.span.start, getEntrySpanEnd);
             lateralStart = searchRes[0] + searchRes[1]; // if exact match (which doesn't collide), go to next one
-            lateralEnd = lateralStart;
+            lateralEnd = lateralStart; // also functions as a moving index
             while ( // loop through entries that horizontally intersect
             (entry = entries[lateralEnd]) && // but not past the whole entry list
-                entry.spanStart < newEntry.spanEnd) {
-                if (strictOrder ||
+                entry.span.start < newEntry.span.end // and not entirely past newEntry
+            ) {
+                if (strictOrder || // strict-mode doesn't care about vert intersection. record touch and keep pushing down
                     ( // vertically intersects?
-                    resCoord < levelCoord + entry.thickness &&
-                        resCoord + newEntry.thickness > levelCoord)) {
+                    resLevelCoord < levelCoord + entry.thickness &&
+                        resLevelCoord + newEntry.thickness > levelCoord)) {
                     // push down the potential destination
+                    resLevelCoord = levelCoord + entry.thickness; // move to bottom of colliding entry
+                    touchingLevel = level;
                     touchingEntry = entry;
-                    resCoord = levelCoord + entry.thickness; // move to bottom of colliding entry
                 }
                 lateralEnd += 1;
             }
+            // regardless of whether there were collisions in the current level,
+            // keep updating the final-destination level until it goes past the final-destination coord.
+            if (levelCoord < resLevelCoord) {
+                resLevel = level + 1;
+            }
         }
         return {
-            levelCoord: resCoord,
-            nextLevel: level,
+            level: resLevel,
+            levelCoord: resLevelCoord,
             lateralStart: lateralStart,
             lateralEnd: lateralEnd,
+            touchingLevel: touchingLevel,
             touchingEntry: touchingEntry,
             stackCnt: touchingEntry ? stackCnts[buildEntryKey(touchingEntry)] + 1 : 0,
         };
@@ -7558,10 +7579,10 @@ var SegHierarchy = /** @class */ (function () {
     return SegHierarchy;
 }());
 function getEntrySpanEnd(entry) {
-    return entry.spanEnd;
+    return entry.span.end;
 }
 function buildEntryKey(entry) {
-    return entry.segInput.index + ':' + entry.spanStart;
+    return entry.index + ':' + entry.span.start;
 }
 // returns groups with entries sorted by input order
 function groupIntersectingEntries(entries) {
@@ -7570,17 +7591,15 @@ function groupIntersectingEntries(entries) {
         var entry = entries_2[_i];
         var filteredMerges = [];
         var hungryMerge = {
-            spanStart: entry.spanStart,
-            spanEnd: entry.spanEnd,
+            span: entry.span,
             entries: [entry],
         };
         for (var _a = 0, merges_1 = merges; _a < merges_1.length; _a++) {
             var merge = merges_1[_a];
-            if (merge.spanStart < hungryMerge.spanEnd && merge.spanEnd > hungryMerge.spanStart) { // collides?
+            if (intersectSpans(merge.span, hungryMerge.span)) {
                 hungryMerge = {
-                    spanStart: Math.min(merge.spanStart, hungryMerge.spanStart),
-                    spanEnd: Math.max(merge.spanEnd, hungryMerge.spanEnd),
                     entries: merge.entries.concat(hungryMerge.entries),
+                    span: joinSpans(merge.span, hungryMerge.span),
                 };
             }
             else {
@@ -7591,6 +7610,20 @@ function groupIntersectingEntries(entries) {
         merges = filteredMerges;
     }
     return merges;
+}
+function joinSpans(span0, span1) {
+    return {
+        start: Math.min(span0.start, span1.start),
+        end: Math.max(span0.end, span1.end),
+    };
+}
+function intersectSpans(span0, span1) {
+    var start = Math.max(span0.start, span1.start);
+    var end = Math.min(span0.end, span1.end);
+    if (start < end) {
+        return { start: start, end: end };
+    }
+    return null;
 }
 // general util
 // ---------------------------------------------------------------------------------------------------------------------
@@ -7712,7 +7745,7 @@ var ToolbarSection = /** @class */ (function (_super) {
     ToolbarSection.prototype.render = function () {
         var _this = this;
         var children = this.props.widgetGroups.map(function (widgetGroup) { return _this.renderWidgetGroup(widgetGroup); });
-        return _vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement.apply(void 0, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArrays)(['div', { className: 'fc-toolbar-chunk' }], children));
+        return _vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement.apply(void 0, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArray)(['div', { className: 'fc-toolbar-chunk' }], children));
     };
     ToolbarSection.prototype.renderWidgetGroup = function (widgetGroup) {
         var props = this.props;
@@ -7740,7 +7773,7 @@ var ToolbarSection = /** @class */ (function (_super) {
         }
         if (children.length > 1) {
             var groupClassName = (isOnlyButtons && theme.getClass('buttonGroup')) || '';
-            return _vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement.apply(void 0, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArrays)(['div', { className: groupClassName }], children));
+            return _vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement.apply(void 0, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArray)(['div', { className: groupClassName }], children));
         }
         return children[0];
     };
@@ -7814,7 +7847,7 @@ var ViewContainer = /** @class */ (function (_super) {
             'fc-view-harness',
             (aspectRatio || props.liquid || props.height)
                 ? 'fc-view-harness-active' // harness controls the height
-                : 'fc-view-harness-passive',
+                : 'fc-view-harness-passive', // let the view do the height
         ];
         var height = '';
         var paddingBottom = '';
@@ -8063,7 +8096,7 @@ var CalendarContent = /** @class */ (function (_super) {
     CalendarContent.prototype.buildAppendContent = function () {
         var props = this.props;
         var children = props.pluginHooks.viewContainerAppends.map(function (buildAppendContent) { return buildAppendContent(props); });
-        return _vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement.apply(void 0, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArrays)([_vdom_js__WEBPACK_IMPORTED_MODULE_1__.Fragment, {}], children));
+        return _vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement.apply(void 0, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArray)([_vdom_js__WEBPACK_IMPORTED_MODULE_1__.Fragment, {}], children));
     };
     CalendarContent.prototype.renderView = function (props) {
         var pluginHooks = props.pluginHooks;
@@ -8168,7 +8201,7 @@ function computeFallbackHeaderFormat(datesRepDistinctDays, dayCnt) {
 }
 
 var CLASS_NAME = 'fc-col-header-cell'; // do the cushion too? no
-function renderInner(hookProps) {
+function renderInner$1(hookProps) {
     return hookProps.text;
 }
 
@@ -8189,7 +8222,7 @@ var TableDateCell = /** @class */ (function (_super) {
             ? { 'data-navlink': buildNavLinkData(date), tabIndex: 0 }
             : {};
         var hookProps = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ date: dateEnv.toDate(date), view: viewApi }, props.extraHookProps), { text: text }), dayMeta);
-        return ((0,_vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement)(RenderHook, { hookProps: hookProps, classNames: options.dayHeaderClassNames, content: options.dayHeaderContent, defaultContent: renderInner, didMount: options.dayHeaderDidMount, willUnmount: options.dayHeaderWillUnmount }, function (rootElRef, customClassNames, innerElRef, innerContent) { return ((0,_vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement)("th", (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ ref: rootElRef, className: classNames.concat(customClassNames).join(' '), "data-date": !dayMeta.isDisabled ? formatDayString(date) : undefined, colSpan: props.colSpan }, props.extraDataAttrs),
+        return ((0,_vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement)(RenderHook, { hookProps: hookProps, classNames: options.dayHeaderClassNames, content: options.dayHeaderContent, defaultContent: renderInner$1, didMount: options.dayHeaderDidMount, willUnmount: options.dayHeaderWillUnmount }, function (rootElRef, customClassNames, innerElRef, innerContent) { return ((0,_vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement)("th", (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ ref: rootElRef, className: classNames.concat(customClassNames).join(' '), "data-date": !dayMeta.isDisabled ? formatDayString(date) : undefined, colSpan: props.colSpan }, props.extraDataAttrs),
             (0,_vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", { className: "fc-scrollgrid-sync-inner" }, !dayMeta.isDisabled && ((0,_vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement)("a", (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ ref: innerElRef, className: [
                     'fc-col-header-cell-cushion',
                     props.isSticky ? 'fc-sticky' : '',
@@ -8219,7 +8252,7 @@ var TableDowCell = /** @class */ (function (_super) {
         var text = dateEnv.format(date, props.dayHeaderFormat);
         var hookProps = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ // TODO: make this public?
             date: date }, dateMeta), { view: viewApi }), props.extraHookProps), { text: text });
-        return ((0,_vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement)(RenderHook, { hookProps: hookProps, classNames: options.dayHeaderClassNames, content: options.dayHeaderContent, defaultContent: renderInner, didMount: options.dayHeaderDidMount, willUnmount: options.dayHeaderWillUnmount }, function (rootElRef, customClassNames, innerElRef, innerContent) { return ((0,_vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement)("th", (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ ref: rootElRef, className: classNames.concat(customClassNames).join(' '), colSpan: props.colSpan }, props.extraDataAttrs),
+        return ((0,_vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement)(RenderHook, { hookProps: hookProps, classNames: options.dayHeaderClassNames, content: options.dayHeaderContent, defaultContent: renderInner$1, didMount: options.dayHeaderDidMount, willUnmount: options.dayHeaderWillUnmount }, function (rootElRef, customClassNames, innerElRef, innerContent) { return ((0,_vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement)("th", (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ ref: rootElRef, className: classNames.concat(customClassNames).join(' '), colSpan: props.colSpan }, props.extraDataAttrs),
             (0,_vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", { className: "fc-scrollgrid-sync-inner" },
                 (0,_vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement)("a", { className: [
                         'fc-col-header-cell-cushion',
@@ -8463,14 +8496,14 @@ var Slicer = /** @class */ (function () {
             extraArgs[_i - 4] = arguments[_i];
         }
         var eventUiBases = props.eventUiBases;
-        var eventSegs = this.sliceEventStore.apply(this, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArrays)([props.eventStore, eventUiBases, dateProfile, nextDayThreshold], extraArgs));
+        var eventSegs = this.sliceEventStore.apply(this, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArray)([props.eventStore, eventUiBases, dateProfile, nextDayThreshold], extraArgs));
         return {
-            dateSelectionSegs: this.sliceDateSelection.apply(this, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArrays)([props.dateSelection, eventUiBases, context], extraArgs)),
-            businessHourSegs: this.sliceBusinessHours.apply(this, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArrays)([props.businessHours, dateProfile, nextDayThreshold, context], extraArgs)),
+            dateSelectionSegs: this.sliceDateSelection.apply(this, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArray)([props.dateSelection, eventUiBases, context], extraArgs)),
+            businessHourSegs: this.sliceBusinessHours.apply(this, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArray)([props.businessHours, dateProfile, nextDayThreshold, context], extraArgs)),
             fgEventSegs: eventSegs.fg,
             bgEventSegs: eventSegs.bg,
-            eventDrag: this.sliceEventDrag.apply(this, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArrays)([props.eventDrag, eventUiBases, dateProfile, nextDayThreshold], extraArgs)),
-            eventResize: this.sliceEventResize.apply(this, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArrays)([props.eventResize, eventUiBases, dateProfile, nextDayThreshold], extraArgs)),
+            eventDrag: this.sliceEventDrag.apply(this, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArray)([props.eventDrag, eventUiBases, dateProfile, nextDayThreshold], extraArgs)),
+            eventResize: this.sliceEventResize.apply(this, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArray)([props.eventResize, eventUiBases, dateProfile, nextDayThreshold], extraArgs)),
             eventSelection: props.eventSelection,
         }; // TODO: give interactionSegs?
     };
@@ -8480,7 +8513,7 @@ var Slicer = /** @class */ (function () {
         for (var _i = 2; _i < arguments.length; _i++) {
             extraArgs[_i - 2] = arguments[_i];
         }
-        return this._sliceDateSpan.apply(this, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArrays)([{ range: { start: date, end: addMs(date, 1) }, allDay: false },
+        return this._sliceDateSpan.apply(this, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArray)([{ range: { start: date, end: addMs(date, 1) }, allDay: false },
             {},
             context], extraArgs));
     };
@@ -8492,7 +8525,7 @@ var Slicer = /** @class */ (function () {
         if (!businessHours) {
             return [];
         }
-        return this._sliceEventStore.apply(this, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArrays)([expandRecurring(businessHours, computeActiveRange(dateProfile, Boolean(nextDayThreshold)), context),
+        return this._sliceEventStore.apply(this, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArray)([expandRecurring(businessHours, computeActiveRange(dateProfile, Boolean(nextDayThreshold)), context),
             {},
             dateProfile,
             nextDayThreshold], extraArgs)).bg;
@@ -8535,7 +8568,7 @@ var Slicer = /** @class */ (function () {
             return [];
         }
         var eventRange = fabricateEventRange(dateSpan, eventUiBases, context);
-        var segs = this.sliceRange.apply(this, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArrays)([dateSpan.range], extraArgs));
+        var segs = this.sliceRange.apply(this, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArray)([dateSpan.range], extraArgs));
         for (var _a = 0, segs_1 = segs; _a < segs_1.length; _a++) {
             var seg = segs_1[_a];
             seg.eventRange = eventRange;
@@ -8565,7 +8598,7 @@ var Slicer = /** @class */ (function () {
                 end: addDays(dateRange.start, 1),
             };
         }
-        var segs = this.sliceRange.apply(this, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArrays)([dateRange], extraArgs));
+        var segs = this.sliceRange.apply(this, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArray)([dateRange], extraArgs));
         for (var _i = 0, segs_2 = segs; _i < segs_2.length; _i++) {
             var seg = segs_2[_i];
             seg.eventRange = eventRange;
@@ -8588,7 +8621,7 @@ function computeActiveRange(dateProfile, isComponentAllDay) {
     }
     return {
         start: addMs(range.start, dateProfile.slotMinTime.milliseconds),
-        end: addMs(range.end, dateProfile.slotMaxTime.milliseconds - 864e5),
+        end: addMs(range.end, dateProfile.slotMaxTime.milliseconds - 864e5), // 864e5 = ms in a day
     };
 }
 
@@ -8959,7 +8992,7 @@ function renderChunkContent(sectionConfig, chunkConfig, arg) {
             style: {
                 minWidth: arg.tableMinWidth,
                 width: arg.clientWidth,
-                height: expandRows ? arg.clientHeight : '',
+                height: expandRows ? arg.clientHeight : '', // css `height` on a <table> serves as a min-height
             },
         }, arg.tableColGroupNode, (0,_vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement)('tbody', {}, typeof chunkConfig.rowContent === 'function' ? chunkConfig.rowContent(arg) : chunkConfig.rowContent));
     return content;
@@ -8984,7 +9017,7 @@ function renderMicroColGroup(cols, shrinkWidth) {
                 } }));
         }
     }
-    return _vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement.apply(void 0, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArrays)(['colgroup', {}], colNodes));
+    return _vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement.apply(void 0, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArray)(['colgroup', {}], colNodes));
 }
 function sanitizeShrinkWidth(shrinkWidth) {
     /* why 4? if we do 0, it will kill any border, which are needed for computeSmallestCellWidth
@@ -9014,7 +9047,7 @@ function getSectionClassNames(sectionConfig, wholeTableVGrow) {
     var classNames = [
         'fc-scrollgrid-section',
         "fc-scrollgrid-section-" + sectionConfig.type,
-        sectionConfig.className,
+        sectionConfig.className, // used?
     ];
     if (wholeTableVGrow && sectionConfig.liquid && sectionConfig.maxHeight == null) {
         classNames.push('fc-scrollgrid-section-liquid');
@@ -9102,7 +9135,7 @@ var SimpleScrollGrid = /** @class */ (function (_super) {
         return (0,_vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement)('table', {
             className: classNames.join(' '),
             style: { height: props.height },
-        }, Boolean(!isBuggy && headSectionNodes.length) && _vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement.apply(void 0, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArrays)(['thead', {}], headSectionNodes)), Boolean(!isBuggy && bodySectionNodes.length) && _vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement.apply(void 0, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArrays)(['tbody', {}], bodySectionNodes)), Boolean(!isBuggy && footSectionNodes.length) && _vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement.apply(void 0, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArrays)(['tfoot', {}], footSectionNodes)), isBuggy && _vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement.apply(void 0, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArrays)(['tbody', {}], headSectionNodes, bodySectionNodes, footSectionNodes)));
+        }, Boolean(!isBuggy && headSectionNodes.length) && _vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement.apply(void 0, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArray)(['thead', {}], headSectionNodes)), Boolean(!isBuggy && bodySectionNodes.length) && _vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement.apply(void 0, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArray)(['tbody', {}], bodySectionNodes)), Boolean(!isBuggy && footSectionNodes.length) && _vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement.apply(void 0, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArray)(['tfoot', {}], footSectionNodes)), isBuggy && _vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement.apply(void 0, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArray)((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArray)((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArray)(['tbody', {}], headSectionNodes), bodySectionNodes), footSectionNodes)));
     };
     SimpleScrollGrid.prototype.renderSection = function (sectionConfig, microColGroupNode) {
         if ('outerContent' in sectionConfig) {
@@ -9267,7 +9300,7 @@ var StandardEvent = /** @class */ (function (_super) {
         var seg = props.seg;
         var timeFormat = context.options.eventTimeFormat || props.defaultTimeFormat;
         var timeText = buildSegTimeText(seg, timeFormat, context, props.defaultDisplayEventTime, props.defaultDisplayEventEnd);
-        return ((0,_vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement)(EventRoot, { seg: seg, timeText: timeText, disableDragging: props.disableDragging, disableResizing: props.disableResizing, defaultContent: props.defaultContent || renderInnerContent, isDragging: props.isDragging, isResizing: props.isResizing, isDateSelecting: props.isDateSelecting, isSelected: props.isSelected, isPast: props.isPast, isFuture: props.isFuture, isToday: props.isToday }, function (rootElRef, classNames, innerElRef, innerContent, hookProps) { return ((0,_vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement)("a", (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ className: props.extraClassNames.concat(classNames).join(' '), style: {
+        return ((0,_vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement)(EventRoot, { seg: seg, timeText: timeText, disableDragging: props.disableDragging, disableResizing: props.disableResizing, defaultContent: props.defaultContent || renderInnerContent$1, isDragging: props.isDragging, isResizing: props.isResizing, isDateSelecting: props.isDateSelecting, isSelected: props.isSelected, isPast: props.isPast, isFuture: props.isFuture, isToday: props.isToday }, function (rootElRef, classNames, innerElRef, innerContent, hookProps) { return ((0,_vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement)("a", (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({ className: props.extraClassNames.concat(classNames).join(' '), style: {
                 borderColor: hookProps.borderColor,
                 backgroundColor: hookProps.backgroundColor,
             }, ref: rootElRef }, getSegAnchorAttrs(seg)),
@@ -9279,7 +9312,7 @@ var StandardEvent = /** @class */ (function (_super) {
     };
     return StandardEvent;
 }(BaseComponent));
-function renderInnerContent(innerProps) {
+function renderInnerContent$1(innerProps) {
     return ((0,_vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", { className: "fc-event-main-frame" },
         innerProps.timeText && ((0,_vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", { className: "fc-event-time" }, innerProps.timeText)),
         (0,_vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", { className: "fc-event-title-container" },
@@ -9362,10 +9395,10 @@ var DayCellRoot = /** @class */ (function (_super) {
 function renderFill(fillType) {
     return ((0,_vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", { className: "fc-" + fillType }));
 }
-var BgEvent = function (props) { return ((0,_vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement)(EventRoot, { defaultContent: renderInnerContent$1, seg: props.seg /* uselesss i think */, timeText: "", disableDragging: true, disableResizing: true, isDragging: false, isResizing: false, isDateSelecting: false, isSelected: false, isPast: props.isPast, isFuture: props.isFuture, isToday: props.isToday }, function (rootElRef, classNames, innerElRef, innerContent, hookProps) { return ((0,_vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", { ref: rootElRef, className: ['fc-bg-event'].concat(classNames).join(' '), style: {
+var BgEvent = function (props) { return ((0,_vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement)(EventRoot, { defaultContent: renderInnerContent, seg: props.seg /* uselesss i think */, timeText: "", disableDragging: true, disableResizing: true, isDragging: false, isResizing: false, isDateSelecting: false, isSelected: false, isPast: props.isPast, isFuture: props.isFuture, isToday: props.isToday }, function (rootElRef, classNames, innerElRef, innerContent, hookProps) { return ((0,_vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", { ref: rootElRef, className: ['fc-bg-event'].concat(classNames).join(' '), style: {
         backgroundColor: hookProps.backgroundColor,
     } }, innerContent)); })); };
-function renderInnerContent$1(props) {
+function renderInnerContent(props) {
     var title = props.event.title;
     return title && ((0,_vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", { className: "fc-event-title" }, props.event.title));
 }
@@ -9377,9 +9410,9 @@ var WeekNumberRoot = function (props) { return ((0,_vdom_js__WEBPACK_IMPORTED_MO
     var num = dateEnv.computeWeekNumber(date); // TODO: somehow use for formatting as well?
     var text = dateEnv.format(date, format);
     var hookProps = { num: num, text: text, date: date };
-    return ((0,_vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement)(RenderHook, { hookProps: hookProps, classNames: options.weekNumberClassNames, content: options.weekNumberContent, defaultContent: renderInner$1, didMount: options.weekNumberDidMount, willUnmount: options.weekNumberWillUnmount }, props.children));
+    return ((0,_vdom_js__WEBPACK_IMPORTED_MODULE_1__.createElement)(RenderHook, { hookProps: hookProps, classNames: options.weekNumberClassNames, content: options.weekNumberContent, defaultContent: renderInner, didMount: options.weekNumberDidMount, willUnmount: options.weekNumberWillUnmount }, props.children));
 })); };
-function renderInner$1(innerProps) {
+function renderInner(innerProps) {
     return innerProps.text;
 }
 
@@ -9501,7 +9534,7 @@ var MorePopover = /** @class */ (function (_super) {
                     right: elWidth,
                     bottom: elHeight,
                 },
-                layer: 1,
+                layer: 1, // important when comparing with hits from other components
             };
         }
         return null;
@@ -9618,7 +9651,7 @@ function pickLatestEnd(seg0, seg1) {
 
 // exports
 // --------------------------------------------------------------------------------------------------
-var version = '5.7.0'; // important to type it, so .d.ts has generic string
+var version = '5.8.0'; // important to type it, so .d.ts has generic string
 
 
 //# sourceMappingURL=main.js.map
@@ -9656,6 +9689,7 @@ var createContext = FullCalendarVDom.createContext;
 var createPortal = FullCalendarVDom.createPortal;
 var flushToDom = FullCalendarVDom.flushToDom;
 var unmountComponentAtNode = FullCalendarVDom.unmountComponentAtNode;
+/* eslint-enable */
 
 
 
@@ -9675,7 +9709,7 @@ var unmountComponentAtNode = FullCalendarVDom.unmountComponentAtNode;
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fullcalendar/common */ "./node_modules/@fullcalendar/common/main.js");
 /*!
-FullCalendar v5.7.0
+FullCalendar v5.8.0
 Docs & License: https://fullcalendar.io/
 (c) 2021 Adam Shaw
 */
@@ -9843,7 +9877,7 @@ function flushToDom() {
         callbackQ.push(callback);
     }
     preact__WEBPACK_IMPORTED_MODULE_0__.options.debounceRendering = execCallbackSync;
-    (0,preact__WEBPACK_IMPORTED_MODULE_0__.render)((0,preact__WEBPACK_IMPORTED_MODULE_0__.createElement)(FakeComponent, {}), document.createElement('div'));
+    preact__WEBPACK_IMPORTED_MODULE_0__.render(preact__WEBPACK_IMPORTED_MODULE_0__.createElement(FakeComponent, {}), document.createElement('div'));
     while (callbackQ.length) {
         callbackQ.shift()();
     }
@@ -9854,12 +9888,12 @@ var FakeComponent = /** @class */ (function (_super) {
     function FakeComponent() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    FakeComponent.prototype.render = function () { return (0,preact__WEBPACK_IMPORTED_MODULE_0__.createElement)('div', {}); };
+    FakeComponent.prototype.render = function () { return preact__WEBPACK_IMPORTED_MODULE_0__.createElement('div', {}); };
     FakeComponent.prototype.componentDidMount = function () { this.setState({}); };
     return FakeComponent;
 }(preact__WEBPACK_IMPORTED_MODULE_0__.Component));
 function createContext(defaultValue) {
-    var ContextType = (0,preact__WEBPACK_IMPORTED_MODULE_0__.createContext)(defaultValue);
+    var ContextType = preact__WEBPACK_IMPORTED_MODULE_0__.createContext(defaultValue);
     var origProvider = ContextType.Provider;
     ContextType.Provider = function () {
         var _this = this;
@@ -9889,7 +9923,7 @@ function createContext(defaultValue) {
     return ContextType;
 }
 function unmountComponentAtNode(node) {
-    (0,preact__WEBPACK_IMPORTED_MODULE_0__.render)(null, node);
+    preact__WEBPACK_IMPORTED_MODULE_0__.render(null, node);
 }
 
 
@@ -9910,7 +9944,7 @@ function unmountComponentAtNode(node) {
 /* harmony import */ var _fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fullcalendar/common */ "./node_modules/@fullcalendar/common/main.js");
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /*!
-FullCalendar v5.7.0
+FullCalendar v5.8.0
 Docs & License: https://fullcalendar.io/
 (c) 2021 Adam Shaw
 */
@@ -10215,9 +10249,11 @@ dayMaxEvents, dayMaxEventRows, strictOrder, eventInstanceHeights, maxContentHeig
         if (eventHeight != null) {
             segInputs.push({
                 index: i,
-                spanStart: seg.firstCol,
-                spanEnd: seg.lastCol + 1,
                 thickness: eventHeight,
+                span: {
+                    start: seg.firstCol,
+                    end: seg.lastCol + 1,
+                },
             });
         }
         else {
@@ -10255,15 +10291,16 @@ dayMaxEvents, dayMaxEventRows, strictOrder, eventInstanceHeights, maxContentHeig
     }
     for (var _b = 0, hiddenEntries_1 = hiddenEntries; _b < hiddenEntries_1.length; _b++) {
         var hiddenEntry = hiddenEntries_1[_b];
-        var seg = segs[hiddenEntry.segInput.index];
-        multiColPlacements[hiddenEntry.spanStart].push({
-            seg: seg,
+        var seg = segs[hiddenEntry.index];
+        var hiddenSpan = hiddenEntry.span;
+        multiColPlacements[hiddenSpan.start].push({
+            seg: resliceSeg(seg, hiddenSpan.start, hiddenSpan.end, cells),
             isVisible: false,
             isAbsolute: true,
             absoluteTop: 0,
             marginTop: 0,
         });
-        for (var col = hiddenEntry.spanStart; col < hiddenEntry.spanEnd; col += 1) {
+        for (var col = hiddenSpan.start; col < hiddenSpan.end; col += 1) {
             moreCnts[col] += 1;
             singleColPlacements[col].push({
                 seg: resliceSeg(seg, col, col + 1, cells),
@@ -10294,7 +10331,7 @@ function placeRects(allRects, segs, cells) {
         var currentMarginTop = 0;
         for (var _i = 0, rects_1 = rects; _i < rects_1.length; _i++) {
             var rect = rects_1[_i];
-            var seg = segs[rect.segInput.index];
+            var seg = segs[rect.index];
             singlePlacements.push({
                 seg: resliceSeg(seg, col, col + 1, cells),
                 isVisible: true,
@@ -10310,16 +10347,16 @@ function placeRects(allRects, segs, cells) {
         currentMarginTop = 0;
         for (var _a = 0, rects_2 = rects; _a < rects_2.length; _a++) {
             var rect = rects_2[_a];
-            var seg = segs[rect.segInput.index];
-            var isAbsolute = rect.spanEnd - rect.spanStart > 1; // multi-column?
-            var isFirstCol = rect.spanStart === col;
+            var seg = segs[rect.index];
+            var isAbsolute = rect.span.end - rect.span.start > 1; // multi-column?
+            var isFirstCol = rect.span.start === col;
             currentMarginTop += rect.levelCoord - currentHeight; // amount of space since bottom of previous seg
             currentHeight = rect.levelCoord + rect.thickness; // height will now be bottom of current seg
             if (isAbsolute) {
                 currentMarginTop += rect.thickness;
                 if (isFirstCol) {
                     multiPlacements.push({
-                        seg: resliceSeg(seg, rect.spanStart, rect.spanEnd, cells),
+                        seg: resliceSeg(seg, rect.span.start, rect.span.end, cells),
                         isVisible: true,
                         isAbsolute: true,
                         absoluteTop: rect.levelCoord,
@@ -10329,11 +10366,11 @@ function placeRects(allRects, segs, cells) {
             }
             else if (isFirstCol) {
                 multiPlacements.push({
-                    seg: resliceSeg(seg, rect.spanStart, rect.spanEnd, cells),
+                    seg: resliceSeg(seg, rect.span.start, rect.span.end, cells),
                     isVisible: true,
                     isAbsolute: false,
                     absoluteTop: 0,
-                    marginTop: currentMarginTop,
+                    marginTop: currentMarginTop, // claim the margin
                 });
                 currentMarginTop = 0;
             }
@@ -10351,7 +10388,7 @@ function groupRectsByEachCol(rects, colCnt) {
     }
     for (var _i = 0, rects_3 = rects; _i < rects_3.length; _i++) {
         var rect = rects_3[_i];
-        for (var col = rect.spanStart; col < rect.spanEnd; col += 1) {
+        for (var col = rect.span.start; col < rect.span.end; col += 1) {
             rectsByEachCol[col].push(rect);
         }
     }
@@ -10397,17 +10434,17 @@ var DayGridSegHierarchy = /** @class */ (function (_super) {
     };
     DayGridSegHierarchy.prototype.handleInvalidInsertion = function (insertion, entry, hiddenEntries) {
         var _a = this, entriesByLevel = _a.entriesByLevel, forceHidden = _a.forceHidden;
-        var level = insertion.nextLevel - 1;
-        if (this.hiddenConsumes && level >= 0) {
+        var touchingLevel = insertion.touchingLevel;
+        if (this.hiddenConsumes && touchingLevel >= 0) {
             for (var lateral = insertion.lateralStart; lateral < insertion.lateralEnd; lateral += 1) {
-                var leadingEntry = entriesByLevel[level][lateral];
+                var leadingEntry = entriesByLevel[touchingLevel][lateral];
                 if (this.allowReslicing) {
-                    var placeholderEntry = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({}, leadingEntry), { spanStart: Math.max(leadingEntry.spanStart, entry.spanStart), spanEnd: Math.min(leadingEntry.spanEnd, entry.spanEnd) });
+                    var placeholderEntry = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__assign)({}, leadingEntry), { span: (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.intersectSpans)(leadingEntry.span, entry.span) });
                     var placeholderEntryId = (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.buildEntryKey)(placeholderEntry);
-                    if (!forceHidden[placeholderEntryId]) {
+                    if (!forceHidden[placeholderEntryId]) { // if not already hidden
                         forceHidden[placeholderEntryId] = true;
-                        entriesByLevel[level][lateral] = placeholderEntry;
-                        this.splitEntry(leadingEntry, entry, hiddenEntries); // split up the leadingEntry
+                        entriesByLevel[touchingLevel][lateral] = placeholderEntry; // replace leadingEntry with our placeholder
+                        this.splitEntry(leadingEntry, entry, hiddenEntries); // split up the leadingEntry, reinsert it
                     }
                 }
                 else {
@@ -10555,7 +10592,7 @@ var TableRow = /** @class */ (function (_super) {
                     (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.renderFill)(fillType)));
             }
         }
-        return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.createElement.apply(void 0, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArrays)([_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.Fragment, {}], nodes));
+        return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.createElement.apply(void 0, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArray)([_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.Fragment, {}], nodes));
     };
     TableRow.prototype.updateSizing = function (isExternalSizingChange) {
         var _a = this, props = _a.props, frameElRefs = _a.frameElRefs;
@@ -10677,7 +10714,7 @@ var Table = /** @class */ (function (_super) {
         var classNames = [
             'fc-daygrid-body',
             limitViaBalanced ? 'fc-daygrid-body-balanced' : 'fc-daygrid-body-unbalanced',
-            expandRows ? '' : 'fc-daygrid-body-natural',
+            expandRows ? '' : 'fc-daygrid-body-natural', // will height of one row depend on the others?
         ];
         return ((0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", { className: classNames.join(' '), ref: this.handleRootEl, style: {
                 // these props are important to give this wrapper correct dimensions for interactions
@@ -10873,7 +10910,7 @@ var main = (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.createPlugin)({
 /* harmony import */ var _fullcalendar_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fullcalendar/common */ "./node_modules/@fullcalendar/common/main.js");
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /*!
-FullCalendar v5.7.0
+FullCalendar v5.8.0
 Docs & License: https://fullcalendar.io/
 (c) 2021 Adam Shaw
 */
@@ -12019,7 +12056,7 @@ var DateSelecting = /** @class */ (function (_super) {
             // don't bother to watch expensive moves if component won't do selection
             dragging.setIgnoreMove(!canSelect);
             // if touch, require user to hold down
-            dragging.delay = ev.isTouch ? getComponentTouchDelay(component) : null;
+            dragging.delay = ev.isTouch ? getComponentTouchDelay$1(component) : null;
         };
         _this.handleDragStart = function (ev) {
             _this.component.context.calendarApi.unselect(ev); // unselect previous selections
@@ -12082,7 +12119,7 @@ var DateSelecting = /** @class */ (function (_super) {
     };
     return DateSelecting;
 }(_fullcalendar_common__WEBPACK_IMPORTED_MODULE_0__.Interaction));
-function getComponentTouchDelay(component) {
+function getComponentTouchDelay$1(component) {
     var options = component.context.options;
     var delay = options.selectLongPressDelay;
     if (delay == null) {
@@ -12144,7 +12181,7 @@ var EventDragging = /** @class */ (function (_super) {
             dragging.delay =
                 // only do a touch delay if touch and this event hasn't been selected yet
                 (ev.isTouch && eventInstanceId !== component.props.eventSelection) ?
-                    getComponentTouchDelay$1(component) :
+                    getComponentTouchDelay(component) :
                     null;
             if (options.fixedMirrorParent) {
                 mirror.parentNode = options.fixedMirrorParent;
@@ -12283,7 +12320,7 @@ var EventDragging = /** @class */ (function (_super) {
                             revert: function () {
                                 initialContext_1.dispatch({
                                     type: 'MERGE_EVENTS',
-                                    eventStore: relevantEvents_1,
+                                    eventStore: relevantEvents_1, // the pre-change data
                                 });
                             },
                         };
@@ -12448,7 +12485,7 @@ function computeEventMutation(hit0, hit1, massagers) {
     }
     return mutation;
 }
-function getComponentTouchDelay$1(component) {
+function getComponentTouchDelay(component) {
     var options = component.context.options;
     var delay = options.eventLongPressDelay;
     if (delay == null) {
@@ -12573,7 +12610,7 @@ var EventResizing = /** @class */ (function (_super) {
                     revert: function () {
                         context.dispatch({
                             type: 'MERGE_EVENTS',
-                            eventStore: relevantEvents,
+                            eventStore: relevantEvents, // the pre-change events
                         });
                     },
                 };
@@ -13047,7 +13084,7 @@ var main = (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_0__.createPlugin)({
 /* harmony import */ var _fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fullcalendar/common */ "./node_modules/@fullcalendar/common/main.js");
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /*!
-FullCalendar v5.7.0
+FullCalendar v5.8.0
 Docs & License: https://fullcalendar.io/
 (c) 2021 Adam Shaw
 */
@@ -13314,6 +13351,7 @@ var OPTION_REFINERS = {
     noEventsContent: _fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.identity,
     noEventsDidMount: _fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.identity,
     noEventsWillUnmount: _fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.identity,
+    // noEventsText is defined in base options
 };
 function createFalsableFormatter(input) {
     return input === false ? null : (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.createFormatter)(input);
@@ -13325,12 +13363,12 @@ var main = (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.createPlugin)({
         list: {
             component: ListView,
             buttonTextKey: 'list',
-            listDayFormat: { month: 'long', day: 'numeric', year: 'numeric' },
+            listDayFormat: { month: 'long', day: 'numeric', year: 'numeric' }, // like "January 1, 2016"
         },
         listDay: {
             type: 'list',
             duration: { days: 1 },
-            listDayFormat: { weekday: 'long' },
+            listDayFormat: { weekday: 'long' }, // day-of-week is all we need. full date is probably in headerToolbar
         },
         listWeek: {
             type: 'list',
@@ -13341,12 +13379,12 @@ var main = (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.createPlugin)({
         listMonth: {
             type: 'list',
             duration: { month: 1 },
-            listDaySideFormat: { weekday: 'long' },
+            listDaySideFormat: { weekday: 'long' }, // day-of-week is nice-to-have
         },
         listYear: {
             type: 'list',
             duration: { year: 1 },
-            listDaySideFormat: { weekday: 'long' },
+            listDaySideFormat: { weekday: 'long' }, // day-of-week is nice-to-have
         },
     },
 });
@@ -13369,13 +13407,13 @@ var main = (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.createPlugin)({
 /* harmony export */ });
 /* harmony import */ var _fullcalendar_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fullcalendar/common */ "./node_modules/@fullcalendar/common/main.js");
 /*!
-FullCalendar Scheduler v5.7.0
+FullCalendar Scheduler v5.8.0
 Docs & License: https://fullcalendar.io/scheduler
 (c) 2021 Adam Shaw
 */
 
 
-var RELEASE_DATE = '2021-05-12'; // for Scheduler
+var RELEASE_DATE = '2021-06-16'; // for Scheduler
 var UPGRADE_WINDOW = 365 + 7; // days. 1 week leeway, for tz shift reasons too
 var INVALID_LICENSE_URL = 'http://fullcalendar.io/docs/schedulerLicenseKey#invalid';
 var OUTDATED_LICENSE_URL = 'http://fullcalendar.io/docs/schedulerLicenseKey#outdated';
@@ -13460,12 +13498,12 @@ var main = (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_0__.createPlugin)({
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* unused harmony exports ScrollGrid, setScrollFromStartingEdge */
+/* unused harmony exports ScrollGrid, setScrollFromLeftEdge */
 /* harmony import */ var _fullcalendar_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fullcalendar/common */ "./node_modules/@fullcalendar/common/main.js");
 /* harmony import */ var _fullcalendar_premium_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fullcalendar/premium-common */ "./node_modules/@fullcalendar/premium-common/main.js");
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /*!
-FullCalendar Scheduler v5.7.0
+FullCalendar Scheduler v5.8.0
 Docs & License: https://fullcalendar.io/scheduler
 (c) 2021 Adam Shaw
 */
@@ -13573,36 +13611,31 @@ function getScrollCanvasOrigin(scrollEl) {
     };
 }
 function getScrollFromLeftEdge(el) {
-    var val = el.scrollLeft;
-    var computedStyles = window.getComputedStyle(el); // TODO: pass in isRtl?
+    var scrollLeft = el.scrollLeft;
+    var computedStyles = window.getComputedStyle(el); // TODO: pass in isRtl instead?
     if (computedStyles.direction === 'rtl') {
         switch (getRtlScrollSystem()) {
             case 'negative':
-                val = el.scrollWidth - el.clientWidth + val; // maxScrollDistance + val
-                break;
-            case 'reverse':
-                val = el.scrollWidth - el.clientWidth - val; // maxScrollDistance - val
-                break;
+                scrollLeft *= -1; // convert to 'reverse'. fall through...
+            case 'reverse': // scrollLeft is distance between scrollframe's right edge scrollcanvas's right edge
+                scrollLeft = el.scrollWidth - scrollLeft - el.clientWidth;
         }
     }
-    return val;
+    return scrollLeft;
 }
-/*
-`val` is in the "negative" scheme
-*/
-function setScrollFromStartingEdge(el, val) {
-    var computedStyles = window.getComputedStyle(el); // TODO: pass in isRtl?
+function setScrollFromLeftEdge(el, scrollLeft) {
+    var computedStyles = window.getComputedStyle(el); // TODO: pass in isRtl instead?
     if (computedStyles.direction === 'rtl') {
         switch (getRtlScrollSystem()) {
-            case 'positive':
-                val = (el.scrollWidth - el.clientWidth) + val; // maxScrollDistance + val
-                break;
             case 'reverse':
-                val = -val;
+                scrollLeft = el.scrollWidth - scrollLeft;
+                break;
+            case 'negative':
+                scrollLeft = -(el.scrollWidth - scrollLeft);
                 break;
         }
     }
-    el.scrollLeft = val;
+    el.scrollLeft = scrollLeft;
 }
 // Horizontal Scroll System Detection
 // ----------------------------------------------------------------------------------------------
@@ -13936,7 +13969,7 @@ var ScrollSyncer = /** @class */ (function () {
         this.isPaused = true;
         for (var _i = 0, _a = this.scrollListeners; _i < _a.length; _i++) {
             var listener = _a[_i];
-            setScrollFromStartingEdge(listener.el, scrollLeft);
+            setScrollFromLeftEdge(listener.el, scrollLeft);
         }
         this.isPaused = false;
     };
@@ -14030,7 +14063,7 @@ var ScrollGrid = /** @class */ (function (_super) {
         var colGroupStats = this.compileColGroupStats(props.colGroups.map(function (colGroup) { return [colGroup]; }));
         var microColGroupNodes = this.renderMicroColGroups(colGroupStats.map(function (stat, i) { return [stat.cols, shrinkWidths[i]]; }));
         var classNames = (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_0__.getScrollGridClassNames)(props.liquid, context);
-        var _b = this.getDims(), sectionCnt = _b[0], chunksPerSection = _b[1];
+        var _b = this.getDims(); _b[0]; _b[1];
         // TODO: make DRY
         var sectionConfigs = props.sections;
         var configCnt = sectionConfigs.length;
@@ -14055,7 +14088,7 @@ var ScrollGrid = /** @class */ (function (_super) {
         return (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_0__.createElement)('table', {
             ref: props.elRef,
             className: classNames.join(' '),
-        }, renderMacroColGroup(colGroupStats, shrinkWidths), Boolean(!isBuggy && headSectionNodes.length) && _fullcalendar_common__WEBPACK_IMPORTED_MODULE_0__.createElement.apply(void 0, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArrays)(['thead', {}], headSectionNodes)), Boolean(!isBuggy && bodySectionNodes.length) && _fullcalendar_common__WEBPACK_IMPORTED_MODULE_0__.createElement.apply(void 0, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArrays)(['tbody', {}], bodySectionNodes)), Boolean(!isBuggy && footSectionNodes.length) && _fullcalendar_common__WEBPACK_IMPORTED_MODULE_0__.createElement.apply(void 0, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArrays)(['tfoot', {}], footSectionNodes)), isBuggy && _fullcalendar_common__WEBPACK_IMPORTED_MODULE_0__.createElement.apply(void 0, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArrays)(['tbody', {}], headSectionNodes, bodySectionNodes, footSectionNodes)));
+        }, renderMacroColGroup(colGroupStats, shrinkWidths), Boolean(!isBuggy && headSectionNodes.length) && _fullcalendar_common__WEBPACK_IMPORTED_MODULE_0__.createElement.apply(void 0, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArray)(['thead', {}], headSectionNodes)), Boolean(!isBuggy && bodySectionNodes.length) && _fullcalendar_common__WEBPACK_IMPORTED_MODULE_0__.createElement.apply(void 0, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArray)(['tbody', {}], bodySectionNodes)), Boolean(!isBuggy && footSectionNodes.length) && _fullcalendar_common__WEBPACK_IMPORTED_MODULE_0__.createElement.apply(void 0, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArray)(['tfoot', {}], footSectionNodes)), isBuggy && _fullcalendar_common__WEBPACK_IMPORTED_MODULE_0__.createElement.apply(void 0, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArray)((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArray)((0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArray)(['tbody', {}], headSectionNodes), bodySectionNodes), footSectionNodes)));
     };
     ScrollGrid.prototype.renderSection = function (sectionConfig, sectionIndex, colGroupStats, microColGroupNodes, sectionRowMaxHeights) {
         var _this = this;
@@ -14374,7 +14407,7 @@ function renderMacroColGroup(colGroupStats, shrinkWidths) {
         return ( // eslint-disable-next-line react/jsx-key
         (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_0__.createElement)("col", { style: { width: width } }));
     });
-    return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_0__.createElement.apply(void 0, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArrays)(['colgroup', {}], children));
+    return _fullcalendar_common__WEBPACK_IMPORTED_MODULE_0__.createElement.apply(void 0, (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__spreadArray)(['colgroup', {}], children));
 }
 function compileColGroupStat(colGroupConfig) {
     var totalColWidth = sumColProp(colGroupConfig.cols, 'width'); // excludes "shrink"
@@ -14455,7 +14488,7 @@ _fullcalendar_common__WEBPACK_IMPORTED_MODULE_0__.config.SCROLLGRID_RESIZE_INTER
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fullcalendar/daygrid */ "./node_modules/@fullcalendar/daygrid/main.js");
 /*!
-FullCalendar v5.7.0
+FullCalendar v5.8.0
 Docs & License: https://fullcalendar.io/
 (c) 2021 Adam Shaw
 */
@@ -14971,7 +15004,7 @@ function renderMoreLinkInner(props) {
 }
 
 // segInputs assumed sorted
-function computeFgSegPlacements(segInputs, strictOrder, maxStackCnt) {
+function buildPositioning(segInputs, strictOrder, maxStackCnt) {
     var hierarchy = new _fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.SegHierarchy();
     if (strictOrder != null) {
         hierarchy.strictOrder = strictOrder;
@@ -14994,7 +15027,7 @@ function buildWeb(hierarchy) {
         var entry = entriesByLevel[level][lateral];
         return [
             (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)({}, entry), { nextLevelNodes: nextLevelRes[0] }),
-            entry.thickness + nextLevelRes[1],
+            entry.thickness + nextLevelRes[1], // the pressure builds
         ];
     });
     return buildNodes(entriesByLevel.length
@@ -15015,7 +15048,7 @@ function buildNodes(siblingRange, buildNode) {
     pairs.sort(cmpDescPressures);
     return [
         pairs.map(extractNode),
-        pairs[0][1],
+        pairs[0][1], // first item's pressure
     ];
 }
 function cmpDescPressures(a, b) {
@@ -15036,12 +15069,12 @@ function findNextLevelSegs(hierarchy, subjectLevel, subjectLateral) {
     for (; level < levelCnt; level += 1) {
         var entries = entriesByLevel[level];
         var entry = void 0;
-        var searchIndex = (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.binarySearch)(entries, subjectEntry.spanStart, _fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.getEntrySpanEnd);
+        var searchIndex = (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.binarySearch)(entries, subjectEntry.span.start, _fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.getEntrySpanEnd);
         var lateralStart = searchIndex[0] + searchIndex[1]; // if exact match (which doesn't collide), go to next one
         var lateralEnd = lateralStart;
         while ( // loop through entries that horizontally intersect
         (entry = entries[lateralEnd]) && // but not past the whole seg list
-            entry.spanStart < subjectEntry.spanEnd) {
+            entry.span.start < subjectEntry.span.end) {
             lateralEnd += 1;
         }
         if (lateralStart < lateralEnd) {
@@ -15114,6 +15147,57 @@ function cacheable(keyFunc, workFunc) {
     };
 }
 
+function computeSegVCoords(segs, colDate, slatCoords, eventMinHeight) {
+    if (slatCoords === void 0) { slatCoords = null; }
+    if (eventMinHeight === void 0) { eventMinHeight = 0; }
+    var vcoords = [];
+    if (slatCoords) {
+        for (var i = 0; i < segs.length; i += 1) {
+            var seg = segs[i];
+            var spanStart = slatCoords.computeDateTop(seg.start, colDate);
+            var spanEnd = Math.max(spanStart + (eventMinHeight || 0), // :(
+            slatCoords.computeDateTop(seg.end, colDate));
+            vcoords.push({
+                start: Math.round(spanStart),
+                end: Math.round(spanEnd), //
+            });
+        }
+    }
+    return vcoords;
+}
+function computeFgSegPlacements(segs, segVCoords, // might not have for every seg
+eventOrderStrict, eventMaxStack) {
+    var segInputs = [];
+    var dumbSegs = []; // segs without coords
+    for (var i = 0; i < segs.length; i += 1) {
+        var vcoords = segVCoords[i];
+        if (vcoords) {
+            segInputs.push({
+                index: i,
+                thickness: 1,
+                span: vcoords,
+            });
+        }
+        else {
+            dumbSegs.push(segs[i]);
+        }
+    }
+    var _a = buildPositioning(segInputs, eventOrderStrict, eventMaxStack), segRects = _a.segRects, hiddenGroups = _a.hiddenGroups;
+    var segPlacements = [];
+    for (var _i = 0, segRects_1 = segRects; _i < segRects_1.length; _i++) {
+        var segRect = segRects_1[_i];
+        segPlacements.push({
+            seg: segs[segRect.index],
+            rect: segRect,
+        });
+    }
+    for (var _b = 0, dumbSegs_1 = dumbSegs; _b < dumbSegs_1.length; _b++) {
+        var dumbSeg = dumbSegs_1[_b];
+        segPlacements.push({ seg: dumbSeg, rect: null });
+    }
+    return { segPlacements: segPlacements, hiddenGroups: hiddenGroups };
+}
+
 var DEFAULT_TIME_FORMAT = (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.createFormatter)({
     hour: 'numeric',
     minute: '2-digit',
@@ -15155,9 +15239,9 @@ var TimeCol = /** @class */ (function (_super) {
     function TimeCol() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.sortEventSegs = (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.memoize)(_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.sortEventSegs);
-        _this.computeFgSegPlacements = (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.memoize)(computeFgSegPlacements); // only for non-print, non-mirror
         return _this;
     }
+    // TODO: memoize event-placement?
     TimeCol.prototype.render = function () {
         var _this = this;
         var _a = this, props = _a.props, context = _a.context;
@@ -15177,7 +15261,7 @@ var TimeCol = /** @class */ (function (_super) {
                     _this.renderFillSegs(props.businessHourSegs, 'non-business'),
                     _this.renderFillSegs(props.bgEventSegs, 'bg-event'),
                     _this.renderFillSegs(props.dateSelectionSegs, 'highlight')),
-                (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", { className: "fc-timegrid-col-events" }, _this.renderFgSegs(sortedFgSegs, interactionAffectedInstances)),
+                (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", { className: "fc-timegrid-col-events" }, _this.renderFgSegs(sortedFgSegs, interactionAffectedInstances, false, false, false)),
                 (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", { className: "fc-timegrid-col-events" }, _this.renderFgSegs(mirrorSegs, {}, Boolean(props.eventDrag), Boolean(props.eventResize), Boolean(isSelectMirror))),
                 (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", { className: "fc-timegrid-now-indicator-container" }, _this.renderNowIndicator(props.nowIndicatorSegs)),
                 (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.createElement)(TimeColMisc, { date: props.date, dateProfile: props.dateProfile, todayRange: props.todayRange, extraHookProps: props.extraHookProps })))); }));
@@ -15187,68 +15271,46 @@ var TimeCol = /** @class */ (function (_super) {
         if (props.forPrint) {
             return renderPlainFgSegs(sortedFgSegs, props);
         }
-        if (props.slatCoords) {
-            return this.renderPositionedFgSegs(sortedFgSegs, segIsInvisible, isDragging, isResizing, isDateSelecting);
-        }
-        return null;
+        return this.renderPositionedFgSegs(sortedFgSegs, segIsInvisible, isDragging, isResizing, isDateSelecting);
     };
     TimeCol.prototype.renderPositionedFgSegs = function (segs, // if not mirror, needs to be sorted
     segIsInvisible, isDragging, isResizing, isDateSelecting) {
         var _this = this;
-        var _a = this.context.options, eventMaxStack = _a.eventMaxStack, eventShortHeight = _a.eventShortHeight, eventOrderStrict = _a.eventOrderStrict;
-        var _b = this.props, eventSelection = _b.eventSelection, todayRange = _b.todayRange, nowDate = _b.nowDate;
+        var _a = this.context.options, eventMaxStack = _a.eventMaxStack, eventShortHeight = _a.eventShortHeight, eventOrderStrict = _a.eventOrderStrict, eventMinHeight = _a.eventMinHeight;
+        var _b = this.props, date = _b.date, slatCoords = _b.slatCoords, eventSelection = _b.eventSelection, todayRange = _b.todayRange, nowDate = _b.nowDate;
         var isMirror = isDragging || isResizing || isDateSelecting;
-        var segInputs = this.buildSegInputs(segs);
-        var _c = isMirror ? computeFgSegPlacements(segInputs) : // don't use memoized
-            this.computeFgSegPlacements(segInputs, eventOrderStrict, eventMaxStack), segRects = _c.segRects, hiddenGroups = _c.hiddenGroups;
+        var segVCoords = computeSegVCoords(segs, date, slatCoords, eventMinHeight);
+        var _c = computeFgSegPlacements(segs, segVCoords, eventOrderStrict, eventMaxStack), segPlacements = _c.segPlacements, hiddenGroups = _c.hiddenGroups;
         return ((0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.createElement)(_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.Fragment, null,
             this.renderHiddenGroups(hiddenGroups, segs),
-            segRects.map(function (segRect) {
-                var seg = segs[segRect.segInput.index];
+            segPlacements.map(function (segPlacement) {
+                var seg = segPlacement.seg, rect = segPlacement.rect;
                 var instanceId = seg.eventRange.instance.instanceId;
-                var positionCss = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)({}, _this.computeSegTopBottomCss(segRect.segInput)), (isMirror ? { left: 0, right: 0 } : _this.computeSegLeftRightCss(segRect)));
-                return ((0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", { className: 'fc-timegrid-event-harness' + (segRect.stackForward > 0 ? ' fc-timegrid-event-harness-inset' : ''), key: instanceId, style: (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)({ visibility: segIsInvisible[instanceId] ? 'hidden' : '' }, positionCss) },
-                    (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.createElement)(TimeColEvent, (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)({ seg: seg, isDragging: isDragging, isResizing: isResizing, isDateSelecting: isDateSelecting, isSelected: instanceId === eventSelection, isShort: (segRect.spanEnd - segRect.spanStart) < eventShortHeight }, (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.getSegMeta)(seg, todayRange, nowDate)))));
+                var isVisible = isMirror || Boolean(!segIsInvisible[instanceId] && rect);
+                var vStyle = computeSegVStyle(rect && rect.span);
+                var hStyle = (!isMirror && rect) ? _this.computeSegHStyle(rect) : { left: 0, right: 0 };
+                var isInset = Boolean(rect) && rect.stackForward > 0;
+                var isShort = Boolean(rect) && (rect.span.end - rect.span.start) < eventShortHeight; // look at other places for this problem
+                return ((0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", { className: 'fc-timegrid-event-harness' +
+                        (isInset ? ' fc-timegrid-event-harness-inset' : ''), key: instanceId, style: (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)((0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)({ visibility: isVisible ? '' : 'hidden' }, vStyle), hStyle) },
+                    (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.createElement)(TimeColEvent, (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)({ seg: seg, isDragging: isDragging, isResizing: isResizing, isDateSelecting: isDateSelecting, isSelected: instanceId === eventSelection, isShort: isShort }, (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.getSegMeta)(seg, todayRange, nowDate)))));
             })));
     };
     // will already have eventMinHeight applied because segInputs already had it
     TimeCol.prototype.renderHiddenGroups = function (hiddenGroups, segs) {
-        var _this = this;
         var _a = this.props, extraDateSpan = _a.extraDateSpan, dateProfile = _a.dateProfile, todayRange = _a.todayRange, nowDate = _a.nowDate, eventSelection = _a.eventSelection, eventDrag = _a.eventDrag, eventResize = _a.eventResize;
         return ((0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.createElement)(_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.Fragment, null, hiddenGroups.map(function (hiddenGroup) {
-            var positionCss = _this.computeSegTopBottomCss(hiddenGroup);
+            var positionCss = computeSegVStyle(hiddenGroup.span);
             var hiddenSegs = compileSegsFromEntries(hiddenGroup.entries, segs);
             return ((0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.createElement)(TimeColMoreLink, { key: (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.buildIsoString)((0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.computeEarliestSegStart)(hiddenSegs)), hiddenSegs: hiddenSegs, top: positionCss.top, bottom: positionCss.bottom, extraDateSpan: extraDateSpan, dateProfile: dateProfile, todayRange: todayRange, nowDate: nowDate, eventSelection: eventSelection, eventDrag: eventDrag, eventResize: eventResize }));
         })));
     };
-    TimeCol.prototype.buildSegInputs = function (segs) {
-        var _a = this.props, date = _a.date, slatCoords = _a.slatCoords;
-        var eventMinHeight = this.context.options.eventMinHeight;
-        var segInputs = [];
-        for (var i = 0; i < segs.length; i += 1) {
-            var seg = segs[i];
-            var spanStart = slatCoords.computeDateTop(seg.start, date);
-            var spanEnd = Math.max(spanStart + (eventMinHeight || 0), // yuck
-            slatCoords.computeDateTop(seg.end, date));
-            segInputs.push({
-                index: i,
-                spanStart: Math.round(spanStart),
-                spanEnd: Math.round(spanEnd),
-                thickness: 1,
-            });
-        }
-        return segInputs;
-    };
     TimeCol.prototype.renderFillSegs = function (segs, fillType) {
-        var _this = this;
-        var props = this.props;
-        if (!props.slatCoords) {
-            return null;
-        }
-        var segInputs = this.buildSegInputs(segs);
-        var children = segInputs.map(function (segInput) {
-            var seg = segs[segInput.index];
-            return ((0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", { key: (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.buildEventRangeKey)(seg.eventRange), className: "fc-timegrid-bg-harness", style: _this.computeSegTopBottomCss(segInput) }, fillType === 'bg-event' ?
+        var _a = this, props = _a.props, context = _a.context;
+        var segVCoords = computeSegVCoords(segs, props.date, props.slatCoords, context.options.eventMinHeight); // don't assume all populated
+        var children = segVCoords.map(function (vcoords, i) {
+            var seg = segs[i];
+            return ((0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", { key: (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.buildEventRangeKey)(seg.eventRange), className: "fc-timegrid-bg-harness", style: computeSegVStyle(vcoords) }, fillType === 'bg-event' ?
                 (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.createElement)(_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.BgEvent, (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)({ seg: seg }, (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.getSegMeta)(seg, props.todayRange, props.nowDate))) :
                 (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.renderFill)(fillType)));
         });
@@ -15263,17 +15325,11 @@ var TimeCol = /** @class */ (function (_super) {
             // key doesn't matter. will only ever be one
             key: i }, function (rootElRef, classNames, innerElRef, innerContent) { return ((0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", { ref: rootElRef, className: ['fc-timegrid-now-indicator-line'].concat(classNames).join(' '), style: { top: slatCoords.computeDateTop(seg.start, date) } }, innerContent)); })); });
     };
-    TimeCol.prototype.computeSegTopBottomCss = function (segLike) {
-        return {
-            top: segLike.spanStart,
-            bottom: -segLike.spanEnd,
-        };
-    };
-    TimeCol.prototype.computeSegLeftRightCss = function (segRect) {
+    TimeCol.prototype.computeSegHStyle = function (segHCoords) {
         var _a = this.context, isRtl = _a.isRtl, options = _a.options;
         var shouldOverlap = options.slotEventOverlap;
-        var nearCoord = segRect.levelCoord; // the left side if LTR. the right side if RTL. floating-point
-        var farCoord = segRect.levelCoord + segRect.thickness; // the right side if LTR. the left side if RTL. floating-point
+        var nearCoord = segHCoords.levelCoord; // the left side if LTR. the right side if RTL. floating-point
+        var farCoord = segHCoords.levelCoord + segHCoords.thickness; // the right side if LTR. the left side if RTL. floating-point
         var left; // amount of space from left edge, a fraction of the total width
         var right; // amount of space from right edge, a fraction of the total width
         if (shouldOverlap) {
@@ -15289,11 +15345,11 @@ var TimeCol = /** @class */ (function (_super) {
             right = 1 - farCoord;
         }
         var props = {
-            zIndex: segRect.stackDepth + 1,
+            zIndex: segHCoords.stackDepth + 1,
             left: left * 100 + '%',
             right: right * 100 + '%',
         };
-        if (shouldOverlap && !segRect.stackForward) {
+        if (shouldOverlap && !segHCoords.stackForward) {
             // add padding to the edge so that forward stacked events don't cover the resizer's icon
             props[isRtl ? 'marginLeft' : 'marginRight'] = 10 * 2; // 10 is a guesstimate of the icon's width
         }
@@ -15312,8 +15368,17 @@ function renderPlainFgSegs(sortedFgSegs, _a) {
             (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.createElement)(TimeColEvent, (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__assign)({ seg: seg, isDragging: false, isResizing: false, isDateSelecting: false, isSelected: instanceId === eventSelection, isShort: false }, (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.getSegMeta)(seg, todayRange, nowDate)))));
     })));
 }
+function computeSegVStyle(segVCoords) {
+    if (!segVCoords) {
+        return { top: '', bottom: '' };
+    }
+    return {
+        top: segVCoords.start,
+        bottom: -segVCoords.end,
+    };
+}
 function compileSegsFromEntries(segEntries, allSegs) {
-    return segEntries.map(function (segEntry) { return allSegs[segEntry.segInput.index]; });
+    return segEntries.map(function (segEntry) { return allSegs[segEntry.index]; });
 }
 
 var TimeColsContent = /** @class */ (function (_super) {
@@ -15643,7 +15708,7 @@ var main = (0,_fullcalendar_common__WEBPACK_IMPORTED_MODULE_1__.createPlugin)({
             usesMinMaxTime: true,
             allDaySlot: true,
             slotDuration: '00:30:00',
-            slotEventOverlap: true,
+            slotEventOverlap: true, // a bad name. confused with overlap/constraint system
         },
         timeGridDay: {
             type: 'timeGrid',
@@ -23646,17 +23711,6 @@ defineJQueryPlugin(Toast);
 
 /***/ }),
 
-/***/ "./node_modules/bootstrap/dist/css/bootstrap.css":
-/*!*******************************************************!*\
-  !*** ./node_modules/bootstrap/dist/css/bootstrap.css ***!
-  \*******************************************************/
-/***/ (() => {
-
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
 /***/ "./src/css/fonts.css":
 /*!***************************!*\
   !*** ./src/css/fonts.css ***!
@@ -23671,6 +23725,17 @@ defineJQueryPlugin(Toast);
 /***/ "./src/css/main.css":
 /*!**************************!*\
   !*** ./src/css/main.css ***!
+  \**************************/
+/***/ (() => {
+
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./src/scss/bt.scss":
+/*!**************************!*\
+  !*** ./src/scss/bt.scss ***!
   \**************************/
 /***/ (() => {
 
@@ -23757,9 +23822,9 @@ var t,u,r,o=0,i=[],c=preact__WEBPACK_IMPORTED_MODULE_0__.options.__b,f=preact__W
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "__extends": () => (/* binding */ __extends),
 /* harmony export */   "__assign": () => (/* binding */ __assign),
-/* harmony export */   "__spreadArrays": () => (/* binding */ __spreadArrays)
+/* harmony export */   "__spreadArray": () => (/* binding */ __spreadArray)
 /* harmony export */ });
-/* unused harmony exports __rest, __decorate, __param, __metadata, __awaiter, __generator, __createBinding, __exportStar, __values, __read, __spread, __spreadArray, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet */
+/* unused harmony exports __rest, __decorate, __param, __metadata, __awaiter, __generator, __createBinding, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet */
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
 
@@ -23924,10 +23989,14 @@ function __spreadArrays() {
     return r;
 }
 
-function __spreadArray(to, from) {
-    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
-        to[j] = from[i];
-    return to;
+function __spreadArray(to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || from);
 }
 
 function __await(v) {
@@ -24063,7 +24132,7 @@ var __webpack_exports__ = {};
   \************************/
 /* harmony import */ var _css_fonts_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/fonts.css */ "./src/css/fonts.css");
 /* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
-/* harmony import */ var bootstrap_dist_css_bootstrap_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.css */ "./node_modules/bootstrap/dist/css/bootstrap.css");
+/* harmony import */ var _scss_bt_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../scss/bt.scss */ "./src/scss/bt.scss");
 /* harmony import */ var _fullcalendar_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fullcalendar/core */ "./node_modules/@fullcalendar/core/main.js");
 /* harmony import */ var _fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fullcalendar/daygrid */ "./node_modules/@fullcalendar/daygrid/main.js");
 /* harmony import */ var _fullcalendar_timegrid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fullcalendar/timegrid */ "./node_modules/@fullcalendar/timegrid/main.js");

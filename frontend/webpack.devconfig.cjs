@@ -21,7 +21,10 @@ module.exports = {
     },
     {
       test: /\.css$/i,
-      use: [MiniCssExtractPlugin.loader, "css-loader"],
+      use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+    }, {
+      test: /\.scss$/i,
+      use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
     }]
   },
   mode: "development",
