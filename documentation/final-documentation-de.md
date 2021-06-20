@@ -18,18 +18,26 @@ Gruppenmitglieder:
 
 
 ## Beschreibung der Installation
-### SSH-Key
-Im Terminal folgenden Befehl eingeben: 
-  
-```git clone git@github.com:fabian-z/dh-application-lectureplan.git``` 
-  
-Nach der Eingabe des gefragten SSH Keys wird das gesamte Repository auf dem hinterlegten Arbeitsplatz heruntergeladen.
+
+### Abhängigkeiten
+
+- MySQL Datenbankserver
+- Go Toolchain
+- nodejs / npm
+- git
 
 
-### Download als ZIP-Datei
-Auf der [Startseite](https://github.com/fabian-z/dh-application-lectureplan) des Repository als ZIP-Datei herunterladen und 
-im gewünschten Ordner entpacken.
+### Installation & Ausführung
 
+Annahme: MySQL Datenbankserver läuft auf localhost mit User mysql, Passwort mysql. Datenbank lectureplan enthält valide Daten, z.B. ```backend/res/demo.sql```.
+
+- ```git clone https://github.com/fabian-z/dh-application-lectureplan.git``` 
+- ```cd dh-application-lectureplan```
+- ```cd frontend```
+- ```npm install && npm run build-dev```
+- ```cd ..```
+- ```cd backend```
+- ```go build && ./backend```
 
 ## Beschreibung des Abgabeinhaltes
 ### Was beinhalten die Mockups
@@ -53,6 +61,7 @@ im gewünschten Ordner entpacken.
 - Entwicklung von Prozessen zur Benachrichtigung, Erinnerung und Bestätigung von Terminen
 - Raumplanung
 - Export als PDF zum Drucken bzw. Versand per E-Mail
+- Vorbereitung von Datenstrukturen zur algorithmischen Planung
 
 
 ### Bereitstellung der Mockups
@@ -62,9 +71,28 @@ im gewünschten Ordner entpacken.
 
 
 ### Was wird als Code abgeliefert?
+
 #### Frontend
+
+- Prototyp der Kalenderkomponente
+  - Integration mit REST API (Anzeige von Terminen aus Datenbank)
+  - Anzeige von Wochen / Monaten / Terminlisten
+- Modal Fenster
+  - Umsetzung "Termin hinzufügen" (Backend Action TODO)
+- Sidebar Navigation (Offscreen Canvas)
+- SSO Authentication (SAML2)
+- Custom Themes / Farben (Bootstrap SCSS)
+- Toolchain Configuration (NPM, Webpack, Babel, ESLint, JSBeautify, SASS)
+- HTML 5 Templates
+- CSS3 Stylesheets, teilweise externes SCSS
+
 #### Backend
 
+- Go Backend
+- Datenbank Boilerplate (SQL Queries)
+- SSO Authentication
+- HTTP Server inkl. ACME Client (TLS über Let's Encrypt)
+- AJAX REST API
 
 ## Tätigkeitsnachweis der einzelnen Teammitglieder
 Die gewünschte Übersicht über alle Tätigkeiten pro Gruppenmitglied ist in zwei Dokumentationen unterteilt.
@@ -81,19 +109,20 @@ Wichtig dabei ist, dass der Filter gänzlich entfernt werden muss, da sonst die 
 ## Rückblick
 ### Welche Probleme sind aufgetreten?
 #### Projektmanagement
-- Fehlendes Fachwissen der Teammitglieder, durch nicht vorhandene Ressourcen führten Zwischenzeitlich zu einen sehr geringen 
-  Fortschritt einzelner Aufgaben bzw. des gemeinsamen Projektes
-- Technische- bzw. Verständnisprobleme während der Nutzung des PM-Tools OpenProject führten Zeitweise zu einer Verzögerung der Projektplanung
 
+- Fehlendes Fachwissen der Teammitglieder, durch nicht vorhandene Ressourcen führten zwischenzeitlich zu einen sehr geringen 
+  Fortschritt einzelner Aufgaben bzw. des gemeinsamen Projektes
+- Technische- bzw. Verständnisprobleme während der Nutzung des PM-Tools OpenProject führten zeitweise zu einer Verzögerung der Projektplanung
 
 #### Frontend
-- Unerwartete Komplexität im Verwendeten Framework Bootstrap (SCSS)
 
+- Unerwartete Komplexität im verwendeten Framework Bootstrap (SCSS Toolchain notwendig)
+- Zu geringer Zeitrahmen für Ausbau des kompletten Prototypen
 
 #### Backend
-- Fehleinschätzung der Vorkenntnisse einzelner Gruppenmitglieder
-- Fehlerhafte Rückmeldung bezüglich des SSO
 
+- Fehleinschätzung der Vorkenntnisse einzelner Gruppenmitglieder
+- Fehlerhafte Registrierung des SSO (Shibboleth Fehler "Nicht unterstützte Anwendung", Erfolreiche Umsetzung mit samltest.id)
 
 ### Was wird nicht mit geliefert (Not-Doing)?
 - E-Mail Ersatz für Individualkommunikation
@@ -106,7 +135,7 @@ Wichtig dabei ist, dass der Filter gänzlich entfernt werden muss, da sonst die 
 
 ### Was wird anders geliefert?
 - SAML Identity Provider samltest.id statt idp.dhbw-loerrach.de - Registrierung der bereitgestellten Metadataten offenbar fehlerhaft (Nicht unterstützte Anwendung)
-
+- Konzeption vollständig, Prototyp begrenzt auf Kalenderkomponente und Templates
 
 ## Ausblick
 ### Auflistung offener Punkte
