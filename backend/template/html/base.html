@@ -1,65 +1,71 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="gfx/favicon.png">
 
-    <!-- Bundled frontend ressources -->
-    <link rel="stylesheet" href="css/bundle.css">
-    <script type="module" src="js/bundle.js"></script>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="gfx/favicon.png">
 
-    <title>{{ $.Title }}</title>
-  </head>
-  <body>
-    <div class="grid-container">
-      <div class="header">
-        <div class="buttons">
-          <a data-bs-toggle="offcanvas" href="#offcanvasNavigation" role="button" aria-controls="offcanvasNavigation">
-            <i class="fas fa-bars"></i>
-          </a>
-          <i class="fas fa-home"></i>
-        </div>
-        <div class="logo">
-          <a href="/" tabindex="-1"><img id="logo" style="height: 40px;" src="gfx/logo.svg"></a>
-        </div>
-        <div class="title">{{ $.PageTitle }}</div>
+  <!-- Bundled frontend ressources -->
+  <link rel="stylesheet" href="css/bundle.css">
+  <script type="module" src="js/bundle.js"></script>
+
+  <title>{{ $.Title }}</title>
+</head>
+
+<body>
+  <div class="grid-container">
+    <div class="header">
+      <div class="buttons">
+        <a data-bs-toggle="offcanvas" href="#offcanvasNavigation" role="button" aria-controls="offcanvasNavigation">
+          <i class="fas fa-bars"></i>
+        </a>
+        <a href="/"><i class="fas fa-home"></i></a>
       </div>
-      <div class="content">
-        <div class="main">{{ template "content" . }}</div>
-        <div class="actions">
-          <div class="d-flex flex-row">
-          <div class="p-2">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addEventModal">
+      <div class="logo">
+        <a href="/" tabindex="-1"><img id="logo" style="height: 40px;" src="gfx/logo.svg"></a>
+      </div>
+      <div class="title">{{ $.PageTitle }}</div>
+    </div>
+    <div class="content">
+      <div class="main">{{ template "content" . }}</div>
+      <div class="actions">
+        <div class="d-flex flex-row justify-content-evenly">
+          <button type="button" class="btn btn-primary action-button" data-bs-toggle="modal" data-bs-target="#addEventModal">
+            Kursauswahl
+          </button>
+          <button type="button" class="btn btn-primary action-button" data-bs-toggle="modal" data-bs-target="#addEventModal">
             Termin hinzufügen
-            </button>
-          </div>
-          <div class="p-2">Flex item 2</div>
-          <div class="p-2">Flex item 3</div>
+          </button>
+          <button type="button" class="btn btn-primary action-button" data-bs-toggle="modal" data-bs-target="#addEventModal">
+            PDF Export
+          </button>
         </div>
       </div>
-      </div>
-      <div class="footer">
-        <div class="left"></div>
-        <div class="middle">{{ template "footer". }}</div>
-        <div class="right"></div>
-      </div>
     </div>
+    <div class="footer">
+      <div class="left"></div>
+      <div class="middle">{{ template "footer". }}</div>
+      <div class="right"></div>
+    </div>
+  </div>
 
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavigation" aria-labelledby="offcanvasNavigationLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavigationLabel">Navigation</h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <div class="d-flex flex-column bd-highlight mb-3">
-          <div class="p-2 bd-highlight">Vorlesungsverwaltung</div>
-          <div class="p-2 bd-highlight">Kursverwaltung</div>
-          <div class="p-2 bd-highlight">Dozentenverwaltung</div>
-          <div class="p-2 bd-highlight">Semesterverwaltung</div>
-        </div>
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavigation"
+    aria-labelledby="offcanvasNavigationLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasNavigationLabel">Navigation</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="d-flex flex-column bd-highlight mb-3">
+        <div class="p-2 bd-highlight">Vorlesungsverwaltung</div>
+        <div class="p-2 bd-highlight">Kursverwaltung</div>
+        <div class="p-2 bd-highlight">Dozentenverwaltung</div>
+        <div class="p-2 bd-highlight">Semesterverwaltung</div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

@@ -145,3 +145,7 @@ select {
     color: #262626;
     text-decoration: none;
 }
+
+.action-button {
+    margin-right: 10%;
+}
