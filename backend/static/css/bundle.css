@@ -12004,7 +12004,7 @@ select {
   overflow-y: scroll;
 }
 
-#awesome {
+.arrow {
   padding: 15px;
 }
 

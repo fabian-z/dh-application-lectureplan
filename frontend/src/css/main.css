@@ -27,10 +27,10 @@ select {
 }
 
 #calendar {
-  height: 100%;
-  width: 95%;
-  margin-left: auto;
-  margin-right: auto;
+    height: 100%;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Grid layout */
@@ -163,6 +163,7 @@ select {
     margin-left: auto;
     overflow-y: scroll;
 }
+
 .arrow {
-	padding: 15px;
+    padding: 15px;
 }

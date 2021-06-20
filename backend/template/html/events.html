@@ -9,8 +9,9 @@
           <h5 class="modal-title" id="addEventModalLabel">Termin hinzufügen</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <form action="/addEvent" method="POST"></form>
         <div class="modal-body">
-            <form action="/addEvent" method="POST">
+            
                 <div class="mb-3">
                   <label for="lecture" class="form-label">Vorlesung</label>
                   <input type="text" class="form-control" id="lecture" aria-describedby="lectureHelp">
@@ -39,12 +40,14 @@
                     <label for="comment" class="form-label">Kommentar</label>
                     <input type="text" class="form-control" id="comment" aria-describedby="commentHelp">
                   </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
+                
+              
         </div>
         <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Speichern</button>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
         </div>
+    </form>
       </div>
     </div>
   </div>
