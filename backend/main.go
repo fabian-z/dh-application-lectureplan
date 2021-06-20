@@ -1,14 +1,20 @@
 package main
 
 import (
+	"context"
+	"crypto/rsa"
+	"crypto/tls"
+	"crypto/x509"
 	"log"
 	"net/http"
+	"net/url"
 	"os"
 	"os/signal"
 	"path/filepath"
 	"syscall"
 	"time"
 
+	"github.com/crewjam/saml/samlsp"
 	"github.com/fabian-z/dh-application-lectureplan/backend/template"
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
@@ -43,6 +49,47 @@ func handleDataProtection(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+func loadSSO() *samlsp.Middleware {
+	keyPair, err := tls.LoadX509KeyPair("dh-application.nerdwiese.de.crt", "dh-application.nerdwiese.de.key")
+	if err != nil {
+		panic(err) // TODO handle error
+	}
+	keyPair.Leaf, err = x509.ParseCertificate(keyPair.Certificate[0])
+	if err != nil {
+		panic(err) // TODO handle error
+	}
+
+	idpMetadataURL, err := url.Parse("https://idp.dhbw-loerrach.de/idp/shibboleth")
+	if err != nil {
+		panic(err) // TODO handle error
+	}
+	idpMetadata, err := samlsp.FetchMetadata(context.Background(), http.DefaultClient,
+		*idpMetadataURL)
+	if err != nil {
+		panic(err) // TODO handle error
+	}
+
+	rootURL, err := url.Parse("https://dh-application.nerdwiese.de")
+	if err != nil {
+		panic(err) // TODO handle error
+	}
+
+	samlSP, _ := samlsp.New(samlsp.Options{
+		URL:         *rootURL,
+		Key:         keyPair.PrivateKey.(*rsa.PrivateKey),
+		Certificate: keyPair.Leaf,
+		IDPMetadata: idpMetadata,
+	})
+
+	return samlSP
+}
+
+func emptyHandler(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		next.ServeHTTP(w, r)
+	})
+}
+
 func main() {
 
 	// Setup globals
@@ -65,6 +112,14 @@ func main() {
 	// Setup database
 	db = openDB()
 
+	useSSO := true
+	ssoHandler := emptyHandler
+	// Setup SSO Handler if enable
+	if useSSO {
+		middleware := loadSSO()
+		ssoHandler = middleware.RequireAccount
+	}
+
 	// Setup router and HTTP server
 	router := chi.NewRouter()
 
@@ -85,12 +140,16 @@ func main() {
 	router.Get("/gfx/*", http.FileServer(http.Dir(staticPath)).ServeHTTP)
 	router.Get("/fonts/*", http.FileServer(http.Dir(staticPath)).ServeHTTP)
 
-	router.Get("/api/events", handleListEvents)
-	//router.Post("/api/changeEvent", handleChangeEvents)
+	router.Group(func(r chi.Router) {
+		// Enforce SSO policy for these routes
+		r.Use(ssoHandler)
+		router.Get("/api/events", handleListEvents)
+		//router.Post("/api/changeEvent", handleChangeEvents)
 
-	router.Get("/events", handleEvents)
+		r.Get("/events", handleEvents)
+	})
+
 	router.Get("/dataprotection", handleDataProtection)
-
 	router.Get("/", handleRoot)
 
 	// Manually specify timeout values
