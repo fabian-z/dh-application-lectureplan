@@ -163,3 +163,6 @@ select {
     margin-left: auto;
     overflow-y: scroll;
 }
+#awesome {
+	padding: 15px;
+}
