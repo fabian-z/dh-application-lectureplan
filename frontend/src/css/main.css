@@ -143,4 +143,5 @@ select {
 
 .header a {
     color: #262626;
+    text-decoration: none;
 }
