@@ -1,0 +1,21 @@
+[Unit]
+Description=Lectureplan
+Wants=mariadb.service
+After=mariadb.service
+
+[Service]
+Type=simple
+LimitNOFILE=1000000
+ExecStart=/opt/dh-application-lectureplan/backend/backend
+WorkingDirectory=/opt/dh-application-lectureplan/backend
+User=lectureplan
+Group=lectureplan
+Restart=always
+# Restart service after 10 seconds if node service crashes
+RestartSec=10
+# Set port permissions capability
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+
+[Install]
+WantedBy=multi-user.target
