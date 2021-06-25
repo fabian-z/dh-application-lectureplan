@@ -1,13 +1,8 @@
 package main
 
 import (
-	"context"
-	"crypto/rsa"
-	"crypto/tls"
-	"crypto/x509"
 	"log"
 	"net/http"
-	"net/url"
 	"os"
 	"os/signal"
 	"path/filepath"
@@ -31,73 +26,8 @@ var (
 
 	useTLS        = false
 	useSSO        = false
-	listeningAddr = ":8888"
+	listeningAddr = ":8080"
 )
-
-func handleRoot(w http.ResponseWriter, r *http.Request) {
-	http.Redirect(w, r, "/events", http.StatusTemporaryRedirect)
-}
-
-func handleDataProtection(w http.ResponseWriter, r *http.Request) {
-	// TODO initial session creation
-	err := templates.DataProtection.Execute(w, struct {
-		Title       string
-		PageTitle   string
-		ShowActions bool
-	}{
-		"DHBW Lörrach - Vorlesungsplanung",
-		"Datenschutz",
-		false,
-	})
-	if err != nil {
-		log.Println("Request error: ", err)
-	}
-}
-
-func loadSSO() *samlsp.Middleware {
-	keyPair, err := tls.LoadX509KeyPair("dh-application.nerdwiese.de.crt", "dh-application.nerdwiese.de.key")
-	if err != nil {
-		panic(err) // TODO handle error
-	}
-	keyPair.Leaf, err = x509.ParseCertificate(keyPair.Certificate[0])
-	if err != nil {
-		panic(err) // TODO handle error
-	}
-
-	// TODO fix bug with upstream Shibboleth IdP (DHBW Lörrach)
-	// should be: https://idp.dhbw-loerrach.de/idp/shibboleth
-	idpMetadataURL, err := url.Parse("https://samltest.id/saml/idp")
-	if err != nil {
-		panic(err) // TODO handle error
-	}
-	idpMetadata, err := samlsp.FetchMetadata(context.Background(), http.DefaultClient,
-		*idpMetadataURL)
-	if err != nil {
-		panic(err) // TODO handle error
-	}
-	log.Println(idpMetadata.EntityID)
-
-	rootURL, err := url.Parse("https://dh-application.nerdwiese.de")
-	if err != nil {
-		panic(err) // TODO handle error
-	}
-
-	samlSP, _ := samlsp.New(samlsp.Options{
-		URL:         *rootURL,
-		Key:         keyPair.PrivateKey.(*rsa.PrivateKey),
-		Certificate: keyPair.Leaf,
-		IDPMetadata: idpMetadata,
-		SignRequest: true,
-	})
-
-	return samlSP
-}
-
-func emptyHandler(next http.Handler) http.Handler {
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		next.ServeHTTP(w, r)
-	})
-}
 
 func main() {
 
@@ -125,7 +55,12 @@ func main() {
 	var ssoMiddleware *samlsp.Middleware
 	// Setup SSO Handler if enable
 	if useSSO {
-		ssoMiddleware = loadSSO()
+		ssoMiddleware, err = loadSSO()
+
+		if err != nil {
+			log.Fatal("error initializing SAML handling:", err)
+		}
+
 		ssoHandler = ssoMiddleware.RequireAccount
 	}
 
@@ -133,7 +68,7 @@ func main() {
 	router := chi.NewRouter()
 
 	// Set security headers
-	//router.Use(middleware.SetHeader("Content-Security-Policy", "default-src 'none'; script-src 'self'; font-src 'self'; connect-src 'self' wss: ws:; img-src 'self'; style-src 'self' 'unsafe-inline';"))
+	router.Use(middleware.SetHeader("Content-Security-Policy", "default-src 'none'; script-src 'self'; font-src 'self'; connect-src 'self' wss: ws:; img-src 'self'; style-src 'self' 'unsafe-inline';"))
 	router.Use(middleware.SetHeader("X-Frame-Options", "deny"))
 	router.Use(middleware.SetHeader("X-XSS-Protection", "1; mode=block"))
 	router.Use(middleware.SetHeader("X-Content-Type-Options", "nosniff"))

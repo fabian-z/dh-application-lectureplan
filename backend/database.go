@@ -765,35 +765,4 @@ func openDB() *sqlx.DB {
 
 	return db
 
-	/*tx := db.MustBegin()
-
-	var event Event
-	err = event.Get(tx, "SELECT * FROM events WHERE id=?", 2)
-	if err != nil {
-		log.Println(err)
-		tx.Rollback()
-	}
-
-	var lecturer Lecturer
-	err = lecturer.Get(tx, "SELECT * FROM lecturers WHERE id=?", 1)
-	if err != nil {
-		log.Println(err)
-		tx.Rollback()
-	}
-
-	lecturer.GivenName = "Erik"
-	err = lecturer.Update(tx)
-	if err != nil {
-		log.Println(err)
-		tx.Rollback()
-	}
-
-	lecturer.Delete(tx)
-
-	err = tx.Commit()
-
-	log.Println(event)
-	log.Println(lecturer)
-	log.Println(err)*/
-
 }
